@@ -1,0 +1,8 @@
+English Female - English Female	SEF1	TEF1	E10001.wav
+English Male - English Male	SEM1	TEM1	E10002.wav
+English Male - English Female	SEM2	TEF2	E10003.wav
+English Female - English Male	SEF2	TEM2	E10004.wav
+English Female - Mandarin Male	SEF2	TMM1	E10001.wav
+English Male - Mandarin Female	SEM1	TMF1	E10002.wav
+English Male - Finnish Female	SEM2	TFF1	E10003.wav
+English Female - German Male	SEF1	TGM1	E10004.wav
