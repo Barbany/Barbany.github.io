@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="BiFold predicts bimanual cloth folding actions."
+    />
+    <meta name="keywords" content="Cloth, LLM, Robotics, VLM, LMM" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BiFold</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <script
+      src="https://kit.fontawesome.com/e038779150.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <link rel="stylesheet" href="../css/academicons.min.css" />
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <link rel="stylesheet" href="./static/css/index.css" />
+    <link rel="icon" href="../img/webico.ico" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
+    <style>
+      .grad_text {
+        background: -webkit-linear-gradient(right, #003f5c, #00ff00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+          <a class="navbar-item" href="../">
+            <span class="icon">
+              <i class="fas fa-home"></i>
+            </span>
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> Related Research </a>
+            <div class="navbar-dropdown">
+              <a
+                class="navbar-item"
+                href="https://sites.google.com/view/cloth-sim2real-benchmark"
+              >
+                Cloth Sim2Real Benchmark
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                <span class="grad_text">BiFold</span>: Bimanual Cloth Folding
+                with Language Guidance
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="../">Oriol Barbany</a><sup>1</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://www.iri.upc.edu/staff/acolome"
+                    >Adrià Colomé</a
+                  ><sup>1</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://www.iri.upc.edu/people/torras/"
+                    >Carme Torras</a
+                  ><sup>1</sup>,
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"
+                  ><sup>1</sup>Institut de Robòtica i Informàtica Industrial,
+                  CSIC-UPC</span
+                >
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <!-- <span class="link-block"> -->
+                  <!--   <a href="https://arxiv.org/pdf/2011.12948" -->
+                  <!--      class="external-link button is-normal is-rounded is-dark"> -->
+                  <!--     <span class="icon"> -->
+                  <!--         <i class="fas fa-file-pdf"></i> -->
+                  <!--     </span> -->
+                  <!--     <span>Paper</span> -->
+                  <!--   </a> -->
+                  <!-- </span> -->
+                  <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+                  <!-- Video Link. -->
+                  <!-- <span class="link-block"> -->
+                  <!--   <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA" -->
+                  <!--      class="external-link button is-normal is-rounded is-dark"> -->
+                  <!--     <span class="icon"> -->
+                  <!--         <i class="fab fa-youtube"></i> -->
+                  <!--     </span> -->
+                  <!--     <span>Video</span> -->
+                  <!--   </a> -->
+                  <!-- </span> -->
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code (coming soon)</span>
+                    </a>
+                  </span>
+                  <!-- Dataset Link. -->
+                  <span class="link-block">
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fa-solid fa-database"></i>
+                      </span>
+                      <span>Data (coming soon)</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Cloth folding is a complex task due to the inevitable
+                self-occlusions of clothes, their complicated dynamics, and the
+                disparate materials, geometries, and textures that garments can
+                have. In this work, we learn folding actions conditioned on text
+                commands. Translating high-level, abstract instructions into
+                precise robotic actions requires sophisticated language
+                understanding and manipulation capabilities. To do that, we
+                leverage a pre-trained vision-language model and repurpose it to
+                predict manipulation actions. Our model, BiFold, can take
+                context into account and achieves state-of-the-art performance
+                on an existing language-conditioned folding benchmark. Given the
+                lack of annotated bimanual folding data, we devise a procedure
+                to automatically parse actions of a simulated dataset and tag
+                them with aligned text instructions. BiFold attains the best
+                performance on our dataset and can transfer to new instructions,
+                garments, and environments.
+              </p>
+              <ul>
+                <li>
+                  We propose a new model that leverages foundational vision and
+                  language models to learn cloth folding manipulations and can
+                  take previous actions into account.
+                </li>
+                <li>
+                  We describe a pipeline to automatically generate language
+                  annotations aligned to manipulation actions for existing
+                  datasets of folding demonstrations.
+                </li>
+                <li>
+                  We demonstrate the superiority of our model on an existing
+                  benchmark of unimodal manipulation, the newly introduced
+                  bimanual dataset, and on a real-world setup.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+
+        <!-- Paper video. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Video (with audio narration)</h2>
+            <video controls preload>
+              <source src="media/video.webm" , type="video/webm" />
+            </video>
+          </div>
+        </div>
+        <!--/ Paper video. -->
+      </div>
+    </section>
+
+    <section class="section">
+      <h1 class="title is-2">Supplementary material</h1>
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Dataset generation</h2>
+            <div class="content has-text-justified">
+              <p>
+                The
+                <a href="https://huggingface.co/datasets/robotflow/vr-folding"
+                  >VR-Folding dataset</a
+                >
+                does not include annotations for the language-conditioned
+                manipulation task we tackle nor action-level segmentation of the
+                actions or natural language annotations. For each instance, if
+                one of the hands of the demonstrator is grasping a point, the
+                dataset provides the indices of the closest vertices of the
+                simulation mesh. Therefore, there is no information on how the
+                hand approaches the garment. Additionally, the only perceptual
+                input is a point cloud of fixed size. No RGB or depth images are
+                available. The process we propose does not require human
+                intervention, contrary to the one used by
+                <a href="https://sites.google.com/view/language-deformable"
+                  >Deng <i>et al.</i></a
+                >
+                for collecting the unimanual dataset , and therefore can be
+                easily scaled.
+              </p>
+            </div>
+            <h3 class="title is-4">Rendering</h3>
+
+            <div class="content has-text-justified">
+              <p>
+                The VR-Folding dataset does not contain RGB-D inputs, and the
+                provided simulation meshes are untextured. Moreover, the
+                garments used in the simulator have a constant color for the
+                interior and a repetitive texture with a differentiated color
+                that yields colored point clouds:
+              </p>
+              <div class="columns is-vcentered">
+                <div class="column is-one-quarter">
+                  <img src="./media/dataset_sample/000045.jpg" />
+                </div>
+                <div class="column is-one-quarter">
+                  <img src="./media/dataset_sample/000105.jpg" />
+                </div>
+                <div class="column is-one-quarter">
+                  <img src="./media/dataset_sample/000155.jpg" />
+                </div>
+                <div class="column is-one-quarter">
+                  <img src="./media/dataset_sample/000210.jpg" />
+                </div>
+              </div>
+              <div class="navbar-menu" id="navMenu">
+                <div class="navbar-end has-text-centered">
+                  <div class="navbar-item">
+                    <a href="/">About</a>
+                  </div>
+                  <div class="navbar-item">
+                    <a href="/resume/">Resume</a>
+                  </div>
+                  <div class="navbar-item">
+                    <a href="/music/">Musical Facet</a>
+                  </div>
+                </div>
+              </div>
+              <p>
+                This design choice can lead to inputs that can be more easily
+                registered. For example, one can identify the interior and
+                exterior, self-intersections, and the scale of the cloth.
+                However, this texturing could limit the generalization
+                capabilities of our RGB-based models for the same reason,
+                causing the learning process to focus only on such patterns and
+                differentiating the few colors seen during training.
+              </p>
+              <p>
+                While VR-Folding obtains the simulation meshes by manipulating
+                assets extracted from
+                <a href="https://hbertiche.github.io/CLOTH3D/">CLOTH3D</a>, they
+                are re-meshed to obtain triangular faces from the original
+                quadratic faces. For this reason, applying face textures cannot
+                be done straightforwardly and requires a first step of texture
+                baking. After assigning each vertex and triangular face to the
+                original CLOTH3D assets, we can transfer the cloth texture to
+                the simulation meshes. When assigning a material to the mesh, we
+                use a material definition from
+                <a href="https://sites.google.com/view/clothesnet/"
+                  >ClothesNet</a
+                >, which effectively achieves a realistic cloth effect:
+              </p>
+              <pre><code>Ns 28.763235
+Ka 1.000000 1.000000 1.000000
+Ks 0.075000 0.075000 0.075000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2</code></pre>
+              <p>
+                We render RGB-D images using
+                <a href="https://github.com/DLR-RM/BlenderProc">BlenderProc2</a>
+                with cameras pointing at the object whose position we randomly
+                sample from the volume delimited by two spherical caps of
+                different radii with centers on the manipulated object.
+                Concretely, we define the volume using elevations [45&deg,
+                90&deg] and radii [1.8, 2.2]. We use the same camera position
+                for all the steps of the same sequence. Finally, we render RGB-D
+                images with a resolution of 384x384 pixels. We include an
+                example of the original input and our newly introduced samples
+                below.
+              </p>
+              <figure>
+                <img src="./media/render_draw.png" />
+                <figcaption>
+                  <b>Re-rendering step: </b>The only visual input in the
+                  original dataset is given as a colored point cloud with
+                  uniform colors and patterns (left). We take the simulation
+                  mesh, and randomly choose camera position (center). Finally,
+                  we apply a texture to the mesh and render RGB-D images
+                  (right).
+                </figcaption>
+              </figure>
+              <p>
+                The decision to use random cameras rather than fixed cameras, as
+                in
+                <a href="https://sites.google.com/view/language-deformable"
+                  >Deng <i>et al.</i></a
+                >, is one of the reasons why our dataset is challenging. When
+                using random camera positions, the input clothes have different
+                sizes, and their shape is more affected by perspective as the
+                camera deviates from the zenithal position. We ensure that all
+                the pick and place positions fall inside the image and resample
+                a new camera to generate the complete sequence again otherwise.
+              </p>
+            </div>
+
+            <h3 class="title is-4">Language annotations</h3>
+
+            <div class="content has-text-justified">
+              <p>
+                When annotating bimanual actions using
+                <a href="https://arxiv.org/abs/1901.02970">NOCS coordinates</a>,
+                it is usual that the left and right pickers use different
+                semantic locations, e.g., the left picker grabs the top right
+                part, and the right picker grabs the bottom right part. In this
+                case, we can infer that the common objective is to hold the
+                right part of the garment, but one cannot trivially resolve many
+                other situations. To do that, we designed a heuristics detailed
+                in \cref{alg:semantic_position_heuristics}, which outputs a
+                common semantic location considering the positions of the left
+                and right pickers given the context of the action.
+              </p>
+              <figure>
+                <img src="./media/nocs.png" />
+                <figcaption>
+                  <b>Semantic pick and place positions: </b>
+                  We obtain the semantic location of the grip by mapping the
+                  picked vertices on the NOCS and thresholding its coordinates.
+                  In this figure, we show an example of each category colored by
+                  thresholding the left-right and top-bottom directions. We do
+                  not threshold the front-rear direction as it is not relevant
+                  for the considered actions.
+                </figcaption>
+              </figure>
+              <p>
+                Once the semantic location of the pick and place positions are
+                known, we assign a language instruction to the folding
+                sub-action. We make use of template prompts and include the
+                complete list below. We can distinguish three different kinds of
+                actions: sleeve manipulations, refinements, and generic folds.
+                For all of them, the prompts follow a template where the
+                placeholders surrounded by brackets, i.e.,
+                <code>{which}</code> and <code>{garment}</code>, are replaced by
+                the pick and place semantic locations and the garment type,
+                respectively. If the heuristics returns a sleeve flag, we use a
+                prompt from the set of language instructions for sleeves with
+                the semantic pick position. If the pick and place position is
+                the same, we assume that the volunteer is performing a
+                refinement and uses one of the prompts from a predefined list of
+                language templates for small actions. Otherwise, we use a
+                generic fold prompt from a set of generic instructions.
+              </p>
+              <p>
+                Simulating clothes is a very challenging task for which
+                <a href="https://sites.google.com/view/cloth-sim2real-benchmark"
+                  >some simulators exhibit a large gap with reality</a
+                >. Additionally, the constrained optimization routines used by
+                some simulators might lead to unstable solutions where the
+                predicted cloth vertices diverge. We found several sequences of
+                the VR-Folding dataset where the clothes underwent this
+                phenomenon and present one of them below.
+              </p>
+              <figure>
+                <div class="columns is-vcentered">
+                  <div class="column is-one-quarter">
+                    <img
+                      src="./media/divergent_sequence/00156_Top_000013_000050.png"
+                    />
+                    <figcaption>t=50</figcaption>
+                  </div>
+                  <div class="column is-one-quarter">
+                    <img
+                      src="./media/divergent_sequence/00156_Top_000013_000055.png"
+                    />
+                    <figcaption>t=55</figcaption>
+                  </div>
+                  <div class="column is-one-quarter">
+                    <img
+                      src="./media/divergent_sequence/00156_Top_000013_000075.png"
+                    />
+                    <figcaption>t=75</figcaption>
+                  </div>
+                  <div class="column is-one-quarter">
+                    <img
+                      src="./media/divergent_sequence/00156_Top_000013_000195.png"
+                    />
+                    <figcaption>t=195</figcaption>
+                  </div>
+                </div>
+                <figcaption>
+                  <b>Divergent sequence: </b>In this sequence, we can see that
+                  the manipulated top has become unstable in the cloth
+                  simulator, yielding unrealistic shapes. The top uses the
+                  CLOTH3D mesh with identifier 00156 and corresponds to the
+                  sequence 00156_Top_000013_t in the VR-Folding dataset, where
+                  the dataset uses time notation t in steps of 5, i.e., t=50 and
+                  t=55 are consecutive frames.
+                </figcaption>
+              </figure>
+            </div>
+
+            <h3 class="title is-4">Filtering out divergent sequences</h3>
+
+            <div class="content has-text-justified">
+              <p>
+                In the above figure, we can observe that when the simulator
+                becomes unstable, some of the vertex positions are excessively
+                far, creating unusually long edges. To remove this and other
+                occurrences of this phenomenon, we compute the set of edge
+                lengths \begin{align}
+                \mathcal{E}_{\text{lengths}}:=\{\left\lVert \mathbf{v}_i -
+                \mathbf{v}_j\right\rVert: (\mathbf{v}_i,\mathbf{v}_j)\in
+                \mathcal{E}\}\,, \end{align} where \(\mathcal{E}\) is the set of
+                vertices of the mesh. Then, we compute the quantity
+                \begin{align} \frac{\text{max}\left[
+                \mathcal{E}_{\text{lengths}}\right] - \mathbb{E}\left[
+                \mathcal{E}_{\text{lengths}}\right]}{\sqrt{\text{VAR}\left[\mathcal{E}_{\text{lengths}}\right]}}\,,
+                \end{align} wich computes how much the maximum edge length
+                deviates from the mean normalized by the standard deviation.
+                Finally, we filter out all meshes for which the ratio of the
+                quantity in the equation above between the mesh of interest and
+                the NOCS mesh exceeds 3.5. Note that NOCS has a different scale
+                but the ratio of standard deviations removes this effect.
+              </p>
+            </div>
+
+            <h3 class="title is-4">Statistics</h3>
+
+            <div class="content has-text-justified">
+              <p>
+                The VR-Folding dataset contains almost 4000 bimanual folding
+                demonstrations from humans. The demonstrations are performed
+                with a large variety of meshes, being almost all of them
+                distinct. From these sequences, we are able to segment around
+                7000 actions and obtain aligned text instructions. By means of
+                our proposed pipeline, we are able to obtain a diverse set of
+                language instructions, totaling more than 1000 unique prompts,
+                as seen in the table below.
+              </p>
+              <table>
+                <tr>
+                  <th>Garment</th>
+                  <th># demos</th>
+                  <th># meshes</th>
+                  <th># actions</th>
+                  <th># instructions</th>
+                </tr>
+                <tr>
+                  <td>Skirt</td>
+                  <td>464</td>
+                  <td>462</td>
+                  <td>857</td>
+                  <td>196</td>
+                </tr>
+                <tr>
+                  <td>Top</td>
+                  <td>893</td>
+                  <td>890</td>
+                  <td>891</td>
+                  <td>262</td>
+                </tr>
+                <tr>
+                  <td>Trousers</td>
+                  <td>1541</td>
+                  <td>1539</td>
+                  <td>2770</td>
+                  <td>353</td>
+                </tr>
+                <tr>
+                  <td>T-shirt</td>
+                  <td>993</td>
+                  <td>990</td>
+                  <td>2444</td>
+                  <td>254</td>
+                </tr>
+              </table>
+              <p>
+                In the figure below, we show a histogram of the number of
+                actions of each sequence grouped by clothing category in linear
+                scale and stacked (left) and logarithmic scale and separated
+                (right) for the BiFold dataset. Note that some sequences can
+                have only one action as the sequence can be truncated by some
+                filtering step and the valid folding sub-action can still be
+                useful for training. We can see that there are sequences with up
+                to six parsed actions, showing the clear need for our novel
+                pipeline for action parsing and annotation as the demonstrators
+                do not follow the predefined instructions.
+              </p>
+              <div class="columns is-vcentered">
+                <div class="column is-one-half">
+                  <img
+                    src="./media/dataset_statistics/number_of_actions_per_category-1.png"
+                  />
+                </div>
+                <div class="column is-one-half">
+                  <img
+                    src="./media/dataset_statistics/log_number_of_actions_per_category-1.png"
+                  />
+                </div>
+              </div>
+              <p>
+                Below, we show the distribution of the semantic locations of the
+                origin and end of the manipulation actions. While in the up-down
+                folds, most volunteers prefer to fold top to down, the folds
+                along the left-right direction present an almost equal number of
+                samples from left to right than from right to left.
+              </p>
+              <img src="./media/dataset_statistics/which_folds-1.png" />
+              <p>
+                When referring to folding sleeves, the next figure shows a
+                similar distribution of equal preference for the left and right
+                arm with the latter being slightly more used for the first fold.
+              </p>
+              <img
+                src="./media/dataset_statistics/which_sleeve_folded_first-1.png"
+              />
+              <p>
+                Finally, in we can see that there is a non-negligible number of
+                refinement actions, which the volunteers use to correct
+                suboptimal folds. The existence of the suboptimal folds is the
+                main motivation for the context that BiFold incorporates, which
+                allows us to keep track of the previous actions.
+              </p>
+              <img
+                src="./media/dataset_statistics/number_of_refinement_actions-1.png"
+              />
+            </div>
+            <h2 class="title is-3">Experimental details</h2>
+
+            <h3 class="title is-4">Modeling</h3>
+            <div class="content has-text-justified">
+              <p>
+                For each dataset, we train a single model for all the cloth
+                categories using the resolution of the images in the training
+                set. That means unimanual models ingest a square image with a
+                resolution of 224 pixels, while bimanual models use a higher
+                resolution of 384. All models use a
+                <a href="https://arxiv.org/abs/2010.11929"
+                  >Vision Transformer image backbone</a
+                >
+                that tokenizes the input image by taking 16x16 patches. We use
+                the
+                <a
+                  href="https://huggingface.co/docs/transformers/en/model_doc/siglip"
+                  >SigLIP base model in Hugginface</a
+                >. We process the RGB images and the input text using the
+                default SigLIP processor. During inference of the bimanual
+                models, we apply the mask to the input image and fill the rest
+                with the background color of the training images.
+              </p>
+              <p>
+                The SigLIP model is trained with a contrastive objective similar
+                to <a href="https://arxiv.org/abs/2103.00020">CLIP</a> and hence
+                learns to extract a single image embedding and a text embedding
+                that lie in the same space and are close if they have semantic
+                similarities. Instead, we are interested in retrieving tokens
+                for the image and language information to be fused using a
+                <a href="https://arxiv.org/abs/1706.03762">transformer</a>.
+                Doing so allows incorporating additional conditioning signals as
+                we do in the BiFold version with context and has the potential
+                of adding new modalities. Moreover, this formulation allows the
+                processing of the tokens corresponding to the input image and
+                transforming them back to the image domain to obtain value maps.
+                The tokens we use are the last hidden states of SigLIP, which
+                have dimension 768.
+              </p>
+              <p>
+                The pretraining of SigLIP on large-scale datasets enables us to
+                learn the invariances of images from data and create a
+                high-level representation of images and text. However, the
+                pretraining objective may focus on distinctive parts of the text
+                that can make a discriminative embedding on the shared space,
+                which does not necessarily align with the representations needed
+                for our problem. With this in mind, we use
+                <a href="https://arxiv.org/abs/2106.09685">LoRA</a>, allowing us
+                to modify the inner activations while retaining the knowledge
+                that would not be possible to learn from small datasets such as
+                that from
+                <a href="https://sites.google.com/view/language-deformable"
+                  >Deng <i>et al.</i></a
+                >.
+              </p>
+              <p>
+                Once we obtain the output tokens of the SigLIP model with the
+                LoRA modifications, we append a class token to indicate the
+                modality of each input and concatenate the result, i.e., one for
+                RGB images and one for text. For the version with context, we
+                process each RGB image separately, add a single RGB image class
+                token, and add a learned positional embedding element-wise to be
+                able to distinguish time steps and pixel positions. The
+                resulting tokens are processed using a transformer encoder with
+                8 blocks having 16 heads each and dimensions 4 times that of the
+                input. The convolutional decoder heads all have the same
+                architecture, which consists of 5 2D convolutional layers with
+                kernel size 1 that halve the number of channels every two layers
+                until reaching a single channel. Each of the layers but the last
+                one is followed by upsampling layers with a scale factor of 2,
+                yielding an image with the same resolution as the input.
+              </p>
+            </div>
+            <h3 class="title is-4">Simulation</h3>
+            <div class="content has-text-justified">
+              <p>
+                The pick and place manipulation primitive uses the following
+                steps:
+              </p>
+              <ol>
+                <li>
+                  Set pick and place heights using the radius of the picker,
+                  regardless of the world coordinate of the vertex.
+                </li>
+                <li>
+                  The picker is moved to the picking position but at a
+                  predefined height.
+                </li>
+                <li>
+                  The picker moves to the pick position and closes the gripper.
+                </li>
+                <li>The picker moves to the position in 2.</li>
+                <li>
+                  The picker is moved to the placing position but at a
+                  predefined height.
+                </li>
+                <li>
+                  The picker goes to the placing position and opens the gripper.
+                </li>
+                <li>
+                  The picker moves to the place position at the same predefined
+                  height as in 2.
+                </li>
+              </ol>
+              <p>
+                All the movements are performed at a speed of 5 mm/action except
+                steps 2 and 7, which we perform 100 times faster as they are
+                supposed to not interact with the cloth. The bimanual primitive
+                uses the unimanual primitive with the actions executed at the
+                same time for both pickers.
+              </p>
+            </div>
+            <h3 class="title is-4">Real</h3>
+            <div class="content has-text-justified">
+              <p>
+                To obtain segmentation masks, we use the
+                <a href="https://segment-anything.com/"
+                  >ViT-h model variant of SAM</a
+                >
+                using pixel coordinates as input prompts. The masks are then
+                used to determine square crops of the images provided by the
+                Azure Kinect camera, which provides 1280x720 pixel images. To
+                reduce the influence of the noise of the depth sensor, we take
+                10 images and use the median value for each pixel. In
+                particular, we compose axis aligned bounding boxes taking all
+                the images of a given folding sequence. Then, we crop the images
+                to a size determined as the maximum side length of the bounding
+                box of all the images and a margin of 10 pixels added to prevent
+                pick and place positions from falling on the border of the
+                image. If needed, we pad the images using constant padding with
+                value 0. We present the resulting cropped images for the clothes
+                used in the real setup below.
+              </p>
+              <p>
+                We evaluate our model on eight pieces of cloth: The checkered
+                rag and small towel from the
+                <a
+                  href="https://www.iri.upc.edu/groups/perception/ClothObjectSet/"
+                  >public household dataset</a
+                >, two jeans, a long-sleeved and two short-sleeved T-shirts, and
+                a dress. The rag, towel, and dress are unseen clothing
+                categories. The jeans have a new material different from the
+                smooth fabrics obtained in rendering. The long-sleeved T-shirt
+                is a double-layer tee that does not appear in any training
+                example. Besides, we record the dataset in a real setup with new
+                lighting conditions, obtain shadows and reflexes, and the
+                garments have different textures. Overall, the real dataset has
+                a significant shift in the distribution of the inputs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Evaluation</h2>
+            <h3 class="title is-4">Folding performance in SoftGym</h3>
+            <div class="content has-text-justified">
+              <p>
+                To evaluate the manipulation performance, we load the meshes in
+                SoftGym and evaluate the model without training. Note that there
+                is an evident distribution shift between the created dataset and
+                the SoftGym appearance.
+              </p>
+            </div>
+            <div class="columns is-vcentered">
+              <div class="column is-one-quarter">
+                <img src="./media/fold_pants.gif" />
+              </div>
+              <div class="column is-one-quarter">
+                <img src="./media/fold_shirt.gif" />
+              </div>
+              <div class="column is-one-quarter">
+                <img src="./media/fold_skirt.gif" />
+              </div>
+              <div class="column is-one-quarter">
+                <img src="./media/fold_top.gif" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img
+              src="./media/186_Fold the right sleeve towards the body only using the right arm..png"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="./media/206_Fold the left sleeve to the centerline of the shirt..png"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="./media/222_Bring the bottom side of the top towards the top side and fold them in half..png"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="./media/231_Make a fold in the top, starting from the bottom and ending at the top..png"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section" id="BibTeX"> -->
+    <!--   <div class="container is-max-desktop content"> -->
+    <!--     <h2 class="title">BibTeX</h2> -->
+    <!--     <pre><code>@article{park2021nerfies, -->
+    <!--   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo}, -->
+    <!--   title     = {Nerfies: Deformable Neural Radiance Fields}, -->
+    <!--   journal   = {ICCV}, -->
+    <!--   year      = {2021}, -->
+    <!-- }</code></pre> -->
+    <!--   </div> -->
+    <!-- </section> -->
+
+    <footer class="footer">
+      <!-- <div class="container"> -->
+      <!--   <div class="content has-text-centered"> -->
+      <!--     <a class="icon-link" -->
+      <!--        href="./static/videos/nerfies_paper.pdf"> -->
+      <!--       <i class="fas fa-file-pdf"></i> -->
+      <!--     </a> -->
+      <!--     <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled> -->
+      <!--       <i class="fab fa-github"></i> -->
+      <!--     </a> -->
+      <!--   </div> -->
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a
+              <a
+                rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/"
+                >Creative Commons Attribution-ShareAlike 4.0 International
+                License</a
+              >
+              and borrowed from
+              <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
