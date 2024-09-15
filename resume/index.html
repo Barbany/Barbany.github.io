@@ -1,790 +1,971 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FL6N6JSDV"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FL6N6JSDV"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-2FL6N6JSDV');
+      gtag("config", "G-2FL6N6JSDV");
     </script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/png" href="../img/webico.ico" />
 
     <title>Oriol Barbany</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
+    />
     <link rel="stylesheet" href="../css/academicons.css" />
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-</head>
-<style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+  </head>
+  <style>
     a {
-        color: black;
+      color: black;
     }
 
     a:hover {
-        color: mediumslateblue;
+      color: mediumslateblue;
     }
 
     .typed-cursor {
-        font-size: 32px;
+      font-size: 32px;
     }
-</style>
+  </style>
 
-<body class="has-navbar-fixed-top">
-
+  <body class="has-navbar-fixed-top">
     <!-- Top bar -->
-    <nav class="navbar is-spaced is-fixed-top" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <div class="navbar-item">
-                <a href="mailto:oriol.barbanymayor@epfl.ch" target="_blank">
-                    <i class="fa fa-envelope"></i>
-                </a>
-            </div>
-            <div class="navbar-item">
-                <a href="https://github.com/Barbany/" target='_blank'>
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-            <div class="navbar-item">
-                <a href="https://scholar.google.es/citations?user=REEqrZEAAAAJ&hl=en" target='_blank'>
-                    <i class="ai ai-google-scholar ai-fw"></i>
-                </a>
-            </div>
-            <div class="navbar-item">
-                <a href="https://stackexchange.com/users/11262251/oriol-b?tab=accounts" target='_blank'>
-                    <i class="fab fa-stack-exchange"></i>
-                </a>
-            </div>
-            <div class="navbar-item">
-                <a href="https://www.linkedin.com/in/oriol-barbany" target='_blank'>
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
-            <div class="navbar-item">
-                <a href="https://twitter.com/oriolbarbany" target='_blank'>
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </div>
-
-            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false"
-                id="navBurger">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+    <nav
+      class="navbar is-spaced is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <div class="navbar-item">
+          <a href="mailto:oriol.barbanymayor@epfl.ch" target="_blank">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href="https://github.com/Barbany/" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a
+            href="https://scholar.google.es/citations?user=REEqrZEAAAAJ&hl=en"
+            target="_blank"
+          >
+            <i class="ai ai-google-scholar ai-fw"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a
+            href="https://stackexchange.com/users/11262251/oriol-b?tab=accounts"
+            target="_blank"
+          >
+            <i class="fab fa-stack-exchange"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href="https://www.linkedin.com/in/oriol-barbany" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href="https://twitter.com/oriolbarbany" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
 
-        <div class="navbar-menu" id="navMenu">
-            <div class="navbar-end has-text-centered">
-                <div class="navbar-item">
-                    <a href="/">About</a>
-                </div>
-                <div class="navbar-item">
-                    <a href="/resume/">Resume</a>
-                </div>
-                <div class="navbar-item">
-                    <a href="/music/">Musical Facet</a>
-                </div>
-            </div>
+        <a
+          role="button"
+          class="navbar-burger"
+          data-target="navMenu"
+          aria-label="menu"
+          aria-expanded="false"
+          id="navBurger"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          <div class="navbar-item">
+            <a href="/">About</a>
+          </div>
+          <div class="navbar-item">
+            <a href="/resume/">Resume</a>
+          </div>
+          <div class="navbar-item">
+            <a href="/music/">Musical Facet</a>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Main content -->
     <div class="container">
-        <div id="Resume" class="content-tab">
-            <section class="section">
-                <div class="columns is-variable is-8 is-vcentered is-multiline" style="justify-content: center;">
-                    <div class="column is-full" style="max-width: 1024px;">
-                        <h1 class="title is-2 has-text-centered">Resume</h1>
-                        <hr style="max-width: 1024px;">
-                        <h1 class="title has-text-centered">Education</h1>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/epfl.svg">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>Expected Spring 2024</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        École Polytechnique Fédérale de Lausanne
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Lausanne
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level subtitle is-6 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Visiting PhD student (ELLIS)
-                                    </div>
-                                </div>
-                            </nav>
-                        </div>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/iri.png">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>2021-2024</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Institut de Robòtica i Informàtica Industrial
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Barcelona
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level subtitle is-6 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        PhD student (ELLIS)
-                                    </div>
-                                </div>
-                            </nav>
-                            <div class="content">
-                                <ul>
-                                    <li><b>Project: </b>"Feedback models for real-time robotic cloth manipulation".</li>
-                                    <li>
-                                        <b>Supervisors: </b><a href="https://www.iri.upc.edu/staff/acolome">Dr. Adrià Colomé</a>, <a href="https://www.iri.upc.edu/staff/torras">Prof. Carme Torras</a>, and
-                                        <a href="https://people.epfl.ch/amir.zamir">Prof. Amir Zamir</a>.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/epfl.svg">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>2018 – 2020</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        École Polytechnique Fédérale de Lausanne
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Lausanne
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level subtitle is-6 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        MSc. in Data Science
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        GPA: 5.74 / 6.00
-                                    </div>
-                                </div>
-                            </nav>
-                            <div class="content">
-                                <ul>
-                                    <li>
-                                        <b>Coursework: </b><a href="https://edu.epfl.ch/coursebook/en/advanced-algorithms-CS-450"> Advanced Algorithms</a>, <a href="https://edu.epfl.ch/coursebook/en/algorithms-CS-250-1"> Algorithms</a>, <a href="https://edu.epfl.ch/coursebook/en/artificial-neural-networks-CS-456-3">Artificial Neural Networks</a>,
-                                        <a href="https://edu.epfl.ch/coursebook/en/automatic-speech-processing-EE-554">Automatic Speech Processing</a>, <a href="https://edu.epfl.ch/coursebook/en/functional-programming-CS-210">Functional Programming</a>, <a href="https://edu.epfl.ch/coursebook/en/graph-theory-MATH-360">Graph Theory</a>, <a href="https://edu.epfl.ch/coursebook/en/image-analysis-and-pattern-recognition-EE-451">Image
-                                        Analysis and Pattern Recognition</a>, <a href="https://www.epfl.ch/schools/ic/ipg/teaching/2018-2019/2018-2019-master-courses/information-theory-and-signal-processing/">Information Theory and Signal Processing</a>,
-                                        <a href="https://edu.epfl.ch/coursebook/en/intelligent-agents-CS-430">Intelligent Agents</a>, <a href="https://edu.epfl.ch/coursebook/en/introduction-to-database-systems-CS-322">Introduction to Database Systems</a>, <a href="https://edu.epfl.ch/coursebook/en/introduction-to-natural-language-processing-CS-431">Introduction to NLP</a>,
-                                        <a href="https://edu.epfl.ch/coursebook/en/learning-theory-CS-526">Learning Theory</a>, <a href="https://edu.epfl.ch/coursebook/en/machine-learning-CS-433">Machine Learning</a>, <a href="https://edu.epfl.ch/coursebook/en/mathematical-foundations-of-signal-processing-COM-514">Mathematical Foundations of Signal Processing</a>,
-                                        <a href="https://edu.epfl.ch/coursebook/en/mathematics-of-data-from-theory-to-computation-EE-556">Mathematics of Data</a>, <a href="https://edu.epfl.ch/coursebook/en/optimization-for-machine-learning-CS-439">Optimization for Machine Learning</a>, <a href="https://edu.epfl.ch/coursebook/en/statistics-for-data-science-MATH-413">Statistics for Data
-                                        Science</a>, <a href="https://edu.epfl.ch/coursebook/en/stochastic-processes-MATH-332">Stochastic Processes</a>, <a href="https://edu.epfl.ch/coursebook/en/time-series-MATH-342">Time Series</a>.</li>
-                                </ul>
-                            </div>
-                            <div class="content">
-                                <ul>
-                                    <li>
-                                        <b>Activities: </b>Member of the <a
-                                            href="https://www.epfl.ch/campus/associations/list/oche/">Lausanne Student
-                                            Chamber Orchestra</a> and the <a href="https://osul.ch/">Orchestre
-                                            Symphonique et Universitaire de Lausanne</a>.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/upc.svg">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>2014 – 2018</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Universitat Politècnica Catalunya
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Barcelona
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level subtitle is-6 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        BSc. in Telecommunications Technologies and Services Engineering
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        GPA: 8.49 / 10.00
-                                    </div>
-                                </div>
-                            </nav>
-                            <div class="content">
-                                <ul>
-                                    <li>
-                                        4th of the promotion. See <a href="./cert/excellence_upc.pdf">recognition of outstanding academic achievement</a>.
-                                    </li>
-                                    <li>
-                                        <b>Major: </b>Audiovisual Systems.
-                                    </li>
-                                    <li>
-                                        <b>Honours in: </b>Bachelor’s thesis, <a href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230024.pdf">Image and Video Processing</a>, <a href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230023.pdf">Acoustics and
-                                        Electro-acoustics</a>, <a href="https://telecombcn-dl.github.io/2018-idl/">Introduction to Deep Learning</a>, <a href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230013.pdf">Radiation and Propagation</a>,
-                                        <a href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230089.pdf">Introduction to Audiovisual Processing</a>, <a href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230090.pdf">Electromagnetic Waves</a>, <a href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230088.pdf">Signals and
-                                        Systems</a>, <a href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230007.pdf">Electromagnetism</a>, Introduction to Mathematics, <a href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230005.pdf">Fundamentals of Computers</a>.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/conservatori.png">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>2002 – 2014</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Escola Municipal de Música i Conservatori professional de Sabadell
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Sabadell
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level subtitle is-6 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Secondary Education in Music
-                                    </div>
-                                </div>
-                            </nav>
-                            <div class="content">
-                                <ul>
-                                    <li>
-                                        Bassoon and harmony studies.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h1 class="title has-text-centered">Experience</h1>
-						<div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/amazon.svg">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>Summer 2023</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Amazon
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Palo Alto
-                                    </div>
-                                </div>
-                            </nav>
-                            <h2 class="subtitle is-6">Applied Science Intern</h2>
-                            <div class="content">
-                                <ul>
-                                    <li><b>Project: </b>"Multimodal search”.</li>
-                                    <li><b>Summary: </b>Adapt language and vision models to perform retrieval using image and text inputs.</li>
-                                    <li><b>Supervisors: </b>Dr. Arnab Dhua, Dr. Xinliang Zhu, and Michael Huang.</li>
-                                </ul>
-                            </div>
-                        </div>
-						<div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/amazon.svg">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>Summer 2022</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Amazon
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Palo Alto
-                                    </div>
-                                </div>
-                            </nav>
-                            <h2 class="subtitle is-6">Applied Science Intern</h2>
-                            <div class="content">
-                                <ul>
-                                    <li><b>Project: </b>"Robust visual similarity learning”.</li>
-                                    <li><b>Summary: </b>Derive a procedure to train robust deep metric learning models on datasets with noisy correspondences. Propose a procedure to perturb the labels of benchmark that mimics real annotation errors.</li>
-                                    <li><b>Supervisors: </b>Dr. Arnab Dhua, Dr. Xiaofan Lin, and Dr. Muhammet Bastan.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/amazon.svg">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>Fall 2020</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Amazon
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Berlin
-                                    </div>
-                                </div>
-                            </nav>
-                            <h2 class="subtitle is-6">Applied Science Intern</h2>
-                            <div class="content">
-                                <ul>
-                                    <li><b>Project: </b>"Contextual Position Bias Estimation for Unbiased Learning to Rank”.</li>
-                                    <li><b>Summary: </b>Propose a ranker-agnostic method to model the probability of an item being seen in different contexts, e.g., for different users, with a single estimator. This can be used in LTR algorithms to distinguish the absence of click due to irrelevance or lack of examination, thus better matching the true user preferences.</li>
-                                    <li><b>Supervisors: </b>Dr. Matteo Ruffini and Dr. Giuseppe Di Benedetto.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/logitech.svg">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>Spring 2020</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Logitech Europe S.A. - CTO, AI Team
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Lausanne
-                                    </div>
-                                </div>
-                            </nav>
-                            <h2 class="subtitle is-6">Engineering Intern, CTO</h2>
-                            <div class="content">
-                                <ul>
-                                    <li><b>Project: </b>”Speech and Audio Style Transfer” - Internship credited with Master Thesis.
-                                    </li>
-                                    <li><b>Summary: </b>This project introduced FastVC, a method for fast (4x faster than real-time on CPU) many-to-many non-parallel Voice
-                                        Conversion (VC). The proposed approach was accepted as a technical paper to the VC Challenge 2020, where FastVC outperformed
-                                        the Challenge baselines in quality results on the cross-lingual VC task.</li>
-                                    <li><b>Supervisors: </b>Dr. Milos Cernak and Prof. Martin Jaggi.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/epfl.svg">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>Fall 2019</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Machine Learning and Optimization Laboratory
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Lausanne
-                                    </div>
-                                </div>
-                            </nav>
-                            <h2 class="subtitle is-6">Student Research Assistant</h2>
-                            <div class="content">
-                                <ul>
-                                    <li><b>Project: </b>”Affine-Invariant Robust Training” - Semester project</li>
-                                    <li><b>Summary: </b>Proposed evolution strategies as zeroth order optimization algorithms to find
-                                        the
-                                        worst affine transforms for each input. The proposed method effectively yields
-                                        robust models and allows introducing non-parametric adversarial perturbations.
-                                    </li>
-                                    <li>
-                                        <b>Supervisors: </b>Dr. Sebastian Stich, Maksym Andriushchenko (PhD candidate at EPFL), and Prof. Martin Jaggi.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/deloitte.svg">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>Fall 2017</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Deloitte Advisory S.L.
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Barcelona
-                                    </div>
-                                </div>
-                            </nav>
-                            <h2 class="subtitle is-6">Junior at Risk Advisory IT Department</h2>
-                            <div class="content">
-                                <ul>
-                                    <li>Bachelor's internship.</li>
-                                    <li>Hardening security measures of IT systems at Banc Sabadell.</li>
-                                </ul>
-                            </div>
-                        </div>
+      <div id="Resume" class="content-tab">
+        <section class="section">
+          <div
+            class="columns is-variable is-8 is-vcentered is-multiline"
+            style="justify-content: center"
+          >
+            <div class="column is-full" style="max-width: 1024px">
+              <h1 class="title is-2 has-text-centered">Resume</h1>
+              <hr style="max-width: 1024px" />
+              <h1 class="title has-text-centered">Education</h1>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/epfl.svg" />
                     </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>Expected Spring 2024</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      École Polytechnique Fédérale de Lausanne
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Lausanne</div>
+                  </div>
+                </nav>
+                <nav class="level subtitle is-6 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">Visiting PhD student (ELLIS)</div>
+                  </div>
+                </nav>
+              </div>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/iri.png" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>2021-2024</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      Institut de Robòtica i Informàtica Industrial
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Barcelona</div>
+                  </div>
+                </nav>
+                <nav class="level subtitle is-6 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">PhD student (ELLIS)</div>
+                  </div>
+                </nav>
+                <div class="content">
+                  <ul>
+                    <li>
+                      <b>Project: </b>"Feedback models for real-time robotic
+                      cloth manipulation".
+                    </li>
+                    <li>
+                      <b>Supervisors: </b
+                      ><a href="https://www.iri.upc.edu/staff/acolome"
+                        >Dr. Adrià Colomé</a
+                      >,
+                      <a href="https://www.iri.upc.edu/staff/torras"
+                        >Prof. Carme Torras</a
+                      >, and
+                      <a href="https://people.epfl.ch/amir.zamir"
+                        >Prof. Amir Zamir</a
+                      >.
+                    </li>
+                  </ul>
                 </div>
-
-                <div class="columns is-multiline is-variable is-8" style="justify-content: center;">
-                    <div class="column is-full" style="max-width: 1024px;">
-                        <h1 class="title has-text-centered">Programming Skills</h1>
-                        <div class="notification has-background-white">
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column is-one-fifth">Python</div>
-                                <div class="column">
-                                    <progress class="progress" value="95" max="100"></progress>
-                                </div>
-                            </div>
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column column is-one-fifth">JAVA</div>
-                                <div class="column">
-                                    <progress class="progress" value="80" max="100"></progress>
-                                </div>
-                            </div>
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column column is-one-fifth">C/C++</div>
-                                <div class="column">
-                                    <progress class="progress" value="75" max="100"></progress>
-                                </div>
-                            </div>
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column column is-one-fifth">MatLab</div>
-                                <div class="column">
-                                    <progress class="progress" value="78" max="100"></progress>
-                                </div>
-                            </div>
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column column is-one-fifth">R</div>
-                                <div class="column">
-                                    <progress class="progress" value="70" max="100"></progress>
-                                </div>
-                            </div>
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column column is-one-fifth">SQL</div>
-                                <div class="column">
-                                    <progress class="progress" value="50" max="100"></progress>
-                                </div>
-                            </div>
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column column is-one-fifth">Scala</div>
-                                <div class="column">
-                                    <progress class="progress" value="60" max="100"></progress>
-                                </div>
-                            </div>
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column column is-one-fifth">Bash</div>
-                                <div class="column">
-                                    <progress class="progress" value="45" max="100"></progress>
-                                </div>
-                            </div>
-                            <li><b>Tools: </b>LaTeX, Git/GitHub, Jupyter Notebook, Linux, AWS</li>
-                            <li><b>Python Packages: </b>Numpy, SciPy, Scikit, Pandas, Matplotlib, Seaborn</li>
-                            <li><b>Deep Learning Frameworks: </b>PyTorch, TensorFlow, MXNet, Keras</li>
-                        </div>
+              </div>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/epfl.svg" />
                     </div>
-                    <div class="column is-full" style="max-width: 1024px;">
-                        <h1 class="title has-text-centered">Languages</h1>
-                        <div class="notification has-background-white">
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column is-one-fifth">Catalan</div>
-                                <div class="column">
-                                    <progress class="progress" value="100" max="100"></progress>
-                                </div>
-                            </div>
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column column is-one-fifth">Spanish</div>
-                                <div class="column">
-                                    <progress class="progress" value="100" max="100"></progress>
-                                </div>
-                            </div>
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column column is-one-fifth">English</div>
-                                <div class="column">
-                                    <progress class="progress" value="90" max="100"></progress>
-                                </div>
-                            </div>
-                            <div class="columns is-mobile is-vcentered">
-                                <div class="column column is-one-fifth">French</div>
-                                <div class="column">
-                                    <progress class="progress" value="30" max="100"></progress>
-                                </div>
-                            </div>
-                        </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>2018 – 2020</em>
                     </div>
-
-                    <div class="column is-full" style="max-width: 1024px;">
-                        <h1 class="title has-text-centered">Honours</h1>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/carnet.png">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>March 2018</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Hackathon Mobility
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Barcelona
-                                    </div>
-                                </div>
-                            </nav>
-                            <h2 class="subtitle is-6">1st prize</h2>
-                            <div class="content">
-                                <ul>
-                                    <li>SEAT Challenge - AI For Mobility & Driving Experience
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/conservatori.png">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>2011,2014</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        Honour Diploma (2011) and Honour Prize (2014)
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Sabadell
-                                    </div>
-                                </div>
-                            </nav>
-                            <h2 class="subtitle is-6">1st prize</h2>
-                            <div class="content">
-                                <ul>
-                                    <li>Bassoon category
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      École Polytechnique Fédérale de Lausanne
                     </div>
-                    <div class="column is-full" style="max-width: 1024px;">
-                        <h1 class="title has-text-centered">Volunteering</h1>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/icml.svg">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>July 2020</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        International Conference on Machine Learning
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Vienna (virtual conference)
-                                    </div>
-                                </div>
-                            </nav>
-                            <h2 class="subtitle is-6">Volunteer</h2>
-                            <div class="content">
-                                Attence to virtual paper presentations to ensure the correct functioning and the lack of violations of the code of conduct as well as to stimulate the discussions.
-                            </div>
-                        </div>
-                        <div class="notification has-background-light">
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <img style="width: 64px;" src="/img/comsoc.png">
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        <em>April 2018</em>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav class="level title is-5 is-mobile">
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        IEEE Wireless Communications and Networking Conference
-                                    </div>
-                                </div>
-                                <div class="level-right">
-                                    <div class="level-item">
-                                        Barcelona
-                                    </div>
-                                </div>
-                            </nav>
-                            <h2 class="subtitle is-6">Student Volunteer</h2>
-                            <div class="content">Coordination of several keynotes and paper presentations.
-                            </div>
-                        </div>
-                        <div class="has-text-centered">
-                            <a style="text-decoration:none" href="/resume/resume.pdf" target="_blank">
-                                <div id="outer">
-                                    <div id="inner" style="background-color:#767C86;width: 300px;text-align:center;
-																		 margin: 0 auto;font-size:1.5em;border-radius: 25px;padding:10px;color: white;">
-                                        Download PDF
-                                    </div>
-                                </div>
-                                <br>
-                            </a>
-                        </div>
-                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Lausanne</div>
+                  </div>
+                </nav>
+                <nav class="level subtitle is-6 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">MSc. in Data Science</div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">GPA: 5.74 / 6.00</div>
+                  </div>
+                </nav>
+                <div class="content">
+                  <ul>
+                    <li>
+                      <b>Coursework: </b
+                      ><a
+                        href="https://edu.epfl.ch/coursebook/en/advanced-algorithms-CS-450"
+                      >
+                        Advanced Algorithms</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/algorithms-CS-250-1"
+                      >
+                        Algorithms</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/artificial-neural-networks-CS-456-3"
+                        >Artificial Neural Networks</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/automatic-speech-processing-EE-554"
+                        >Automatic Speech Processing</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/functional-programming-CS-210"
+                        >Functional Programming</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/graph-theory-MATH-360"
+                        >Graph Theory</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/image-analysis-and-pattern-recognition-EE-451"
+                        >Image Analysis and Pattern Recognition</a
+                      >,
+                      <a
+                        href="https://www.epfl.ch/schools/ic/ipg/teaching/2018-2019/2018-2019-master-courses/information-theory-and-signal-processing/"
+                        >Information Theory and Signal Processing</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/intelligent-agents-CS-430"
+                        >Intelligent Agents</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/introduction-to-database-systems-CS-322"
+                        >Introduction to Database Systems</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/introduction-to-natural-language-processing-CS-431"
+                        >Introduction to NLP</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/learning-theory-CS-526"
+                        >Learning Theory</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/machine-learning-CS-433"
+                        >Machine Learning</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/mathematical-foundations-of-signal-processing-COM-514"
+                        >Mathematical Foundations of Signal Processing</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/mathematics-of-data-from-theory-to-computation-EE-556"
+                        >Mathematics of Data</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/optimization-for-machine-learning-CS-439"
+                        >Optimization for Machine Learning</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/statistics-for-data-science-MATH-413"
+                        >Statistics for Data Science</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/stochastic-processes-MATH-332"
+                        >Stochastic Processes</a
+                      >,
+                      <a
+                        href="https://edu.epfl.ch/coursebook/en/time-series-MATH-342"
+                        >Time Series</a
+                      >.
+                    </li>
+                  </ul>
                 </div>
-            </section>
-        </div>
+                <div class="content">
+                  <ul>
+                    <li>
+                      <b>Activities: </b>Member of the
+                      <a
+                        href="https://www.epfl.ch/campus/associations/list/oche/"
+                        >Lausanne Student Chamber Orchestra</a
+                      >
+                      and the
+                      <a href="https://osul.ch/"
+                        >Orchestre Symphonique et Universitaire de Lausanne</a
+                      >.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/upc.svg" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>2014 – 2018</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      Universitat Politècnica Catalunya
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Barcelona</div>
+                  </div>
+                </nav>
+                <nav class="level subtitle is-6 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      BSc. in Telecommunications Technologies and Services
+                      Engineering
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">GPA: 8.49 / 10.00</div>
+                  </div>
+                </nav>
+                <div class="content">
+                  <ul>
+                    <li>
+                      4th of the promotion. See
+                      <a href="./cert/excellence_upc.pdf"
+                        >recognition of outstanding academic achievement</a
+                      >.
+                    </li>
+                    <li><b>Major: </b>Audiovisual Systems.</li>
+                    <li>
+                      <b>Honours in: </b>Bachelor’s thesis,
+                      <a
+                        href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230024.pdf"
+                        >Image and Video Processing</a
+                      >,
+                      <a
+                        href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230023.pdf"
+                        >Acoustics and Electro-acoustics</a
+                      >,
+                      <a href="https://telecombcn-dl.github.io/2018-idl/"
+                        >Introduction to Deep Learning</a
+                      >,
+                      <a
+                        href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230013.pdf"
+                        >Radiation and Propagation</a
+                      >,
+                      <a
+                        href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230089.pdf"
+                        >Introduction to Audiovisual Processing</a
+                      >,
+                      <a
+                        href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230090.pdf"
+                        >Electromagnetic Waves</a
+                      >,
+                      <a
+                        href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230088.pdf"
+                        >Signals and Systems</a
+                      >,
+                      <a
+                        href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230007.pdf"
+                        >Electromagnetism</a
+                      >, Introduction to Mathematics,
+                      <a
+                        href="http://infoteleco.upc.edu/documents/guia_docent/assignatures/all/ang/230005.pdf"
+                        >Fundamentals of Computers</a
+                      >.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/conservatori.png" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>2002 – 2014</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      Escola Municipal de Música i Conservatori professional de
+                      Sabadell
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Sabadell</div>
+                  </div>
+                </nav>
+                <nav class="level subtitle is-6 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">Secondary Education in Music</div>
+                  </div>
+                </nav>
+                <div class="content">
+                  <ul>
+                    <li>Bassoon and harmony studies.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h1 class="title has-text-centered">Experience</h1>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/amazon.svg" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>Summer 2023</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">Amazon</div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Palo Alto</div>
+                  </div>
+                </nav>
+                <h2 class="subtitle is-6">Applied Science Intern</h2>
+                <div class="content">
+                  <ul>
+                    <li><b>Project: </b>"Multimodal search”.</li>
+                    <li>
+                      <b>Summary: </b>Adapt language and vision models to
+                      perform retrieval using image and text inputs.
+                    </li>
+                    <li>
+                      <b>Supervisors: </b>Dr. Arnab Dhua, Dr. Xinliang Zhu, and
+                      Michael Huang.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/amazon.svg" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>Summer 2022</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">Amazon</div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Palo Alto</div>
+                  </div>
+                </nav>
+                <h2 class="subtitle is-6">Applied Science Intern</h2>
+                <div class="content">
+                  <ul>
+                    <li>
+                      <b>Project: </b>"Robust visual similarity learning”.
+                    </li>
+                    <li>
+                      <b>Summary: </b>Derive a procedure to train robust deep
+                      metric learning models on datasets with noisy
+                      correspondences. Propose a procedure to perturb the labels
+                      of benchmark that mimics real annotation errors.
+                    </li>
+                    <li>
+                      <b>Supervisors: </b>Dr. Arnab Dhua, Dr. Xiaofan Lin, and
+                      Dr. Muhammet Bastan.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/amazon.svg" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>Fall 2020</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">Amazon</div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Berlin</div>
+                  </div>
+                </nav>
+                <h2 class="subtitle is-6">Applied Science Intern</h2>
+                <div class="content">
+                  <ul>
+                    <li>
+                      <b>Project: </b>"Contextual Position Bias Estimation for
+                      Unbiased Learning to Rank”.
+                    </li>
+                    <li>
+                      <b>Summary: </b>Propose a ranker-agnostic method to model
+                      the probability of an item being seen in different
+                      contexts, e.g., for different users, with a single
+                      estimator. This can be used in LTR algorithms to
+                      distinguish the absence of click due to irrelevance or
+                      lack of examination, thus better matching the true user
+                      preferences.
+                    </li>
+                    <li>
+                      <b>Supervisors: </b>Dr. Matteo Ruffini and Dr. Giuseppe Di
+                      Benedetto.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/logitech.svg" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>Spring 2020</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      Logitech Europe S.A. - CTO, AI Team
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Lausanne</div>
+                  </div>
+                </nav>
+                <h2 class="subtitle is-6">Engineering Intern, CTO</h2>
+                <div class="content">
+                  <ul>
+                    <li>
+                      <b>Project: </b>”Speech and Audio Style Transfer” -
+                      Internship credited with Master Thesis.
+                    </li>
+                    <li>
+                      <b>Summary: </b>This project introduced FastVC, a method
+                      for fast (4x faster than real-time on CPU) many-to-many
+                      non-parallel Voice Conversion (VC). The proposed approach
+                      was accepted as a technical paper to the VC Challenge
+                      2020, where FastVC outperformed the Challenge baselines in
+                      quality results on the cross-lingual VC task.
+                    </li>
+                    <li>
+                      <b>Supervisors: </b>Dr. Milos Cernak and Prof. Martin
+                      Jaggi.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/epfl.svg" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>Fall 2019</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      Machine Learning and Optimization Laboratory
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Lausanne</div>
+                  </div>
+                </nav>
+                <h2 class="subtitle is-6">Student Research Assistant</h2>
+                <div class="content">
+                  <ul>
+                    <li>
+                      <b>Project: </b>”Affine-Invariant Robust Training” -
+                      Semester project
+                    </li>
+                    <li>
+                      <b>Summary: </b>Proposed evolution strategies as zeroth
+                      order optimization algorithms to find the worst affine
+                      transforms for each input. The proposed method effectively
+                      yields robust models and allows introducing non-parametric
+                      adversarial perturbations.
+                    </li>
+                    <li>
+                      <b>Supervisors: </b>Dr. Sebastian Stich, Maksym
+                      Andriushchenko (PhD candidate at EPFL), and Prof. Martin
+                      Jaggi.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/deloitte.svg" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>Fall 2017</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">Deloitte Advisory S.L.</div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Barcelona</div>
+                  </div>
+                </nav>
+                <h2 class="subtitle is-6">
+                  Junior at Risk Advisory IT Department
+                </h2>
+                <div class="content">
+                  <ul>
+                    <li>Bachelor's internship.</li>
+                    <li>
+                      Hardening security measures of IT systems at Banc
+                      Sabadell.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="columns is-multiline is-variable is-8"
+            style="justify-content: center"
+          >
+            <div class="column is-full" style="max-width: 1024px">
+              <h1 class="title has-text-centered">Programming Skills</h1>
+              <div class="notification has-background-white">
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column is-one-fifth">Python</div>
+                  <div class="column">
+                    <progress class="progress" value="95" max="100"></progress>
+                  </div>
+                </div>
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column column is-one-fifth">JAVA</div>
+                  <div class="column">
+                    <progress class="progress" value="80" max="100"></progress>
+                  </div>
+                </div>
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column column is-one-fifth">C/C++</div>
+                  <div class="column">
+                    <progress class="progress" value="75" max="100"></progress>
+                  </div>
+                </div>
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column column is-one-fifth">MatLab</div>
+                  <div class="column">
+                    <progress class="progress" value="78" max="100"></progress>
+                  </div>
+                </div>
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column column is-one-fifth">R</div>
+                  <div class="column">
+                    <progress class="progress" value="70" max="100"></progress>
+                  </div>
+                </div>
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column column is-one-fifth">SQL</div>
+                  <div class="column">
+                    <progress class="progress" value="50" max="100"></progress>
+                  </div>
+                </div>
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column column is-one-fifth">Scala</div>
+                  <div class="column">
+                    <progress class="progress" value="60" max="100"></progress>
+                  </div>
+                </div>
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column column is-one-fifth">Bash</div>
+                  <div class="column">
+                    <progress class="progress" value="45" max="100"></progress>
+                  </div>
+                </div>
+                <li>
+                  <b>Tools: </b>LaTeX, Git/GitHub, Jupyter Notebook, Linux, AWS
+                </li>
+                <li>
+                  <b>Python Packages: </b>Numpy, SciPy, Scikit, Pandas,
+                  Matplotlib, Seaborn
+                </li>
+                <li>
+                  <b>Deep Learning Frameworks: </b>PyTorch, TensorFlow, MXNet,
+                  Keras
+                </li>
+              </div>
+            </div>
+            <div class="column is-full" style="max-width: 1024px">
+              <h1 class="title has-text-centered">Languages</h1>
+              <div class="notification has-background-white">
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column is-one-fifth">Catalan</div>
+                  <div class="column">
+                    <progress class="progress" value="100" max="100"></progress>
+                  </div>
+                </div>
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column column is-one-fifth">Spanish</div>
+                  <div class="column">
+                    <progress class="progress" value="100" max="100"></progress>
+                  </div>
+                </div>
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column column is-one-fifth">English</div>
+                  <div class="column">
+                    <progress class="progress" value="90" max="100"></progress>
+                  </div>
+                </div>
+                <div class="columns is-mobile is-vcentered">
+                  <div class="column column is-one-fifth">French</div>
+                  <div class="column">
+                    <progress class="progress" value="30" max="100"></progress>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-full" style="max-width: 1024px">
+              <h1 class="title has-text-centered">Honours</h1>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/carnet.png" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>March 2018</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">Hackathon Mobility</div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Barcelona</div>
+                  </div>
+                </nav>
+                <h2 class="subtitle is-6">1st prize</h2>
+                <div class="content">
+                  <ul>
+                    <li>
+                      SEAT Challenge - AI For Mobility & Driving Experience
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/conservatori.png" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>2011,2014</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      Honour Diploma (2011) and Honour Prize (2014)
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Sabadell</div>
+                  </div>
+                </nav>
+                <h2 class="subtitle is-6">1st prize</h2>
+                <div class="content">
+                  <ul>
+                    <li>Bassoon category</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="column is-full" style="max-width: 1024px">
+              <h1 class="title has-text-centered">Volunteering</h1>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/icml.svg" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>July 2020</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      International Conference on Machine Learning
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Vienna (virtual conference)</div>
+                  </div>
+                </nav>
+                <h2 class="subtitle is-6">Volunteer</h2>
+                <div class="content">
+                  Attence to virtual paper presentations to ensure the correct
+                  functioning and the lack of violations of the code of conduct
+                  as well as to stimulate the discussions.
+                </div>
+              </div>
+              <div class="notification has-background-light">
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <img style="width: 64px" src="/img/comsoc.png" />
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <em>April 2018</em>
+                    </div>
+                  </div>
+                </nav>
+                <nav class="level title is-5 is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      IEEE Wireless Communications and Networking Conference
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">Barcelona</div>
+                  </div>
+                </nav>
+                <h2 class="subtitle is-6">Student Volunteer</h2>
+                <div class="content">
+                  Coordination of several keynotes and paper presentations.
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <a
+                  style="text-decoration: none"
+                  href="/resume/resume.pdf"
+                  target="_blank"
+                >
+                  <div id="outer">
+                    <div
+                      id="inner"
+                      style="
+                        background-color: #767c86;
+                        width: 300px;
+                        text-align: center;
+                        margin: 0 auto;
+                        font-size: 1.5em;
+                        border-radius: 25px;
+                        padding: 10px;
+                        color: white;
+                      "
+                    >
+                      Download PDF
+                    </div>
+                  </div>
+                  <br />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
