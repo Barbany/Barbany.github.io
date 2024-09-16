@@ -182,6 +182,18 @@
       </div>
     </section>
 
+    <!-- <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{park2021nerfies,
+      author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+      title     = {Nerfies: Deformable Neural Radiance Fields},
+      journal   = {ICCV},
+      year      = {2021},
+    }</code></pre>
+      </div>
+    </section> -->
+
     <section class="section">
       <div class="container is-max-desktop">
         <!-- Abstract. -->
@@ -243,11 +255,112 @@
     </section>
 
     <section class="section">
-      <h1 class="title is-2">Supplementary material</h1>
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h2 class="title is-3">Dataset generation</h2>
+            <h2 class="title is-3">Evaluation</h2>
+            <h3 class="title is-4">Folding performance in SoftGym</h3>
+            <div class="content has-text-justified">
+              <p>
+                To evaluate the manipulation performance, we load the meshes in
+                SoftGym and evaluate the model without training. Note that there
+                is an evident distribution shift between the created dataset and
+                the SoftGym appearance.
+              </p>
+            </div>
+            <div class="columns is-vcentered">
+              <div class="column is-one-quarter">
+                <img src="./media/bimanual_gifs/fold_pants.gif" />
+              </div>
+              <div class="column is-one-quarter">
+                <img src="./media/bimanual_gifs/fold_shirt.gif" />
+              </div>
+              <div class="column is-one-quarter">
+                <img src="./media/bimanual_gifs/fold_skirt.gif" />
+              </div>
+              <div class="column is-one-quarter">
+                <img src="./media/bimanual_gifs/fold_top.gif" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img
+              src="./media/results-carousel/186_Fold the right sleeve towards the body only using the right arm..png"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="./media/results-carousel/206_Fold the left sleeve to the centerline of the shirt..png"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="./media/results-carousel/222_Bring the bottom side of the top towards the top side and fold them in half..png"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="./media/results-carousel/231_Make a fold in the top, starting from the bottom and ending at the top..png"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h1 class="title is-2">Supplementary material</h1>
+            <div class="content has-text-justified">
+              <ol>
+                <li class="counter">
+                  <a href="#datasest_generation">Dataset generation</a>
+                  <ol>
+                    <li class="counter"><a href="#rendering">Rendering</a></li>
+                    <li class="counter">
+                      <a href="#language_annotations">Language annotations</a>
+                    </li>
+                    <li class="counter">
+                      <a href="#filtering">Filtering out divergent sequences</a>
+                    </li>
+                    <li class="counter">
+                      <a href="#statistics">Statistics</a>
+                    </li>
+                  </ol>
+                </li>
+                <li class="counter">
+                  <a href="#experimental_setup">Experimental setup</a>
+                  <ol>
+                    <li class="counter"><a href="#modeling">Modeling</a></li>
+                    <li class="counter">
+                      <a href="#simulation">Simulation</a>
+                    </li>
+                    <li class="counter">
+                      <a href="#real">Real</a>
+                    </li>
+                  </ol>
+                </li>
+                <li class="counter">
+                  <a href="#limitations">Limitations and future work</a>
+                  <ol>
+                    <li class="counter">
+                      <a href="#dataset_extensions">Dataset extensions</a>
+                    </li>
+                    <li class="counter">
+                      <a href="#modeling_and_evaluation"
+                        >Modeling and evaluation</a
+                      >
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+            <h2 id="dataset_generation" class="title is-3">
+              Dataset generation
+            </h2>
             <div class="content has-text-justified">
               <p>
                 The
@@ -271,7 +384,7 @@
                 easily scaled.
               </p>
             </div>
-            <h3 class="title is-4">Rendering</h3>
+            <h3 id="rendering" class="title is-4">Rendering</h3>
 
             <div class="content has-text-justified">
               <p>
@@ -293,19 +406,6 @@
                 </div>
                 <div class="column is-one-quarter">
                   <img src="./media/dataset_sample/000210.jpg" />
-                </div>
-              </div>
-              <div class="navbar-menu" id="navMenu">
-                <div class="navbar-end has-text-centered">
-                  <div class="navbar-item">
-                    <a href="/">About</a>
-                  </div>
-                  <div class="navbar-item">
-                    <a href="/resume/">Resume</a>
-                  </div>
-                  <div class="navbar-item">
-                    <a href="/music/">Musical Facet</a>
-                  </div>
                 </div>
               </div>
               <p>
@@ -377,7 +477,9 @@ illum 2</code></pre>
               </p>
             </div>
 
-            <h3 class="title is-4">Language annotations</h3>
+            <h3 id="language_annotations" class="title is-4">
+              Language annotations
+            </h3>
 
             <div class="content has-text-justified">
               <p>
@@ -408,10 +510,10 @@ illum 2</code></pre>
               <p>
                 Once the semantic location of the pick and place positions are
                 known, we assign a language instruction to the folding
-                sub-action. We make use of template prompts and include the
-                complete list below. We can distinguish three different kinds of
-                actions: sleeve manipulations, refinements, and generic folds.
-                For all of them, the prompts follow a template where the
+                sub-action. We make use of template prompts below and include
+                the complete list below. We can distinguish three different
+                kinds of actions: sleeve manipulations, refinements, and generic
+                folds. For all of them, the prompts follow a template where the
                 placeholders surrounded by brackets, i.e.,
                 <code>{which}</code> and <code>{garment}</code>, are replaced by
                 the pick and place semantic locations and the garment type,
@@ -423,6 +525,340 @@ illum 2</code></pre>
                 language templates for small actions. Otherwise, we use a
                 generic fold prompt from a set of generic instructions.
               </p>
+              <div class="columns is-vcentered">
+                <div class="column is-one-third">
+                  <table>
+                    <tr style="text-align: center">
+                      <th>Sleeve manipulations</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve towards the inside.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve towards the body.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Bend the
+                        <code>{which}</code>
+                        sleeve towards the inside.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve to the center.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve towards the middle.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Bring the
+                        <code>{which}</code>
+                        sleeve to the center.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve inward to the halfway point.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Tuck the
+                        <code>{which}</code>
+                        sleeve towards the center.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Meet the
+                        <code>{which}</code>
+                        sleeve at the center.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve to the midpoint.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Center the
+                        <code>{which}</code>
+                        sleeve.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Align the
+                        <code>{which}</code>
+                        sleeve to the center.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve to the axis.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Bring the
+                        <code>{which}</code>
+                        sleeve to the median.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve to the central point.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve towards the midpoint of the shirt.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Bring the
+                        <code>{which}</code>
+                        sleeve to the center seam.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve to the centerline of the shirt.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the
+                        <code>{which}</code>
+                        sleeve to the centerline of the shirt.
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="column is-one-third">
+                  <table>
+                    <tr style="text-align: center">
+                      <th>Small refinements</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{which}</code> part of the
+                        <code>{garment}</code> neatly.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Align the <code>{which}</code> part of the
+                        <code>{garment}</code> properly.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Arrange the <code>{which}</code> part of the
+                        <code>{garment}</code> neatly.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Straighten out the <code>{which}</code> part of the
+                        <code>{garment}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Place the <code>{which}</code> part of the
+                        <code>{garment}</code> in the correct position.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Ensure the <code>{which}</code> part of the
+                        <code>{garment}</code> is well-positioned.
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="column is-one-third">
+                  <table>
+                    <tr style="text-align: center">
+                      <th>Folds</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code> in half,
+                        <code>{from}</code> to <code>{to}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code> from the
+                        <code>{from}</code> side towards the
+                        <code>{to}</code> side.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code> in half, starting from
+                        the <code>{from}</code> and ending at the
+                        <code>{to}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code>,
+                        <code>{from}</code> side over <code>{to}</code> side.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Bend the <code>{garment}</code> in half, from
+                        <code>{from}</code> to <code>{to}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code>, making sure the
+                        <code>{from}</code> side touches the
+                        <code>{to}</code> side.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code>, bringing the
+                        <code>{from}</code> side to meet the
+                        <code>{to}</code> side.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Crease the <code>{garment}</code> down the middle, from
+                        <code>{from}</code> to <code>{to}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code> in half horizontally,
+                        <code>{from}</code> to <code>{to}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Make a fold in the <code>{garment}</code>, starting from
+                        the <code>{from}</code> and ending at the
+                        <code>{to}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code> in half, aligning the
+                        <code>{from}</code> and <code>{to}</code> sides.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code>, ensuring the
+                        <code>{from}</code> side meets the
+                        <code>{to}</code> side.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code>, orientating from the
+                        <code>{from}</code> towards the <code>{to}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code> cleanly, from the
+                        <code>{from}</code> side to the <code>{to}</code> side.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code> in half, with the
+                        <code>{from}</code> side overlapping the
+                        <code>{to}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Create a fold in the <code>{garment}</code>, going from
+                        <code>{from}</code> to <code>{to}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Bring the <code>{from}</code> side of the
+                        <code>{garment}</code> towards the
+                        <code>{to}</code> side and fold them in half.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the waistband of the <code>{garment}</code> in
+                        half, from <code>{from}</code> to <code>{to}</code>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code> neatly, from the
+                        <code>{from}</code> side to the <code>{to}</code> side.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Fold the <code>{garment}</code>, making a crease from
+                        the <code>{from}</code> to the <code>{to}</code>.
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <h3 id="filtering" class="title is-4">
+              Filtering out divergent sequences
+            </h3>
+
+            <div class="content has-text-justified">
               <p>
                 Simulating clothes is a very challenging task for which
                 <a href="https://sites.google.com/view/cloth-sim2real-benchmark"
@@ -470,11 +906,6 @@ illum 2</code></pre>
                   t=55 are consecutive frames.
                 </figcaption>
               </figure>
-            </div>
-
-            <h3 class="title is-4">Filtering out divergent sequences</h3>
-
-            <div class="content has-text-justified">
               <p>
                 In the above figure, we can observe that when the simulator
                 becomes unstable, some of the vertex positions are excessively
@@ -497,7 +928,7 @@ illum 2</code></pre>
               </p>
             </div>
 
-            <h3 class="title is-4">Statistics</h3>
+            <h3 id="statistics" class="title is-4">Statistics</h3>
 
             <div class="content has-text-justified">
               <p>
@@ -578,13 +1009,27 @@ illum 2</code></pre>
                 along the left-right direction present an almost equal number of
                 samples from left to right than from right to left.
               </p>
-              <img src="./media/dataset_statistics/which_folds-1.png" />
+              <img
+                style="
+                  display: block;
+                  width: 50%;
+                  margin-left: auto;
+                  margin-right: auto;
+                "
+                src="./media/dataset_statistics/which_folds-1.png"
+              />
               <p>
                 When referring to folding sleeves, the next figure shows a
                 similar distribution of equal preference for the left and right
                 arm with the latter being slightly more used for the first fold.
               </p>
               <img
+                style="
+                  display: block;
+                  width: 50%;
+                  margin-left: auto;
+                  margin-right: auto;
+                "
                 src="./media/dataset_statistics/which_sleeve_folded_first-1.png"
               />
               <p>
@@ -595,12 +1040,20 @@ illum 2</code></pre>
                 allows us to keep track of the previous actions.
               </p>
               <img
+                style="
+                  display: block;
+                  width: 50%;
+                  margin-left: auto;
+                  margin-right: auto;
+                "
                 src="./media/dataset_statistics/number_of_refinement_actions-1.png"
               />
             </div>
-            <h2 class="title is-3">Experimental details</h2>
+            <h2 id="experimental_setup" class="title is-3">
+              Experimental setup
+            </h2>
 
-            <h3 class="title is-4">Modeling</h3>
+            <h3 id="modeling" class="title is-4">Modeling</h3>
             <div class="content has-text-justified">
               <p>
                 For each dataset, we train a single model for all the cloth
@@ -671,7 +1124,7 @@ illum 2</code></pre>
                 yielding an image with the same resolution as the input.
               </p>
             </div>
-            <h3 class="title is-4">Simulation</h3>
+            <h3 id="simulation" class="title is-4">Simulation</h3>
             <div class="content has-text-justified">
               <p>
                 The pick and place manipulation primitive uses the following
@@ -710,7 +1163,7 @@ illum 2</code></pre>
                 same time for both pickers.
               </p>
             </div>
-            <h3 class="title is-4">Real</h3>
+            <h3 id="real" class="title is-4">Real</h3>
             <div class="content has-text-justified">
               <p>
                 To obtain segmentation masks, we use the
@@ -745,80 +1198,252 @@ illum 2</code></pre>
                 example. Besides, we record the dataset in a real setup with new
                 lighting conditions, obtain shadows and reflexes, and the
                 garments have different textures. Overall, the real dataset has
-                a significant shift in the distribution of the inputs.
+                a significant shift in the distribution of the inputs. Below, we
+                show images of the eight garments of the real dataset in the
+                initial configuration, which have different materials,
+                topologies and textures.
               </p>
+              <div class="columns is-multiline">
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="./media/real_dataset/0000_towel_0_0000.png" />
+                    </div>
+                    <footer class="card-footer">
+                      <a
+                        class="card-footer-item"
+                        href="https://www.iri.upc.edu/groups/perception/ClothObjectSet/"
+                        >Checkered rag
+                      </a>
+                    </footer>
+                  </div>
+                </div>
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="./media/real_dataset/0001_towel_0_0000.png" />
+                    </div>
+                    <footer class="card-footer">
+                      <a
+                        class="card-footer-item"
+                        href="https://www.iri.upc.edu/groups/perception/ClothObjectSet/"
+                        >Small towel
+                      </a>
+                    </footer>
+                  </div>
+                </div>
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="./media/real_dataset/0002_pants_0_0000.png" />
+                    </div>
+                    <footer class="card-footer">
+                      <div class="card-footer-item">Jeans 1</div>
+                    </footer>
+                  </div>
+                </div>
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="./media/real_dataset/0003_pants_0_0000.png" />
+                    </div>
+                    <footer class="card-footer">
+                      <div class="card-footer-item">Jeans 2</div>
+                    </footer>
+                  </div>
+                </div>
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                  <div class="card">
+                    <div class="card-image">
+                      <img
+                        src="./media/real_dataset/0004_long_shirt_0_0000.png"
+                      />
+                    </div>
+                    <footer class="card-footer">
+                      <div class="card-footer-item">Long-sleeved T-shirt</div>
+                    </footer>
+                  </div>
+                </div>
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                  <div class="card">
+                    <div class="card-image">
+                      <img
+                        src="./media/real_dataset/0005_short_shirt_0_0000.png"
+                      />
+                    </div>
+                    <footer class="card-footer">
+                      <div class="card-footer-item">
+                        Short-sleeved T-shirt 1
+                      </div>
+                    </footer>
+                  </div>
+                </div>
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                  <div class="card">
+                    <div class="card-image">
+                      <img
+                        src="./media/real_dataset/0006_short_shirt_0_0000.png"
+                      />
+                    </div>
+                    <footer class="card-footer">
+                      <div class="card-footer-item">
+                        Short-sleeved T-shirt 2
+                      </div>
+                    </footer>
+                  </div>
+                </div>
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="./media/real_dataset/0007_dress_0_0000.png" />
+                    </div>
+                    <footer class="card-footer">
+                      <div class="card-footer-item">Dress</div>
+                    </footer>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Evaluation</h2>
-            <h3 class="title is-4">Folding performance in SoftGym</h3>
+            <h2 id="limitations" class="title is-3">
+              Limitations and future work
+            </h2>
+
+            <h3 id="dataset_extension" class="title is-4">Dataset extension</h3>
             <div class="content has-text-justified">
               <p>
-                To evaluate the manipulation performance, we load the meshes in
-                SoftGym and evaluate the model without training. Note that there
-                is an evident distribution shift between the created dataset and
-                the SoftGym appearance.
+                Our dataset does not contain a variety of backgrounds, lighting,
+                and materials. We address the lack of diversity of background by
+                using image masking, and the large set of textures used in our
+                dataset accounts for variability regarding the visual
+                appearance. We obtain semantic locations based on \gls{nocs}
+                thresholding, which is a reasonable approach but leverages the
+                fact that the garments of the same category have a similar
+                shape. Considering clothes with more variability such as those
+                in the
+                <a href="https://sites.google.com/view/clothesnet/"
+                  >ClothesNet dataset</a
+                >
+                may require other approaches. One possibility is to use a
+                contrastive vision-language model and find the nearest neighbor
+                in the embedding space from a set of category-specific names,
+                e.g., hem, collar, sleeve, cuff. This is similar to approaches
+                that distill language features to 3D, a technique applied to
+                robotics in
+                <a href="https://f3rm.github.io/">Distilled Feature Fields</a>.
               </p>
             </div>
-            <div class="columns is-vcentered">
-              <div class="column is-one-quarter">
-                <img src="./media/fold_pants.gif" />
-              </div>
-              <div class="column is-one-quarter">
-                <img src="./media/fold_shirt.gif" />
-              </div>
-              <div class="column is-one-quarter">
-                <img src="./media/fold_skirt.gif" />
-              </div>
-              <div class="column is-one-quarter">
-                <img src="./media/fold_top.gif" />
-              </div>
+
+            <h3 id="modeling_and_evaluation" class="title is-4">
+              Modeling and evaluation
+            </h3>
+            <div class="content has-text-justified">
+              <p>
+                BiFold and all other approaches predicting value maps to infer
+                pick and place positions are trained to minimize image-based
+                metrics. As we can observe in the qualitative results that
+                evaluate pixel accuracy in our bimanual dataset, the BiFold
+                variant with context can obtain outstanding results. However, we
+                are ultimately interested in improving the success metrics on
+                folding actions instead. One of the problems is that using start
+                and end positions close in the pixel space to the optimal
+                positions may result in radically different configurations after
+                performing the pick-and-place action. This is due to the nearly
+                infinite degrees of freedom of clothes.
+              </p>
+              <p>
+                When assessing the pick-and-place success, using a dataset of
+                human demonstrations calls into question the evaluation
+                procedure to compare to an oracle. As we have seen,
+                demonstrations are sometimes bad, which can lead to confusing
+                performance reports. While there exist
+                <a href="https://ral-si.github.io/cloth-benchmark/"
+                  >metrics to evaluate simple garment manipulation actions such
+                  as folding in half </a
+                >, some of the actions we include in our dataset, e.g.,
+                refinement actions, cannot be directly evaluated with such
+                metrics.
+              </p>
+              <p>
+                Among the baselines considered in this work, Foldsformer and
+                <a href="https://sites.google.com/view/language-deformable"
+                  >Deng <i>et al.</i></a
+                >
+                use
+                <a href="https://sites.google.com/view/softgym">SoftGym</a> as a
+                simulator, while
+                <a href="https://cliport.github.io/">CLIPort</a> relies on
+                <a href="https://pybullet.org/wordpress/">PyBullet</a>. However,
+                according to
+                <a href="https://sites.google.com/view/cloth-sim2real-benchmark"
+                  >a recent bimanual cloth manipulation bechmark</a
+                >, the cloth physics of these simulators is inaccurate. Among
+                all the simulators tested in the benchmark,
+                <a href="https://mujoco.org/">MuJoCo</a> is chosen as the one
+                achieving closer dynamics. Even if the pick and place positions
+                are perfect, the success metric also considers errors from the
+                manipulator. While simulators allow the grasp mesh vertices and
+                hence achieve an ideal grasp, deploying on real robots
+                introduces additional errors due to incorrect grasps or
+                workspace limitations. This can be seen in some examples in
+                simulation, and we include one of them below:
+              </p>
+              <figure>
+                <div class="columns is-vcentered">
+                  <div class="column is-one-quarter">
+                    <img
+                      src="./media/grasping_failure/00017_Trousers_000004_000180_Fold the trousers, orientating from the bottom right towards the top left._True.png"
+                    />
+                  </div>
+                  <div class="column is-one-quarter">
+                    <img src="./media/grasping_failure/00000.png" />
+                  </div>
+                  <div class="column is-one-quarter">
+                    <img src="./media/grasping_failure/00050.png" />
+                  </div>
+                  <div class="column is-one-quarter">
+                    <img src="./media/grasping_failure/00100.png" />
+                  </div>
+                </div>
+                <figcaption>
+                  <b>Grasping failure: </b>Example of an instance in which the
+                  root of the failure is on the motion primitive. In this case,
+                  the language instruction is
+                  <code
+                    >Fold the trousers, orientating from the bottom right
+                    towards the top left.</code
+                  >. BiFold produces satisfactory pick and place locations
+                  (left), but the actions of the primitive (from second image
+                  onwards) fail to grasp the lower layer due to hard-coded
+                  action to approach the cloth and pick it up.
+                </figcaption>
+              </figure>
+              <p>
+                A natural next step could be to not rely on primitives and
+                directly predict robot actions, which could help improve the
+                grasp and evaluation of real robots. To do that we could use a
+                <a href="https://diffusion-policy.cs.columbia.edu/"
+                  >diffusion policy</a
+                >
+                and
+                <a href="https://yusufma03.github.io/projects/hdp/"
+                  >condition it with the predicted pick and place actions</a
+                >.
+              </p>
+              <p>
+                In this work, we also focus on folding subactions instead of an
+                end-to-end fold. However, performing a fold would amount to
+                either following a predefined list of ordered instructions or
+                using a
+                <a href="https://voxposer.github.io/"
+                  >LLM-based planner to break down the task into steps </a
+                >.
+              </p>
             </div>
-          </div>
-        </div>
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <img
-              src="./media/186_Fold the right sleeve towards the body only using the right arm..png"
-            />
-          </div>
-          <div class="item">
-            <img
-              src="./media/206_Fold the left sleeve to the centerline of the shirt..png"
-            />
-          </div>
-          <div class="item">
-            <img
-              src="./media/222_Bring the bottom side of the top towards the top side and fold them in half..png"
-            />
-          </div>
-          <div class="item">
-            <img
-              src="./media/231_Make a fold in the top, starting from the bottom and ending at the top..png"
-            />
           </div>
         </div>
       </div>
     </section>
-
-    <!-- <section class="section" id="BibTeX"> -->
-    <!--   <div class="container is-max-desktop content"> -->
-    <!--     <h2 class="title">BibTeX</h2> -->
-    <!--     <pre><code>@article{park2021nerfies, -->
-    <!--   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo}, -->
-    <!--   title     = {Nerfies: Deformable Neural Radiance Fields}, -->
-    <!--   journal   = {ICCV}, -->
-    <!--   year      = {2021}, -->
-    <!-- }</code></pre> -->
-    <!--   </div> -->
-    <!-- </section> -->
 
     <footer class="footer">
       <!-- <div class="container"> -->

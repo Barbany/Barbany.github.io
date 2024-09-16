@@ -2,6 +2,19 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+ol {
+  counter-reset: item;
+}
+
+li.counter {
+  display: block;
+}
+
+li.counter:before {
+  content: counters(item, ".")" ";
+  counter-increment: item;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -14,6 +27,7 @@ td, th {
   padding: 8px;
   border: 1px solid black;
 }
+
 
 tr:nth-child(even) {
   background-color: #dddddd;
