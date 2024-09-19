@@ -17,15 +17,21 @@ li.counter:before {
 
 table {
   font-family: arial, sans-serif;
-  border-collapse: collapse;
   width: 100%;
 }
 
-td, th {
-  border: 1px solid #dddddd;
+tr.header {
+  border-top: 2pt solid black;
+  border-bottom: 2pt solid black;
+}
+
+tr {
+  border-bottom: 1pt solid black;
   text-align: center;
+}
+
+td, th {
   padding: 8px;
-  border: 1px solid black;
 }
 
 
@@ -179,4 +185,37 @@ tr:nth-child(even) {
 }
 #interpolation-image-wrapper img {
   border-radius: 5px;
+}
+
+.item {
+  position: relative;
+}
+
+/* Make the image to responsive */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  opacity:0;
+  color: white;
+  font-size: 1rem;
+  padding: 5%;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.item:hover .overlay {
+  opacity: 1;
 }
