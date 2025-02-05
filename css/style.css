@@ -1,3 +1,32 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #1a0dab;
+  --hero-background: linear-gradient(141deg, #fa0a62 0%, #f14668 71%, #f7595f 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --link-color: #8ab4f8;
+    --hero-background: linear-gradient(141deg, #3a0a62 0%, #614668 71%, #87595f 100%);
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+.hero.is-danger.is-bold {
+  background-image: var(--hero-background);
+}
+
 @charset "UTF-8";
 /*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
@@ -1253,7 +1282,7 @@ a.box:active {
 
   .button.is-responsive.is-large {
     font-size: 1rem; } }
-@media screen and (min-width: 769px) and (max-width: 1023px) {
+@media screen and (min-width: 500px) and (max-width: 720px) {
   .button.is-responsive.is-small {
     font-size: 0.65625rem; }
 
