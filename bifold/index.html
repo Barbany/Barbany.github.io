@@ -96,6 +96,7 @@
                 <span class="grad_text">BiFold</span>: Bimanual Cloth Folding
                 with Language Guidance
               </h1>
+              <h2 class="title is-3">ICRA 2025</h2>
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
                   <a href="../">Oriol Barbany</a><sup>1</sup>,</span
@@ -178,6 +179,22 @@
                       <span>Data</span>
                     </a>
                   </span>
+                  <span class="link-block">
+                    <a
+                      href="https://x.com/oriolbarbany/status/1890428992978645198"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <i class="fa-brands fa-x-twitter"></i>Thread
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="#BibTeX"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <i class="fa-sharp fa-solid fa-link"></i>BibTex
+                    </a>
+                  </span>
                 </div>
               </div>
             </div>
@@ -185,18 +202,6 @@
         </div>
       </div>
     </section>
-
-    <!-- <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <pre><code>@article{park2021nerfies,
-      author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-      title     = {Nerfies: Deformable Neural Radiance Fields},
-      journal   = {ICCV},
-      year      = {2021},
-    }</code></pre>
-      </div>
-    </section> -->
 
     <section class="section">
       <div class="container is-max-desktop">
@@ -255,6 +260,22 @@
           </div>
         </div>
         <!--/ Paper video. -->
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@misc{barbany2025bifold,
+  author={Oriol Barbany and Adrià Colomé and Carme Torras},
+  title={{BiFold: Bimanual Cloth Folding with Language Guidance}}, 
+  year={2025},
+  eprint={2501.16458},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2501.16458}, 
+}
+</code></pre>
       </div>
     </section>
 
@@ -1236,7 +1257,7 @@
             <div class="content has-text-justified">
               <p>
                 The VR-Folding dataset does not contain RGB-D inputs, and the
-                provided simulation meshes are untextured. Moreover, the
+                provided simulation meshes are un-textured. Moreover, the
                 garments used in the simulator have a constant color for the
                 interior and a repetitive texture with a differentiated color
                 that yields colored point clouds:
@@ -1337,9 +1358,47 @@ illum 2</code></pre>
                 part, and the right picker grabs the bottom right part. In this
                 case, we can infer that the common objective is to hold the
                 right part of the garment, but one cannot trivially resolve many
-                other situations. To do that, we designed a heuristics that
-                outputs a common semantic location considering the positions of
-                the left and right pickers given the context of the action.
+                other situations. To do that, we designed a heuristics detailed
+                below that outputs a common semantic location considering the
+                positions of the left and right pickers given the context of the
+                action. $$ \begin{align} &\textbf{Inputs: }\ l_v, l_h,r_v, r_h,
+                \texttt{type}, \texttt{garment}, s_{\text{pick}} \text{ (if
+                }\texttt{type="place"}\text{)} \\ &\textbf{Output:}\
+                \text{Semantic location. Optionally a sleeve flag} \\ & v
+                \leftarrow l_v \text{ if } l_v=r_v \text{ else } \text{NULL}
+                \quad \triangleleft\text{Same position in top-bottom plane} \\&
+                h \leftarrow l_h \text{ if } l_h=r_h \text{ else } \text{NULL}
+                \quad \triangleleft\text{Same position in left-right plane} \\ &
+                \textbf{if } h \neq \text{NULL} \\& \quad \textbf{if } v \neq
+                \text{NULL} \\ &\quad \quad \textbf{if }
+                \texttt{type}=\texttt{"place"} \\ &\quad \quad \quad
+                \triangleleft \text{Avoid same pick&place} \\ &\quad \quad \quad
+                \textbf{if } s_{\text{pick}} = h \textbf{ return } v \\ &\quad
+                \quad \quad \textbf{else-if } s_{\text{pick}} = v \textbf{
+                return } h \\ &\quad \quad \quad \textbf{else-if }
+                s_{\text{pick}}\ \text{opposite of}\ v \textbf{ return } h \\
+                &\quad \quad \quad \textbf{else-if } s_{\text{pick}}\
+                \text{opposite of}\ h \textbf{ return } v \\ &\quad \quad \quad
+                \textbf{else} \textbf{ return } v + \texttt{" "}+h \\ &\quad
+                \quad \textbf{else} \\ &\quad \quad \quad \textbf{if }
+                \texttt{garment}=\texttt{"tshirt"} \text{ and }v\text{ is top
+                }\textbf{ then} \\ & \quad\quad\quad\quad \textbf{return }h
+                \text{ and sleeve flag.} \\ &\quad \quad \quad \textbf{else}
+                \textbf{ return } v + \texttt{" "}+h \\ & \quad
+                \textbf{else}\\&\quad\quad\textbf{ return }h\\ & \textbf{else}
+                \\ & \quad \textbf{if } v \neq \text{NULL} \\ & \quad\quad
+                \textbf{return }h \\ & \quad \textbf{else} \\ & \quad\quad
+                \textbf{if }\texttt{type}=\texttt{"place"} \\ & \quad\quad\quad
+                \textbf{return }\text{Opposite of }s_{\text{pick}} \\ &
+                \textbf{Raise error if not returned} \\ \end{align} $$ where
+                \(l_v, l_h, r_v, r_h\) are the semantic locations for the left
+                (\(l\)) and right (\(r\)) picker along the top-bottom (\(v\))
+                and left-right planes (\(h\)), and \(s_{\text{pick}}\) is the
+                semantic pick location. \(\texttt{type}\) can be
+                \(\texttt{"pick"}\) or \(\texttt{"place"}\) and
+                \(\texttt{"garment"}\) is the garment type. Note that when the
+                sleeve flag is returned, the place action is irrelevant. In some
+                cases, observe that we use both semantic locations together.
               </p>
               <figure>
                 <img src="./media/nocs.png" />
