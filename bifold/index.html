@@ -221,23 +221,25 @@
                 leverage a pre-trained vision-language model and repurpose it to
                 predict manipulation actions. Our model, BiFold, can take
                 context into account and achieves state-of-the-art performance
-                on an existing language-conditioned folding benchmark. Given the
-                lack of annotated bimanual folding data, we devise a procedure
-                to automatically parse actions of a simulated dataset and tag
-                them with aligned text instructions. BiFold attains the best
-                performance on our dataset and can transfer to new instructions,
-                garments, and environments.
+                on an existing language-conditioned folding benchmark. To
+                address the lack of annotated bimanual folding data, we
+                introduce a novel dataset with automatically parsed actions and
+                language-aligned instructions, enabling better learning of
+                text-conditioned manipulation. BiFold attains the best
+                performance on our dataset and demonstrates strong
+                generalization to new instructions, garments, and environments.
               </p>
+              <p>The main contributions of this work are:</p>
               <ul>
                 <li>
-                  We propose a new model that leverages foundational vision and
-                  language models to learn cloth folding manipulations and can
-                  take previous actions into account.
+                  A new model that leverages a foundational vision-language
+                  backend to learn cloth folding manipulations taking previous
+                  actions into account.
                 </li>
                 <li>
-                  We describe a pipeline to automatically generate language
-                  annotations aligned to manipulation actions for existing
-                  datasets of folding demonstrations.
+                  A novel dataset of language-aligned bimanual cloth folding
+                  actions obtained with an automatic pipeline that could be
+                  applied to other datasets
                 </li>
                 <li>
                   We demonstrate the superiority of our model on an existing
