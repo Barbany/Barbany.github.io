@@ -51,7 +51,11 @@
       }
     </style>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav
+      class="navbar is-transparent is-fixed-top glass-overlay"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div class="navbar-brand">
         <a
           role="button"
@@ -65,7 +69,77 @@
         </a>
       </div>
       <div class="navbar-menu">
-        <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+        <a class="navbar-item" href="#">
+          <span class="icon">
+            <i class="fas fa-arrow-up"></i>
+          </span>
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#additional-evaluations">
+            Aditional evaluations
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="#unimanual-folding">
+              Unimanual folding
+            </a>
+            <a class="navbar-item" href="#bimanual-folding">
+              Bimanual folding
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#dataset_generation">
+            Dataset generation
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="#rendering"> Rendering </a>
+            <a class="navbar-item" href="#language_annotations">
+              Language annotations
+            </a>
+            <a class="navbar-item" href="#filtering">
+              Filtering out divergent sequences
+            </a>
+            <a class="navbar-item" href="#statistics"> Statistics </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#experimental_setup">
+            Experimental setup
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="#modeling"> Modeling </a>
+            <a class="navbar-item" href="#simulation"> Simulation </a>
+            <a class="navbar-item" href="#real"> Real </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#additional_experiments">
+            Additional experiments
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="#qualitative">
+              Qualitative evaluation
+            </a>
+            <a class="navbar-item" href="#quantitative">
+              Quantitative evaluation
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#limitations"> Limitations </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="#related_work_limitations">
+              Previous approaches
+            </a>
+            <a class="navbar-item" href="#dataset_extensions">
+              BiFold dataset
+            </a>
+            <a class="navbar-item" href="#modeling_and_evaluation">
+              BiFold model and evaluation
+            </a>
+          </div>
+        </div>
+        <div class="navbar-end" style="flex-grow: 1">
           <a class="navbar-item" href="../">
             <span class="icon">
               <i class="fas fa-home"></i>
@@ -93,6 +167,7 @@
           <div class="columns is-centered">
             <div class="column has-text-centered">
               <h1 class="title is-1 publication-title">
+                <br />
                 <span class="grad_text">BiFold</span>: Bimanual Cloth Folding
                 with Language Guidance
               </h1>
@@ -285,8 +360,10 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h2 class="title is-3">Additional evaluations</h2>
-            <h3 class="title is-4">Unimanual folding</h3>
+            <h2 class="title is-3" id="additional-evaluations">
+              Additional evaluations
+            </h2>
+            <h3 class="title is-4" id="unimanual-folding">Unimanual folding</h3>
             <div class="content has-text-justified">
               <p>
                 Below we present some of the actions predicted by BiFold on the
@@ -544,7 +621,7 @@
         </div>
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h3 class="title is-4">Bimanual folding</h3>
+            <h3 class="title is-4" id="bimanual-folding">Bimanual folding</h3>
             <p>
               We include action visualizations for the different bimanual
               folding environments. In all the following qualitative examples,
@@ -1159,75 +1236,6 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h1 class="title is-2">Supplementary material</h1>
-            <div class="content has-text-justified">
-              <ol>
-                <li class="counter">
-                  <a href="#dataset_generation">Dataset generation</a>
-                  <ol>
-                    <li class="counter"><a href="#rendering">Rendering</a></li>
-                    <li class="counter">
-                      <a href="#language_annotations">Language annotations</a>
-                    </li>
-                    <li class="counter">
-                      <a href="#filtering">Filtering out divergent sequences</a>
-                    </li>
-                    <li class="counter">
-                      <a href="#statistics">Statistics</a>
-                    </li>
-                  </ol>
-                </li>
-                <li class="counter">
-                  <a href="#experimental_setup">Experimental setup</a>
-                  <ol>
-                    <li class="counter"><a href="#modeling">Modeling</a></li>
-                    <li class="counter">
-                      <a href="#simulation">Simulation</a>
-                    </li>
-                    <li class="counter">
-                      <a href="#real">Real</a>
-                    </li>
-                  </ol>
-                </li>
-                <li class="counter">
-                  <a href="#additional_experiments">Additional experiments</a>
-                  <ol>
-                    <li class="counter">
-                      <a href="#qualitative">Qualitative evaluation</a>
-                    </li>
-                    <li class="counter">
-                      <a href="#quantitative">Quantitative evaluation</a>
-                    </li>
-                  </ol>
-                </li>
-                <li class="counter">
-                  <a href="#related_work">Related work</a>
-                  <ol>
-                    <li class="counter">
-                      <a href="#related_work_limitations"
-                        >Limitations of previous approaches</a
-                      >
-                    </li>
-                    <!-- <li class="counter">
-                      <a href="#related_work_modeling">Modeling differences</a>
-                    </li> -->
-                  </ol>
-                </li>
-                <li class="counter">
-                  <a href="#limitations">Limitations and future work</a>
-                  <ol>
-                    <li class="counter">
-                      <a href="#dataset_extensions">Dataset extensions</a>
-                    </li>
-                    <li class="counter">
-                      <a href="#modeling_and_evaluation"
-                        >Modeling and evaluation</a
-                      >
-                    </li>
-                  </ol>
-                </li>
-              </ol>
-            </div>
             <h2 id="dataset_generation" class="title is-3">
               Dataset generation
             </h2>
@@ -2578,10 +2586,12 @@ illum 2</code></pre>
               </p>
             </div>
 
-            <h2 id="related_work" class="title is-3">Related work</h2>
+            <h2 id="limitations" class="title is-3">
+              Limitations and future work
+            </h2>
 
             <h3 id="related_work_limitations" class="title is-4">
-              Limitations of previous approaches
+              Previous approaches
             </h3>
             <div class="content has-text-justified">
               <p>
@@ -2894,11 +2904,7 @@ illum 2</code></pre>
               </ul>
             </div> -->
 
-            <h2 id="limitations" class="title is-3">
-              Limitations and future work
-            </h2>
-
-            <h3 id="dataset_extension" class="title is-4">Dataset extension</h3>
+            <h3 id="dataset_extension" class="title is-4">BiFold dataset</h3>
             <div class="content has-text-justified">
               <p>
                 Our dataset does not contain a variety of backgrounds, lighting,
@@ -2924,7 +2930,7 @@ illum 2</code></pre>
             </div>
 
             <h3 id="modeling_and_evaluation" class="title is-4">
-              Modeling and evaluation
+              BiFold model and evaluation
             </h3>
             <div class="content has-text-justified">
               <p>

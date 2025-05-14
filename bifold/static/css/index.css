@@ -63,9 +63,17 @@ tr:nth-child(even) {
   font-family: 'Google Sans', sans-serif;
 }
 
-
-.publication-title {
+.glass-overlay {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); /* Adjust the blur value to your preference */
+  background: rgba(255, 255, 255, 0.2); /* Adjust the background color and opacity */
+  /* background: linear-gradient(to right, #DFE7FDA0, #D3F8E2A0); Adjust the background color and opacity */
+  /* background: linear-gradient(to right, #bde0fea0, #ffafcca0); /* Adjust the background color and opacity */
 }
+
+
+/* .publication-title {
+} */
 
 .publication-banner {
   max-height: parent;
