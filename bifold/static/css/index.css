@@ -6,6 +6,12 @@ ol {
   counter-reset: item;
 }
 
+.navbar-dropdown.is-right-aligned {
+  right: 0; /* Align the dropdown to the right edge of the page */
+  left: auto; /* Prevent default left alignment */
+  position: absolute; /* Ensure the dropdown is positioned relative to the page */
+}
+
 li.counter {
   display: block;
 }
@@ -111,8 +117,6 @@ tr:nth-child(even) {
     font-weight: bolder;
 }
 
-.publication-authors {
-}
 
 .publication-authors a {
    color: hsl(204, 86%, 53%) !important;
@@ -130,7 +134,7 @@ tr:nth-child(even) {
 }
 
 .publication-authors {
-  /*color: #4286f4;*/
+  /* color: #4286f4; */
 }
 
 .publication-video {
