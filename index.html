@@ -1,26 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2FL6N6JSDV"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-2FL6N6JSDV");
-    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="shortcut icon" type="image/png" href="/img/webico.ico" />
-
     <title>Oriol Barbany</title>
+    <link rel="shortcut icon" type="image/png" href="/img/webico.ico" />
 
     <script
       src="https://kit.fontawesome.com/e038779150.js"
@@ -28,30 +12,53 @@
     ></script>
     <link rel="stylesheet" href="/css/academicons.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
-
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-    <script defer src="/navbar.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script language="JavaScript">
       function ShowHide(divId) {
         $(divId).slideToggle(200);
       }
     </script>
+    <script>
+      (function () {
+        // Check for saved theme or system preference
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+        // Apply dark mode immediately if needed
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add("dark-mode-preload");
+        }
+      })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
   </head>
 
   <body>
+    <nav class="navbar is-transparent is-fixed-top">
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <button id="dark-mode-toggle" class="dark-mode-toggle">
+              <div class="moon-icon" id="moon-icon">
+                <i class="fas fa-moon"></i>
+              </div>
+              <div class="sun-icon" id="sun-icon">
+                <i class="fas fa-sun"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
     <!-- Main content -->
     <div class="container">
       <section class="hero">
         <br />
         <div class="hero-body">
-          <div class="container has-text-centered">
+          <div class="container has-text-centered" style="max-width: 950px">
             <img
-              align="middle"
               src="img/me_square.jpg"
               style="width: 15%; margin-left: auto; margin-right: auto"
               alt="Avatar"
@@ -103,7 +110,7 @@
               >. During 2024, I visited the
               <a href="https://www.epfl.ch/en/"
                 >École Polytechnique Fédérale de Lausanne (EPFL)</a
-              >, where I was advised by
+              >, where I was hosted by
               <a href="https://people.epfl.ch/amir.zamir">Prof. Amir Zamir</a> .
             </p>
             <p>
@@ -122,12 +129,12 @@
                 Services Engineering from UPC</a
               >.
             </p>
-            <p>
+            <!-- <p>
               Besides academia, an essential part of my life is focused on
               music. I have played bassoon since I was six years old. Take a
               look at <a href="./music/">my musical resume</a>
               for further details.
-            </p>
+            </p> -->
             <!-- <p>
               If you want to know more about me, take a look at my
               <a href="./resume/">resume</a> or keep browsing through my
@@ -157,22 +164,22 @@
             </div>
             <br />
             <!-- BiFold -->
-            <div class="notification filterDiv cv robotics" style="width: 100%">
+            <div class="notification filterDiv cv robotics">
               <div
                 class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third is-mobile">
                   <img
-                    align="middle"
                     style="
                       display: block;
                       margin-left: auto;
                       margin-right: auto;
                       border-radius: 0%;
                     "
-                    src="/img/bifold_thumbnail.png"
+                    src="/img/bifold_thumbnail.gif"
                     alt="HTML5 Icon"
+                    width="80%"
                   />
                 </div>
                 <div class="column is-two-thirds">
@@ -243,14 +250,13 @@
               >
             </div>
             <!-- Multimodal search -->
-            <div class="notification filterDiv cv ranking" style="width: 100%">
+            <div class="notification filterDiv cv ranking">
               <div
                 class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third is-mobile">
                   <img
-                    align="middle"
                     style="
                       display: block;
                       margin-left: auto;
@@ -330,14 +336,13 @@
               >
             </div>
             <!-- Procsim -->
-            <div class="notification filterDiv cv ranking" style="width: 100%">
+            <div class="notification filterDiv cv ranking">
               <div
                 class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third is-mobile">
                   <img
-                    align="middle"
                     style="
                       display: block;
                       margin-left: auto;
@@ -417,14 +422,13 @@
               >
             </div>
             <!-- Benchmark -->
-            <div class="notification filterDiv cv robotics" style="width: 100%">
+            <div class="notification filterDiv cv robotics">
               <div
                 class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third is-mobile">
                   <img
-                    align="middle"
                     style="
                       display: block;
                       margin-left: auto;
@@ -515,23 +519,22 @@
               >
             </div>
             <!-- Riemannian Metric -->
-            <div class="notification filterDiv cv" style="width: 100%">
+            <div class="notification filterDiv cv">
               <div
                 class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third is-mobile">
                   <img
-                    align="middle"
                     style="
                       display: block;
                       margin-left: auto;
                       margin-right: auto;
                       border-radius: 0%;
                     "
-                    src="/img/deformable_thumbnail.png"
+                    src="/img/deformable_thumbnail.gif"
                     alt="HTML5 Icon"
-                    width="90%"
+                    width="80%"
                   />
                 </div>
                 <div class="column is-two-thirds">
@@ -605,7 +608,6 @@
               >
                 <div class="column is-one-third is-mobile">
                   <img
-                    align="middle"
                     style="
                       display: block;
                       margin-left: auto;
@@ -658,14 +660,13 @@
               >
             </div>
             <!-- FastVC -->
-            <div class="notification filterDiv speech" style="width: 100%">
+            <div class="notification filterDiv speech">
               <div
                 class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third is-mobile">
                   <img
-                    align="middle"
                     style="
                       display: block;
                       margin-left: auto;
@@ -734,14 +735,13 @@
               >
             </div>
             <!-- Multi-speaker -->
-            <div class="notification filterDiv speech" style="width: 100%">
+            <div class="notification filterDiv speech">
               <div
                 class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third is-mobile">
                   <img
-                    align="middle"
                     style="
                       display: block;
                       margin-left: auto;
@@ -808,19 +808,6 @@
       </section>
     </div>
     <script>
-      const body = document.querySelector("body");
-      const toggle = document.getElementById("toggle");
-
-      toggle.addEventListener("click", () => {
-        const bodyCheck = body.classList.contains("dark");
-        if (bodyCheck) {
-          body.className = "";
-        } else {
-          body.className = "dark";
-        }
-      });
-    </script>
-    <script>
       filterSelection("all");
 
       function filterSelection(c) {
@@ -866,6 +853,88 @@
           this.className += " active";
         });
       }
+    </script>
+    <script>
+      document.querySelectorAll("pre").forEach(function (codeBlock) {
+        var button = document.createElement("button");
+        button.className = "copy-code-button";
+        button.type = "button";
+        var s = codeBlock.innerText;
+        button.setAttribute("data-clipboard-text", s);
+        button.innerText = "Copy";
+        // var pre = codeBlock.parentNode;
+        codeBlock.classList.add("prettyprint");
+        // pre.parentNode.insertBefore(button, pre);
+        codeBlock.appendChild(button);
+      });
+
+      var clipboard = new ClipboardJS(".copy-code-button");
+
+      clipboard.on("success", function (e) {
+        console.info("Action:", e.action);
+        console.info("Text:", e.text);
+        console.info("Trigger:", e.trigger);
+        e.trigger.textContent = "Copied!";
+        window.setTimeout(function () {
+          e.trigger.textContent = "Copy";
+        }, 2000);
+        e.clearSelection();
+      });
+
+      clipboard.on("error", function (e) {
+        console.error("Action:", e.action);
+        console.error("Trigger:", e.trigger);
+        e.trigger.textContent = "Error Copying";
+        window.setTimeout(function () {
+          e.trigger.textContent = "Copy";
+        }, 2000);
+        e.clearSelection();
+      });
+      //]]>
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        const prefersDarkScheme = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        );
+
+        // Function to apply the theme
+        function applyTheme(theme) {
+          if (theme === "dark") {
+            document.body.classList.add("dark-mode");
+          } else {
+            document.body.classList.remove("dark-mode");
+          }
+        }
+
+        // Check for saved theme preference or use the system preference
+        function getCurrentTheme() {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            return savedTheme; // Use saved theme if available
+          }
+          return prefersDarkScheme.matches ? "dark" : "light"; // Fallback to system preference
+        }
+
+        // Apply the initial theme
+        applyTheme(getCurrentTheme());
+
+        // Listen for system preference changes
+        prefersDarkScheme.addEventListener("change", (e) => {
+          if (!localStorage.getItem("theme")) {
+            // Only update if no theme is saved in localStorage
+            applyTheme(e.matches ? "dark" : "light");
+          }
+        });
+
+        // Toggle dark mode when button is clicked
+        darkModeToggle.addEventListener("click", function () {
+          const isDarkMode = document.body.classList.toggle("dark-mode");
+          const theme = isDarkMode ? "dark" : "light";
+          localStorage.setItem("theme", theme); // Save user preference
+        });
+      });
     </script>
   </body>
 </html>
