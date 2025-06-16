@@ -1,377 +1,532 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FL6N6JSDV"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FL6N6JSDV"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-2FL6N6JSDV');
+      gtag("config", "G-2FL6N6JSDV");
     </script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="/img/webico.ico"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="/img/webico.ico" />
 
     <title>Oriol Barbany</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-    <link rel="stylesheet" href="/css/academicons.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/academicons.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-</head>
-<style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+  </head>
+  <style>
     a {
-        color: black;
+      color: black;
     }
 
     a:hover {
-        color: mediumslateblue;
+      color: mediumslateblue;
     }
 
     img {
-        border-radius: 50%;
+      border-radius: 50%;
     }
 
     div.container_column {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
-        margin: 20px;
+      -moz-column-count: 3;
+      -webkit-column-count: 3;
+      column-count: 3;
+      margin: 20px;
     }
 
     div.box_column {
-        page-break-inside: avoid; /* For Firefox. */
-        -webkit-column-break-inside: avoid; /* For Chrome & friends. */
-        break-inside: avoid; /* For standard browsers like IE. :-) */
+      page-break-inside: avoid; /* For Firefox. */
+      -webkit-column-break-inside: avoid; /* For Chrome & friends. */
+      break-inside: avoid; /* For standard browsers like IE. :-) */
     }
-</style>
+  </style>
 
-<body class="has-navbar-fixed-top">
+  <body class="has-navbar-fixed-top">
+    <!-- Top bar -->
+    <nav
+      class="navbar is-spaced is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <div class="navbar-item">
+          <a href="mailto:oriol.barbanymayor@epfl.ch" target="_blank">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href="https://github.com/Barbany/" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a
+            href="https://scholar.google.es/citations?user=REEqrZEAAAAJ&hl=en"
+            target="_blank"
+          >
+            <i class="ai ai-google-scholar ai-fw"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a
+            href="https://stackexchange.com/users/11262251/oriol-b?tab=accounts"
+            target="_blank"
+          >
+            <i class="fab fa-stack-exchange"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href="https://www.linkedin.com/in/oriol-barbany" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href="https://twitter.com/oriolbarbany" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
 
-<!-- Top bar -->
-<nav class="navbar is-spaced is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <div class="navbar-item">
-            <a href="mailto:oriol.barbanymayor@epfl.ch" target="_blank">
-                <i class="fa fa-envelope"></i>
-            </a>
-        </div>
-        <div class="navbar-item">
-            <a href="https://github.com/Barbany/" target='_blank'>
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-        <div class="navbar-item">
-            <a href="https://scholar.google.es/citations?user=REEqrZEAAAAJ&hl=en" target='_blank'>
-                <i class="ai ai-google-scholar ai-fw"></i>
-            </a>
-        </div>
-        <div class="navbar-item">
-            <a href="https://stackexchange.com/users/11262251/oriol-b?tab=accounts" target='_blank'>
-								<i class="fab fa-stack-exchange"></i>
-            </a>
-        </div>
-        <div class="navbar-item">
-            <a href="https://www.linkedin.com/in/oriol-barbany" target='_blank'>
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-        </div>
-        <div class="navbar-item">
-            <a href="https://twitter.com/oriolbarbany" target="_blank">
-                <i class="fab fa-twitter"></i>
-            </a>
-        </div>
-
-        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false"
-           id="navBurger">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+        <a
+          role="button"
+          class="navbar-burger"
+          data-target="navMenu"
+          aria-label="menu"
+          aria-expanded="false"
+          id="navBurger"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
-    </div>
+      </div>
 
-    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-menu" id="navMenu">
         <div class="navbar-end has-text-centered">
-            <div class="navbar-item">
-                <a href="/">About</a>
-            </div>
-            <div class="navbar-item">
-                <a href="/resume/">Resume</a>
-            </div>
-            <div class="navbar-item">
-                <a href="/music/">Musical Facet</a>
-            </div>
+          <div class="navbar-item">
+            <a href="/">About</a>
+          </div>
+          <div class="navbar-item">
+            <a href="/resume/">Resume</a>
+          </div>
+          <div class="navbar-item">
+            <a href="/music/">Musical Facet</a>
+          </div>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<!-- Main content -->
-<div id="About" class="content-tab">
-    <section class="hero is-fullheight-with-navbar">
+    <!-- Main content -->
+    <div id="About" class="content-tab">
+      <section class="hero is-fullheight-with-navbar">
         <div class="hero-body">
-            <div class="column is-one-third">
-                <img align="middle" src="/img/me_music.jpg"
-                     style="width:70%;display: block;margin-left: auto;margin-right: auto;"
-                     alt="Avatar" class="center"><br>
-                <h2 class="title is-2" style="text-align: center">Oriol Barbany</h2>
-                <h2 class="subtitle is-4" style="text-align: center">Bassoon and Contrabassoon</h2>
-                <hr>
-                <p style="text-align: center"><b>Orchestral recordings:</b></p>
-                <br>
-                <audio align="middle" controls
-                       style="display: block;margin-left: auto;margin-right: auto;border-radius: 0%;">
-                    <source src="berlioz1.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <h6 style="text-align:center;font-size:12px">Symphonie Fantastique I. Rêveries, Passions - Berlioz
-                    (IRO)</h6>
-                <br>
-                <audio align="middle" controls
-                       style="display: block;margin-left: auto;margin-right: auto;border-radius: 0%;">
-                    <source src="berlioz2.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <h6 style="text-align:center;font-size:12px">Symphonie Fantastique II. Un bal - Berlioz (IRO)</h6>
-                <br>
-                <audio align="middle" controls
-                       style="display: block;margin-left: auto;margin-right: auto;border-radius: 0%;">
-                    <source src="berlioz3.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <h6 style="text-align:center;font-size:12px">Symphonie Fantastique III. Scène aux champs - Berlioz
-                    (IRO)</h6>
-                <br>
-                <audio align="middle" controls
-                       style="display: block;margin-left: auto;margin-right: auto;border-radius: 0%;">
-                    <source src="berlioz4.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <h6 style="text-align:center;font-size:12px">Symphonie Fantastique IV. Marche au supplice - Berlioz
-                    (IRO)</h6>
-                <br>
-                <audio align="middle" controls
-                       style="display: block;margin-left: auto;margin-right: auto;border-radius: 0%;">
-                    <source src="berlioz5.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <h6 style="text-align:center;font-size:12px">Symphonie Fantastique V. Songe d'une nuit du sabbat -
-                    Berlioz (IRO)</h6>
-                <br>
-            </div>
-            <div class="container has-text-centered">
-                <h1 class="title is-1">
-                    Education
-                </h1> <h6 style="text-align:justify">I started Bassoon studies at the Municipal School of Music of
-                Sabadell in 2004 under the tutelage of Joan Xicola
-                and joined the Conservatory in 2008, where I finalized my musical studies in 2014 after being
-                acknowledged during my trajectory with the diploma and honour prize.
-                These are the only two prizes that the Conservatory grants to recognize the excellence during the 2nd
-                and 6th course respectively.</h6>
-                <br>
-                <h6 style="text-align:justify">My musical studies continued from 2014 to 2018 at the Municipal
-                    Conservatory of
-                    Badalona with professor Maria Crisol while I was studying a Bachelor's Degree in
-                    Telecommunications Engineering
-                    at the Universitat Politècnica de Catalunya (UPC) in parallel.</h6>
-                <br>
-                <h6 style="text-align:justify">I have also received masterclasses from internationally renowned
-                    bassoonists such
-                    as Gustavo Núñez, Silvia Coricelli, Salvador Sanchis (during the intensive week of the
-                    high-performance course of Ad Libitum),
-                    Bernardo Verde and Antonio Lozano.</h6>
-                <br>
-                <img align="middle" src="/img/nunez.jpg"
-                     style="width:50%;display: block;margin-left: auto;margin-right: auto;border-radius: 0%;"
-                     alt="Avatar" class="center">
-                <h6 style="text-align:center">Masterclass with <a
-                        href="https://www.concertgebouworkest.nl/en/gustavo-nunez" target="_blank">Gustavo Núñez</a>
-                </h6>
-                <hr>
-                <h2 class="title is-2">
-                    Orchestral Trajectory
-                </h2> <h6 style="text-align:justify">My first symphonic appearance was in 2011 with JOSV and I was
-                also invited by the same
-                orchestra in 2012, 2015, 2016, and 2017. I have also played as principal bassoon with
-                Orquestra Simfònica Sant Cugat,
-                the Band of Cerdanyola, Jeunesses Musicales of Sabadell and at the European project Tutti organized by
-                JOIC. Between 2015 and 2018
-                I have been the principal bassoon of JOCG and I have been titular bassoon of the Youth Barcelona
-                Orchestra (JOSB). I have also been
-                a titular member of the Simfònica Tekhné Orchestra between 2015 and 2017 and collaborated with JOFICAT
-                and UNESCO orchestras. Besides that, I played the bassoon and the contrabassoon at the International Regions Symphony Orchestra (IRO) held at
-                Germany in 2016 and 2017. I have also been the principal bassoon of the Lausanne Student Chamber Orchestra from 2018 to 2020 and of
-                the Orchestre Symphonique et Universitaire de Lausanne in 2020. I am currently the first bassoon of the Collegium Musicum Berlin Symphony Orchestra.</h6>
-                <br>
-                <h6 style="text-align:justify">During the stay at the previous orchestras, I had the honor of
-                    being under the baton
-                    of renowned conductors such as Gilles Apap, Salvador Brotons, Miguel Hernández Silva, Joshua dos
-                    Santos, Florian Krumpöck,
-                    Rubén Gimeno, Sebastian Tewinkel, Michiel Delanghe, Hannes Reich, Simone Perugini, Gonçal Comellas
-                    and José Trigueros. I have also
-                    played with international soloists such as Gilles Apap, Claire Huangci, Maximilian Hornung, Yuriy
-                    Bekker, Josep Colom and Mariona Camats.</h6>
-            </div>
+          <div class="column is-one-third">
+            <img
+              align="middle"
+              src="/img/me_music.jpg"
+              style="
+                width: 70%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+              "
+              alt="Avatar"
+              class="center"
+            /><br />
+            <h2 class="title is-2" style="text-align: center">Oriol Barbany</h2>
+            <h2 class="subtitle is-4" style="text-align: center">
+              Bassoon and Contrabassoon
+            </h2>
+            <hr />
+            <p style="text-align: center"><b>Orchestral recordings:</b></p>
+            <br />
+            <audio
+              align="middle"
+              controls
+              style="
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 0%;
+              "
+            >
+              <source src="berlioz1.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <h6 style="text-align: center; font-size: 12px">
+              Symphonie Fantastique I. Rêveries, Passions - Berlioz (IRO)
+            </h6>
+            <br />
+            <audio
+              align="middle"
+              controls
+              style="
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 0%;
+              "
+            >
+              <source src="berlioz2.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <h6 style="text-align: center; font-size: 12px">
+              Symphonie Fantastique II. Un bal - Berlioz (IRO)
+            </h6>
+            <br />
+            <audio
+              align="middle"
+              controls
+              style="
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 0%;
+              "
+            >
+              <source src="berlioz3.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <h6 style="text-align: center; font-size: 12px">
+              Symphonie Fantastique III. Scène aux champs - Berlioz (IRO)
+            </h6>
+            <br />
+            <audio
+              align="middle"
+              controls
+              style="
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 0%;
+              "
+            >
+              <source src="berlioz4.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <h6 style="text-align: center; font-size: 12px">
+              Symphonie Fantastique IV. Marche au supplice - Berlioz (IRO)
+            </h6>
+            <br />
+            <audio
+              align="middle"
+              controls
+              style="
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 0%;
+              "
+            >
+              <source src="berlioz5.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <h6 style="text-align: center; font-size: 12px">
+              Symphonie Fantastique V. Songe d'une nuit du sabbat - Berlioz
+              (IRO)
+            </h6>
+            <br />
+          </div>
+          <div class="container has-text-centered">
+            <h1 class="title is-1">Education</h1>
+            <h6 style="text-align: justify">
+              I started Bassoon studies at the Municipal School of Music of
+              Sabadell in 2004 under the tutelage of Joan Xicola and joined the
+              Conservatory in 2008, where I finalized my musical studies in 2014
+              after being acknowledged during my trajectory with the diploma and
+              honour prize. These are the only two prizes that the Conservatory
+              grants to recognize the excellence during the 2nd and 6th course
+              respectively.
+            </h6>
+            <br />
+            <h6 style="text-align: justify">
+              My musical studies continued from 2014 to 2018 at the Municipal
+              Conservatory of Badalona with professor Maria Crisol while I was
+              studying a Bachelor's Degree in Telecommunications Engineering at
+              the Universitat Politècnica de Catalunya (UPC) in parallel.
+            </h6>
+            <br />
+            <h6 style="text-align: justify">
+              I have also received masterclasses from internationally renowned
+              bassoonists such as Gustavo Núñez, Silvia Coricelli, Salvador
+              Sanchis (during the intensive week of the high-performance course
+              of Ad Libitum), Bernardo Verde and Antonio Lozano.
+            </h6>
+            <br />
+            <img
+              align="middle"
+              src="/img/nunez.jpg"
+              style="
+                width: 50%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 0%;
+              "
+              alt="Avatar"
+              class="center"
+            />
+            <h6 style="text-align: center">
+              Masterclass with
+              <a
+                href="https://www.concertgebouworkest.nl/en/gustavo-nunez"
+                target="_blank"
+                >Gustavo Núñez</a
+              >
+            </h6>
+            <hr />
+            <h2 class="title is-2">Orchestral Trajectory</h2>
+            <h6 style="text-align: justify">
+              My first symphonic appearance was in 2011 with JOSV and I was also
+              invited by the same orchestra in 2012, 2015, 2016, and 2017. I
+              have also played as principal bassoon with Orquestra Simfònica
+              Sant Cugat, the Band of Cerdanyola, Jeunesses Musicales of
+              Sabadell and at the European project Tutti organized by JOIC.
+              Between 2015 and 2018 I have been the principal bassoon of JOCG
+              and I have been titular bassoon of the Youth Barcelona Orchestra
+              (JOSB). I have also been a titular member of the Simfònica Tekhné
+              Orchestra between 2015 and 2017 and collaborated with JOFICAT and
+              UNESCO orchestras. Besides that, I played the bassoon and the
+              contrabassoon at the International Regions Symphony Orchestra
+              (IRO) held at Germany in 2016 and 2017. I have also been the
+              principal bassoon of the Lausanne Student Chamber Orchestra from
+              2018 to 2020 and of the Orchestre Symphonique et Universitaire de
+              Lausanne in 2020. I am currently the first bassoon of the
+              Collegium Musicum Berlin Symphony Orchestra.
+            </h6>
+            <br />
+            <h6 style="text-align: justify">
+              During the stay at the previous orchestras, I had the honor of
+              being under the baton of renowned conductors such as Gilles Apap,
+              Salvador Brotons, Miguel Hernández Silva, Joshua dos Santos,
+              Florian Krumpöck, Rubén Gimeno, Sebastian Tewinkel, Michiel
+              Delanghe, Hannes Reich, Simone Perugini, Gonçal Comellas and José
+              Trigueros. I have also played with international soloists such as
+              Gilles Apap, Claire Huangci, Maximilian Hornung, Yuriy Bekker,
+              Josep Colom and Mariona Camats.
+            </h6>
+          </div>
         </div>
-        <hr>
-        <h1 class="title is-1" style="text-align:center">
-            Symphonic Repertoire
+        <hr />
+        <h1 class="title is-1" style="text-align: center">
+          Symphonic Repertoire
         </h1>
         <div class="container_column">
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Antonín Dvořák</h4>
-                Cello Concerto (soloist Arnau Rovira)<br>
-                Symphonies 8, 9
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Camille Saint-Saëns</h4>
-                Cello Concerto (soloist Mariona Camats)
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Charles Gounod</h4>
-                Petite Symphonie
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Claude Debussy</h4>
-                Petite Suite
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Dmitri Shostakovich</h4>
-                Festive Overture
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Edouard Lalo</h4>
-                Cello Concerto (soloist Maximilian Hornung)
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Eduard Toldrà</h4>
-                Empúries
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Edvard Grieg</h4>
-                Funeral March in Memory of Rikard Nordraak <br>
-                Peer Gynt Suites 1, 2
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Felix Mendelssohn</h4>
-                The Hebrides Overture <br>
-                Symphonies 3, 5 <br>
-                Violin Concerto (soloist Gilles Apap)
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Ferdinand David</h4>
-                Trombone Concertino
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Franz Joseph Haydn</h4>
-                The creation
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Franz Schubert</h4>
-                Rosamunde<br>
-                Symphonies 1, 5, 7 (unfinished), 9
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Gabriel Fauré</h4>
-                Pavane
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Georges Bizet</h4>
-                Symphony 1
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">George Frideric Handel</h4>
-                The Messiah
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Gerónimo Giménez</h4>
-                Intermezzo "La boda de Luis Alonso"
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Giovanni Battista Viotti</h4>
-                Violin Concerto 22
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Gustav Holst</h4>
-                The Planets
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Hector Berlioz</h4>
-                Symphonie Fantastique
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Igor Stravinsky</h4>
-                Firebird Suite (Band arrangement)
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Jean Sibelius</h4>
-                Finlandia
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Joachim Raff</h4>
-                Sinfonietta (Double wind quintet)
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Johann Strauss</h4>
-                Blue Danube Waltz <br>
-                Emperor Waltzes<br>
-                Radetzky Marsch
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Johannes Brahms</h4>
-                Academic Festival Overture <br>
-                Hungarian Dances <br>
-                Symphony 1
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Leo Weiner</h4>
-                Carnival
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Leonard Bernstein</h4>
-                Symphonic Dances from "West Side Story"
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Ludwig van Beethoven</h4>
-                Corolian Overture <br>
-                Egmont Overture<br>
-                Piano Concert No. 5 (soloists Claire Huangci, Josep Colom)<br>
-                Symphonies 1, 3, 4, 5, 6, 7, 8
-                <h4 style="font-size:1.5em;text-align:justify">Maurice Ravel</h4>
-                Le Tombeau de Couperin <br>
-                Pavane pour une infante défunte
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Peter Ilyich Tchaikovsky</h4>
-                Nutcracker Suite<br>
-                Rome and Juliet Fantasy Overture <br>
-                Suite No. 4<br>
-                Symphonies 1, 4, 5<br>
-                Swan Lake Suite<br>
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Richard Wagner</h4>
-                Die Meistersinger von Nürnberg<br>
-                Parsifal - Concert version<br>
-                Tannhäuser<br>
-                Tristan und Isolde - Convert Version
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Robert Schumann</h4>
-                Symphony 4
-            </div>
-            <div class="box_column">
-                <h4 style="font-size:1.5em;text-align:justify">Wolfgang Amadeus Mozart</h4>
-                Clarinet Concerto (soloists Lluís Casanova, Alejandro Lobato)<br>
-                The Magic Flute <br>
-                Requiem<br>
-            </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Antonín Dvořák
+            </h4>
+            Cello Concerto (soloist Arnau Rovira)<br />
+            Symphonies 8, 9
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Camille Saint-Saëns
+            </h4>
+            Cello Concerto (soloist Mariona Camats)
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Charles Gounod
+            </h4>
+            Petite Symphonie
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Claude Debussy
+            </h4>
+            Petite Suite
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Dmitri Shostakovich
+            </h4>
+            Festive Overture
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">Edouard Lalo</h4>
+            Cello Concerto (soloist Maximilian Hornung)
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">Eduard Toldrà</h4>
+            Empúries
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">Edvard Grieg</h4>
+            Funeral March in Memory of Rikard Nordraak <br />
+            Peer Gynt Suites 1, 2
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Felix Mendelssohn
+            </h4>
+            The Hebrides Overture <br />
+            Symphonies 3, 5 <br />
+            Violin Concerto (soloist Gilles Apap)
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Ferdinand David
+            </h4>
+            Trombone Concertino
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Franz Joseph Haydn
+            </h4>
+            The creation
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Franz Schubert
+            </h4>
+            Rosamunde<br />
+            Symphonies 1, 5, 7 (unfinished), 9
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">Gabriel Fauré</h4>
+            Pavane
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">Georges Bizet</h4>
+            Symphony 1
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              George Frideric Handel
+            </h4>
+            The Messiah
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Gerónimo Giménez
+            </h4>
+            Intermezzo "La boda de Luis Alonso"
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Giovanni Battista Viotti
+            </h4>
+            Violin Concerto 22
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">Gustav Holst</h4>
+            The Planets
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Hector Berlioz
+            </h4>
+            Symphonie Fantastique
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Igor Stravinsky
+            </h4>
+            Firebird Suite (Band arrangement)
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">Jean Sibelius</h4>
+            Finlandia
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">Joachim Raff</h4>
+            Sinfonietta (Double wind quintet)
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Johann Strauss
+            </h4>
+            Blue Danube Waltz <br />
+            Emperor Waltzes<br />
+            Radetzky Marsch
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Johannes Brahms
+            </h4>
+            Academic Festival Overture <br />
+            Hungarian Dances <br />
+            Symphony 1
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">Leo Weiner</h4>
+            Carnival
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Leonard Bernstein
+            </h4>
+            Symphonic Dances from "West Side Story"
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Ludwig van Beethoven
+            </h4>
+            Corolian Overture <br />
+            Egmont Overture<br />
+            Piano Concert No. 5 (soloists Claire Huangci, Josep Colom)<br />
+            Symphonies 1, 3, 4, 5, 6, 7, 8
+            <h4 style="font-size: 1.5em; text-align: justify">Maurice Ravel</h4>
+            Le Tombeau de Couperin <br />
+            Pavane pour une infante défunte
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Peter Ilyich Tchaikovsky
+            </h4>
+            Nutcracker Suite<br />
+            Rome and Juliet Fantasy Overture <br />
+            Suite No. 4<br />
+            Symphonies 1, 4, 5<br />
+            Swan Lake Suite<br />
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Richard Wagner
+            </h4>
+            Die Meistersinger von Nürnberg<br />
+            Parsifal - Concert version<br />
+            Tannhäuser<br />
+            Tristan und Isolde - Convert Version
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Robert Schumann
+            </h4>
+            Symphony 4
+          </div>
+          <div class="box_column">
+            <h4 style="font-size: 1.5em; text-align: justify">
+              Wolfgang Amadeus Mozart
+            </h4>
+            Clarinet Concerto (soloists Lluís Casanova, Alejandro Lobato)<br />
+            The Magic Flute <br />
+            Requiem<br />
+          </div>
         </div>
-    </section>
-</div>
-</body>
-
+      </section>
+    </div>
+  </body>
 </html>
