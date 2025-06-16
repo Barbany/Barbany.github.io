@@ -41,6 +41,12 @@
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
+    <script language="JavaScript">
+      function ShowHide(divId) {
+        $(divId).slideToggle(200);
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
   </head>
   <body>
     <style>
@@ -218,7 +224,18 @@
                       <span class="icon">
                         <i class="ai ai-arxiv"></i>
                       </span>
-                      <span>arXiv</span>
+                      <span>BiFold</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/abs/2505.07600"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>Workshop extension</span>
                     </a>
                   </span>
                   <!-- Video Link. -->
@@ -261,25 +278,6 @@
                       class="external-link button is-normal is-rounded is-dark"
                     >
                       <i class="fa-brands fa-x-twitter"></i>Thread
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a
-                      href="https://arxiv.org/abs/2505.07600"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                      </span>
-                      <span>Workshop extension</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a
-                      href="#BibTeX"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <i class="fa-sharp fa-solid fa-link"></i>BibTex
                     </a>
                   </span>
                 </div>
@@ -337,34 +335,267 @@
             </div>
           </div>
         </div>
-        <!--/ Abstract. -->
 
-        <!-- Paper video. -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Video (with audio narration)</h2>
-            <video controls preload>
-              <source src="media/bifold_icra25.mp4" , type="video/mp4" />
-            </video>
+        <h2 class="title is-3">Papers</h2>
+        <!-- Paper 1: Use box + is-primary -->
+        <div
+          class="box has-text-centered"
+          style="
+            background: -webkit-linear-gradient(right, #ffa2002b, #77258329);
+          "
+        >
+          <h3 class="title is-3">
+            BiFold: Bimanual Cloth Folding with Language Guidance
+          </h3>
+          <h3 class="title is-4">ICRA 2025</h3>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="../">Oriol Barbany</a><sup>1</sup>,</span
+            >
+            <span class="author-block">
+              <a href="https://www.iri.upc.edu/staff/acolome">Adrià Colomé</a
+              ><sup>1</sup>,</span
+            >
+            <span class="author-block">
+              <a href="https://www.iri.upc.edu/people/torras/">Carme Torras</a
+              ><sup>1</sup>,
+            </span>
           </div>
-        </div>
-        <!--/ Paper video. -->
-      </div>
-    </section>
+          <br />
+          <p>
+            Proposes a vision-language model (BiFold) for bimanual cloth folding
+            conditioned on natural language instructions. It combines LoRA-tuned
+            SigLIP encoders with a transformer to predict pick-and-place actions
+            from keyframes, enabling end-to-end learning without explicit cloth
+            representations. The model is trained on a new dataset annotated
+            through a scalable, automatic procedure for generating
+            language-aligned instructions.
+          </p>
+          <br />
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a
+                  href="https://arxiv.org/abs/2501.16458"
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a
+                  href="https://github.com/barbany/bifold"
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a
+                  href="https://zenodo.org/records/14851100"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="fa-solid fa-database"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span>
+              <!-- Poster -->
+              <span class="link-block">
+                <a
+                  href="media/icra_poster.pdf"
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="far fa-sticky-note"></i>
+                  </span>
+                  <span>Poster</span>
+                </a>
+              </span>
+              <!-- Slides (Keynote) -->
+              <span class="link-block">
+                <a
+                  href="media/icra.key"
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="fas fa-file-powerpoint"></i>
+                  </span>
+                  <span>Slides (Keynote)</span>
+                </a>
+              </span>
 
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <pre><code>@misc{barbany2025bifold,
+              <!-- BibTeX -->
+              <span class="link-block">
+                <a
+                  class="external-link button is-normal is-rounded is-dark js-modal-trigger"
+                  onclick="javascript:ShowHide('#bibtex_bifold')"
+                  href="javascript:;"
+                  style="text-decoration: none"
+                >
+                  <i class="fa-sharp fa-solid fa-link"></i>
+                  BibTeX
+                </a>
+              </span>
+            </div>
+          </div>
+          <pre id="bibtex_bifold" style="display: none; text-align: left">
+@inproceedings{bifold,
+  title={{BiFold: Bimanual Cloth Folding with Language Guidance}},
   author={Oriol Barbany and Adrià Colomé and Carme Torras},
-  title={{BiFold: Bimanual Cloth Folding with Language Guidance}}, 
+  booktitle={IEEE International Conference on Robotics and Automation},
+  year={2025}
+}</pre
+          >
+          <br />
+          <h2 class="title is-4">
+            Video (3 min) <i class="fa fa-volume-up"></i>
+          </h2>
+          <video controls preload>
+            <source src="media/bifold_icra25.mp4" , type="video/mp4" />
+          </video>
+        </div>
+
+        <!-- Paper 2: Use box + is-link -->
+        <div
+          class="box has-text-centered"
+          style="
+            background: -webkit-linear-gradient(right, #ffa2002b, #77258329);
+          "
+        >
+          <h3 class="title is-3">
+            Beyond Static Perception: Integrating Temporal Context into VLMs for
+            Cloth Folding
+          </h3>
+          <h3 class="title is-4">
+            ICRA 2025 Workshop
+            <a href="https://deformable-workshop.github.io/icra2025/"
+              >"Reflections on Representations and Manipulating Deformable
+              Objects"</a
+            >
+          </h3>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="../">Oriol Barbany</a><sup>1</sup>,</span
+            >
+            <span class="author-block">
+              <a href="https://www.iri.upc.edu/staff/acolome">Adrià Colomé</a
+              ><sup>1</sup>,</span
+            >
+            <span class="author-block">
+              <a href="https://www.iri.upc.edu/people/torras/">Carme Torras</a
+              ><sup>1</sup>,
+            </span>
+          </div>
+          <br />
+          <p>
+            Analyzes the BiFold model to understand how temporal context and
+            fine-tuning influence perception. Shows that using keyframes
+            improves feature consistency, attention alignment, and state
+            recognition compared to static or redundant frame inputs.
+          </p>
+          <br />
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a
+                  href="https://arxiv.org/abs/2505.07600"
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a
+                  href="https://github.com/barbany/bifold"
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Poster -->
+              <span class="link-block">
+                <a
+                  href="media/icraw_poster.pdf"
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="far fa-sticky-note"></i>
+                  </span>
+                  <span>Poster</span>
+                </a>
+              </span>
+              <!-- Slides (Keynote) -->
+              <span class="link-block">
+                <a
+                  href="media/icraw.key"
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="fas fa-file-powerpoint"></i>
+                  </span>
+                  <span>Slides (Keynote)</span>
+                </a>
+              </span>
+
+              <!-- BibTeX -->
+              <span class="link-block">
+                <a
+                  class="external-link button is-normal is-rounded is-dark js-modal-trigger"
+                  onclick="javascript:ShowHide('#bibtex_temporal')"
+                  href="javascript:;"
+                  style="text-decoration: none"
+                >
+                  <i class="fa-sharp fa-solid fa-link"></i>
+                  BibTeX
+                </a>
+              </span>
+            </div>
+          </div>
+          <pre id="bibtex_temporal" style="display: none; text-align: left">
+@misc{barbany25temporalcontext,
+  title={{Beyond Static Perception: Integrating Temporal Context into VLMs for Cloth Folding}},
+  author={Oriol Barbany and Adrià Colomé and Carme Torras},
   year={2025},
-  eprint={2501.16458},
+  eprint={2505.07600},
   archivePrefix={arXiv},
   primaryClass={cs.RO},
-  url={https://arxiv.org/abs/2501.16458}, 
-}
-</code></pre>
+  url={https://arxiv.org/abs/2505.07600}, 
+}</pre
+          >
+          <br />
+          <h2 class="title is-4">
+            Video (3 min) <i class="fa fa-volume-up"></i>
+          </h2>
+          <video controls preload>
+            <source src="media/video_icraw.mp4" , type="video/mp4" />
+          </video>
+        </div>
       </div>
     </section>
 
@@ -3108,6 +3339,44 @@ illum 2</code></pre>
         autoplay: true,
         autoplaySpeed: 2000,
       });
+    </script>
+    <script>
+      document.querySelectorAll("pre").forEach(function (codeBlock) {
+        var button = document.createElement("button");
+        button.className = "copy-code-button";
+        button.type = "button";
+        var s = codeBlock.innerText;
+        button.setAttribute("data-clipboard-text", s);
+        button.innerText = "Copy";
+        // var pre = codeBlock.parentNode;
+        codeBlock.classList.add("prettyprint");
+        // pre.parentNode.insertBefore(button, pre);
+        codeBlock.appendChild(button);
+      });
+
+      var clipboard = new ClipboardJS(".copy-code-button");
+
+      clipboard.on("success", function (e) {
+        console.info("Action:", e.action);
+        console.info("Text:", e.text);
+        console.info("Trigger:", e.trigger);
+        e.trigger.textContent = "Copied!";
+        window.setTimeout(function () {
+          e.trigger.textContent = "Copy";
+        }, 2000);
+        e.clearSelection();
+      });
+
+      clipboard.on("error", function (e) {
+        console.error("Action:", e.action);
+        console.error("Trigger:", e.trigger);
+        e.trigger.textContent = "Error Copying";
+        window.setTimeout(function () {
+          e.trigger.textContent = "Copy";
+        }, 2000);
+        e.clearSelection();
+      });
+      //]]>
     </script>
   </body>
 </html>
