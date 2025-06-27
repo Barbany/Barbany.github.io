@@ -4,7 +4,7 @@
   --text-color: #353535;
   --notification-bg: #bb0707; /* Light background */
   --notification-text: #000000; /* Dark text */
-  --filterDiv-bg: #ececec;
+  --filterDiv-bg: #ffffff;
 }
 
 body.dark-mode {
@@ -5879,6 +5879,7 @@ button {
   color: var(--text-color);
 	background-color: var(--filterDiv-bg);
 	display: none;
+  box-shadow: 1em 1em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 1em rgba(10, 10, 10, .02);
 }
 
 .show {
