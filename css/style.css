@@ -4,7 +4,7 @@
   --text-color: #353535;
   --notification-bg: #bb0707; /* Light background */
   --notification-text: #000000; /* Dark text */
-  --filterDiv-bg: #f5f5f5;
+  --filterDiv-bg: #ececec;
 }
 
 body.dark-mode {
