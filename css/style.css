@@ -2,18 +2,18 @@
   --background-color: #ffffff;
   --link-color: #2980b9;
   --text-color: #353535;
-  --notification-bg: #bb0707; /* Light background */
-  --notification-text: #000000; /* Dark text */
   --filterDiv-bg: #ffffff;
 }
 
-body.dark-mode {
+body.dark-mode,
+html.dark-mode-preload {
   --background-color: #121212;
   --text-color: #ffffff;
   --link-color: #8ab4f8;
-  --notification-bg: #333333; /* Dark background */
-  --notification-text: #ffffff; /* Light text */
   --filterDiv-bg: #323030;
+}
+
+body.dark-mode {
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -47,11 +47,13 @@ body {
   display: block;
 }
 
-body.dark-mode #moon-icon {
+body.dark-mode #moon-icon,
+html.dark-mode-preload #moon-icon {
   display: none; /* Hide moon icon in dark mode */
 }
 
-body.dark-mode #sun-icon {
+body.dark-mode #sun-icon,
+html.dark-mode-preload #sun-icon {
   display: block; /* Show sun icon in dark mode */
 }
 body:not(.dark-mode) #moon-icon {
@@ -171,7 +173,8 @@ tab-size: 4;
 -moz-hyphens: none;
 hyphens: none;
 position: relative;
-overflow: hidden;
+overflow-x: auto;
+overflow-y: hidden;
 }
 
 ol.linenums {
@@ -1602,7 +1605,7 @@ div.icon-text {
     width: 128px; }
 
 .notification {
-  background-color: var(--notification-bg);
+  background-color: var(--filterDiv-bg);
   border-radius: 4px;
   position: relative;
   padding: 1.25rem 2.5rem 1.25rem 1.5rem;
@@ -2695,8 +2698,7 @@ a.navbar-item,
 
   .navbar-menu {
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
-	/* TODO: background: #7d7c7a; */
-	background: #fff;
+	background: var(--background-color);
     padding: 0.5rem 0; }
     .navbar-menu.is-active {
       display: block; }
@@ -5880,6 +5882,11 @@ button {
 	background-color: var(--filterDiv-bg);
 	display: none;
   box-shadow: 1em 1em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 1em rgba(10, 10, 10, .02);
+}
+
+.pub-thumb-col {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .show {

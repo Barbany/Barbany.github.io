@@ -1,10 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Oriol Barbany</title>
-    <link rel="shortcut icon" type="image/png" href="/img/webico.ico" />
+    <meta
+      name="description"
+      content="Oriol Barbany is a PhD student in the ELLIS PhD & PostDoc program at IRI (UPC), working on computer vision, robotics, and multimodal learning."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Oriol Barbany" />
+    <meta
+      property="og:description"
+      content="Oriol Barbany is a PhD student in the ELLIS PhD & PostDoc program at IRI (UPC), working on computer vision, robotics, and multimodal learning."
+    />
+    <meta
+      property="og:image"
+      content="https://barbany.github.io/img/me_square.jpg"
+    />
+    <meta property="og:url" content="https://barbany.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Oriol Barbany" />
+    <meta
+      name="twitter:description"
+      content="Oriol Barbany is a PhD student in the ELLIS PhD & PostDoc program at IRI (UPC), working on computer vision, robotics, and multimodal learning."
+    />
+    <meta
+      name="twitter:image"
+      content="https://barbany.github.io/img/me_square.jpg"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/img/webico.ico" />
 
     <link
       rel="stylesheet"
@@ -23,7 +48,7 @@
         // Check for saved theme or system preference
         const savedTheme = localStorage.getItem("theme");
         const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
+          "(prefers-color-scheme: dark)",
         ).matches;
 
         // Apply dark mode immediately if needed
@@ -163,23 +188,84 @@
               </button>
             </div>
             <br />
+            <!-- OmniDiMM -->
+            <div class="notification filterDiv cv robotics">
+              <div
+                class="columns is-mobile"
+                style="padding: 0; margin: 0; align-items: center"
+              >
+                <div class="column is-one-third pub-thumb-col">
+                  <img
+                    style="display: block; border-radius: 0%"
+                    src="/img/omnidimm_thumbnail.gif"
+                    alt="OmniDiMM teaser figure showing 1D, 2D, and 3D modality outputs"
+                    width="100%"
+                  />
+                </div>
+                <div class="column is-two-thirds">
+                  <div class="level title is-5" style="text-align: left">
+                    OmniDiMM: Bridging 1D, 2D, and 3D with Any-to-Any Multimodal
+                    Modeling
+                  </div>
+                  <div class="subtitle is-6" style="text-align: left">
+                    Jason Toskov*, <u>Oriol Barbany*</u>, Rishubh Singh*, Jinya
+                    Sakurai, Efe Tarhan, Oğuzhan Fatih Kar, Roman Bachmann, Amir
+                    Zadeh, Jesse Allardice, Chuan Li, Carme Torras, Afshin
+                    Dehghan and Amir Zamir
+                    <br />
+                    arXiv preprint, 2026
+                  </div>
+                  <div class="columns">
+                    <a
+                      href="https://omnidimm.epfl.ch/"
+                      target="_blank"
+                      class="card-footer-item"
+                      style="text-decoration: none"
+                    >
+                      <i class="fas fa-home"></i>&nbsp;Page
+                    </a>
+                    <a
+                      onclick="javascript: ShowHide('#bibtex_omnidimm');"
+                      href="javascript:;"
+                      class="card-footer-item"
+                      style="text-decoration: none"
+                    >
+                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTex
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <pre
+                id="bibtex_omnidimm"
+                style="
+                  display: none;
+                  text-align: left;
+                  white-space: pre-wrap;
+                  overflow-wrap: anywhere;
+                  word-break: break-word;
+                "
+              >
+@article{omnidimm2026,
+    title={{OmniDiMM: Bridging 1D, 2D, and 3D with Any-to-Any Multimodal Modeling}},
+    author={Toskov, Jason and Barbany, Oriol and Singh, Rishubh and Sakurai, Jinya and Tarhan, Efe and Kar, O\u{g}uzhan Fatih and Bachmann, Roman and Zadeh, Amir and Allardice, Jesse and Li, Chuan and Torras, Carme and Dehghan, Afshin and Zamir, Amir},
+    journal={arXiv preprint},
+    year={2026},
+}
+</pre
+              >
+            </div>
             <!-- BiFold -->
             <div class="notification filterDiv cv robotics">
               <div
-                class="columns"
+                class="columns is-mobile"
                 style="padding: 0; margin: 0; align-items: center"
               >
-                <div class="column is-one-third is-mobile">
+                <div class="column is-one-third pub-thumb-col">
                   <img
-                    style="
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      border-radius: 0%;
-                    "
+                    style="display: block; border-radius: 0%"
                     src="/img/bifold_thumbnail.gif"
-                    alt="HTML5 Icon"
-                    width="80%"
+                    alt="BiFold robot bimanually folding a piece of cloth"
+                    width="100%"
                   />
                 </div>
                 <div class="column is-two-thirds">
@@ -226,7 +312,7 @@
                       <i class="fa-brands fa-x-twitter"></i>thread
                     </a>
                     <a
-                      onclick="javascript:ShowHide('#bibtex_bifold')"
+                      onclick="javascript: ShowHide('#bibtex_bifold');"
                       href="javascript:;"
                       class="card-footer-item"
                       style="text-decoration: none"
@@ -250,19 +336,15 @@
             <!-- Multimodal search -->
             <div class="notification filterDiv cv retrieval">
               <div
-                class="columns"
+                class="columns is-mobile"
                 style="padding: 0; margin: 0; align-items: center"
               >
-                <div class="column is-one-third is-mobile">
+                <div class="column is-one-third pub-thumb-col">
                   <img
-                    style="
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      border-radius: 0%;
-                    "
+                    style="display: block; border-radius: 0%"
                     src="/img/multimodal_search_thumbnail.png"
-                    alt="HTML5 Icon"
+                    alt="Multimodal search pipeline combining text and image queries"
+                    width="100%"
                   />
                 </div>
                 <div class="column is-two-thirds">
@@ -310,7 +392,9 @@
                       <i class="fa-brands fa-x-twitter"></i>thread
                     </a>
                     <a
-                      onclick="javascript:ShowHide('#bibtex_multimodal_search')"
+                      onclick="
+                        javascript: ShowHide('#bibtex_multimodal_search');
+                      "
                       href="javascript:;"
                       class="card-footer-item"
                       style="text-decoration: none"
@@ -336,19 +420,15 @@
             <!-- Procsim -->
             <div class="notification filterDiv cv retrieval">
               <div
-                class="columns"
+                class="columns is-mobile"
                 style="padding: 0; margin: 0; align-items: center"
               >
-                <div class="column is-one-third is-mobile">
+                <div class="column is-one-third pub-thumb-col">
                   <img
-                    style="
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      border-radius: 0%;
-                    "
+                    style="display: block; border-radius: 0%"
                     src="/img/procsim_thumbnail.png"
-                    alt="HTML5 Icon"
+                    alt="ProcSim proxy-based confidence diagram for similarity learning"
+                    width="100%"
                   />
                 </div>
                 <div class="column is-two-thirds">
@@ -397,7 +477,7 @@
                       <i class="fa-brands fa-x-twitter"></i>thread
                     </a>
                     <a
-                      onclick="javascript:ShowHide('#bibtex_procsim')"
+                      onclick="javascript: ShowHide('#bibtex_procsim');"
                       href="javascript:;"
                       class="card-footer-item"
                       style="text-decoration: none"
@@ -422,20 +502,15 @@
             <!-- Benchmark -->
             <div class="notification filterDiv cv robotics">
               <div
-                class="columns"
+                class="columns is-mobile"
                 style="padding: 0; margin: 0; align-items: center"
               >
-                <div class="column is-one-third is-mobile">
+                <div class="column is-one-third pub-thumb-col">
                   <img
-                    style="
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      border-radius: 0%;
-                    "
+                    style="display: block; border-radius: 0%"
                     src="/img/benchmark_thumbnail.gif"
-                    alt="HTML5 Icon"
-                    width="90%"
+                    alt="Robot manipulating cloth in simulation next to its real-world counterpart"
+                    width="100%"
                   />
                 </div>
                 <div class="column is-two-thirds">
@@ -490,7 +565,7 @@
                       <i class="fa-brands fa-x-twitter"></i>thread
                     </a>
                     <a
-                      onclick="javascript:ShowHide('#bibtex_benchmark')"
+                      onclick="javascript: ShowHide('#bibtex_benchmark');"
                       href="javascript:;"
                       class="card-footer-item"
                       style="text-decoration: none"
@@ -519,20 +594,15 @@
             <!-- Riemannian Metric -->
             <div class="notification filterDiv cv">
               <div
-                class="columns"
+                class="columns is-mobile"
                 style="padding: 0; margin: 0; align-items: center"
               >
-                <div class="column is-one-third is-mobile">
+                <div class="column is-one-third pub-thumb-col">
                   <img
-                    style="
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      border-radius: 0%;
-                    "
+                    style="display: block; border-radius: 0%"
                     src="/img/deformable_thumbnail.gif"
-                    alt="HTML5 Icon"
-                    width="80%"
+                    alt="Deformable surface reconstruction preserving Riemannian metric"
+                    width="100%"
                   />
                 </div>
                 <div class="column is-two-thirds">
@@ -571,7 +641,7 @@
                       <i class="ai ai-arxiv"></i>arXiv
                     </a>
                     <a
-                      onclick="javascript:ShowHide('#bibtex_deformable')"
+                      onclick="javascript: ShowHide('#bibtex_deformable');"
                       href="javascript:;"
                       class="card-footer-item"
                       style="text-decoration: none"
@@ -601,20 +671,15 @@
             <!-- Ranker agnostic -->
             <div class="notification filterDiv retrieval" style="width: 100%">
               <div
-                class="columns"
+                class="columns is-mobile"
                 style="padding: 0; margin: 0; align-items: center"
               >
-                <div class="column is-one-third is-mobile">
+                <div class="column is-one-third pub-thumb-col">
                   <img
-                    style="
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      border-radius: 0%;
-                    "
+                    style="display: block; border-radius: 0%"
                     src="/img/ranker_thumbnail.png"
-                    alt="HTML5 Icon"
-                    width="90%"
+                    alt="Diagram of ranker-agnostic contextual position bias estimation"
+                    width="100%"
                   />
                 </div>
                 <div class="column is-two-thirds">
@@ -638,7 +703,7 @@
                       <i class="ai ai-arxiv"></i>arXiv
                     </a>
                     <a
-                      onclick="javascript:ShowHide('#bibtex_ranker')"
+                      onclick="javascript: ShowHide('#bibtex_ranker');"
                       href="javascript:;"
                       class="card-footer-item"
                       style="text-decoration: none"
@@ -660,20 +725,15 @@
             <!-- FastVC -->
             <div class="notification filterDiv speech">
               <div
-                class="columns"
+                class="columns is-mobile"
                 style="padding: 0; margin: 0; align-items: center"
               >
-                <div class="column is-one-third is-mobile">
+                <div class="column is-one-third pub-thumb-col">
                   <img
-                    style="
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      border-radius: 0%;
-                    "
+                    style="display: block; border-radius: 0%"
                     src="/img/fastvc_thumbnail.png"
-                    alt="HTML5 Icon"
-                    width="90%"
+                    alt="FastVC voice conversion system diagram"
+                    width="100%"
                   />
                 </div>
                 <div class="column is-two-thirds">
@@ -712,7 +772,7 @@
                       <i class="ai ai-arxiv"></i>arXiv
                     </a>
                     <a
-                      onclick="javascript:ShowHide('#bibtex_fastvc')"
+                      onclick="javascript: ShowHide('#bibtex_fastvc');"
                       href="javascript:;"
                       class="card-footer-item"
                       style="text-decoration: none"
@@ -725,7 +785,7 @@
               <pre id="bibtex_fastvc" style="display: none; text-align: left">
 @inproceedings{barbany20fastvc,
 	title = {{FastVC: Fast Voice Conversion with non-parallel data}},
-	author = {Barbany, Oriol and Cernak, Milos}
+	author = {Barbany, Oriol and Cernak, Milos},
 	year = {2020},
 	booktitle = {Joint Workshop for the Blizzard Challenge and Voice Conversion Challenge},
 	pages = {145--149},
@@ -735,20 +795,15 @@
             <!-- Multi-speaker -->
             <div class="notification filterDiv speech">
               <div
-                class="columns"
+                class="columns is-mobile"
                 style="padding: 0; margin: 0; align-items: center"
               >
-                <div class="column is-one-third is-mobile">
+                <div class="column is-one-third pub-thumb-col">
                   <img
-                    style="
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      border-radius: 0%;
-                    "
+                    style="display: block; border-radius: 0%"
                     src="/img/multispeaker_thumbnail.png"
-                    alt="HTML5 Icon"
-                    width="90%"
+                    alt="Multi-speaker neural vocoder mel-spectrogram"
+                    width="100%"
                   />
                 </div>
                 <div class="column is-two-thirds">
@@ -756,7 +811,7 @@
                     Multi-Speaker Neural Vocoder
                   </div>
                   <div class="subtitle is-6" style="text-align: left">
-                    <u>Oriol Barbany</u> Antonio Bonafonte and Santiago Pascual
+                    <u>Oriol Barbany</u>, Antonio Bonafonte and Santiago Pascual
                     <br />
                     IberSPEECH, 2018
                   </div>
@@ -778,7 +833,7 @@
                       <i class="fa-brands fa-github"></i>&nbsp;Code
                     </a>
                     <a
-                      onclick="javascript:ShowHide('#bibtex_multispeaker')"
+                      onclick="javascript: ShowHide('#bibtex_multispeaker');"
                       href="javascript:;"
                       class="card-footer-item"
                       style="text-decoration: none"
@@ -794,7 +849,7 @@
               >
 @inproceedings{barbany18multispeaker,
 	title = {{Multi-Speaker Neural Vocoder}},
-	author = {Oriol Barbany and Antonio Bonafonte and Santiago Pascual}
+	author = {Oriol Barbany and Antonio Bonafonte and Santiago Pascual},
 	year = {2018},
 	booktitle = {IberSPEECH},
 	pages = {30--34},
@@ -894,7 +949,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         const darkModeToggle = document.getElementById("dark-mode-toggle");
         const prefersDarkScheme = window.matchMedia(
-          "(prefers-color-scheme: dark)"
+          "(prefers-color-scheme: dark)",
         );
 
         // Function to apply the theme
