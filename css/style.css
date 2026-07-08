@@ -419,8 +419,9 @@ pre {
   font-size: 0.875em;
   overflow-x: auto;
   padding: 1.25rem 1.5rem;
-  white-space: pre;
-  word-wrap: normal; }
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word; }
   pre code {
     background-color: transparent;
     color: currentColor;
@@ -5861,6 +5862,15 @@ body.dark {
   background-color: #23252f;
   color: #ffffff; }
 
+/* Homepage navbar only holds the dark-mode toggle (no link list needing a
+   burger menu, and this page has no .navbar-burger) - keep it visible at
+   every width instead of being hidden by Bulma's mobile navbar-menu toggle. */
+#site-navbar-menu {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
 button {
   cursor: pointer;
   border: none;
@@ -5878,6 +5888,7 @@ button {
 
 .filterDiv {
 	float: left;
+	width: 100%;
   color: var(--text-color);
 	background-color: var(--filterDiv-bg);
 	display: none;
@@ -5895,6 +5906,14 @@ button {
 .pub-thumb-col img {
   aspect-ratio: 4 / 3;
   object-fit: contain;
+}
+
+/* Mobile: publication-card thumbnail stacks above text (not vendored Bulma) */
+@media screen and (max-width: 768px) {
+  .pub-thumb-col img {
+    width: 100%;
+    max-height: 200px;
+  }
 }
 
 .show {

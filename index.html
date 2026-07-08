@@ -62,7 +62,7 @@
 
   <body>
     <nav class="navbar is-transparent is-fixed-top">
-      <div class="navbar-menu">
+      <div class="navbar-menu" id="site-navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
             <button id="dark-mode-toggle" class="dark-mode-toggle">
@@ -189,9 +189,9 @@
             </div>
             <br />
             <!-- OmniDiMM -->
-            <div class="notification filterDiv cv robotics">
+            <div class="notification filterDiv cv robotics retrieval">
               <div
-                class="columns is-mobile"
+                class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third pub-thumb-col">
@@ -237,13 +237,7 @@
               </div>
               <pre
                 id="bibtex_omnidimm"
-                style="
-                  display: none;
-                  text-align: left;
-                  white-space: pre-wrap;
-                  overflow-wrap: anywhere;
-                  word-break: break-word;
-                "
+                style="display: none; text-align: left"
               >
 @article{omnidimm2026,
     title={{OmniDiMM: Bridging 1D, 2D, and 3D with Any-to-Any Multimodal Modeling}},
@@ -257,7 +251,7 @@
             <!-- BiFold -->
             <div class="notification filterDiv cv robotics">
               <div
-                class="columns is-mobile"
+                class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third pub-thumb-col">
@@ -336,7 +330,7 @@
             <!-- Multimodal search -->
             <div class="notification filterDiv cv retrieval">
               <div
-                class="columns is-mobile"
+                class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third pub-thumb-col">
@@ -420,7 +414,7 @@
             <!-- Procsim -->
             <div class="notification filterDiv cv retrieval">
               <div
-                class="columns is-mobile"
+                class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third pub-thumb-col">
@@ -502,7 +496,7 @@
             <!-- Benchmark -->
             <div class="notification filterDiv cv robotics">
               <div
-                class="columns is-mobile"
+                class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third pub-thumb-col">
@@ -594,7 +588,7 @@
             <!-- Riemannian Metric -->
             <div class="notification filterDiv cv">
               <div
-                class="columns is-mobile"
+                class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third pub-thumb-col">
@@ -669,9 +663,9 @@
               >
             </div>
             <!-- Ranker agnostic -->
-            <div class="notification filterDiv retrieval" style="width: 100%">
+            <div class="notification filterDiv retrieval">
               <div
-                class="columns is-mobile"
+                class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third pub-thumb-col">
@@ -725,7 +719,7 @@
             <!-- FastVC -->
             <div class="notification filterDiv speech">
               <div
-                class="columns is-mobile"
+                class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third pub-thumb-col">
@@ -795,7 +789,7 @@
             <!-- Multi-speaker -->
             <div class="notification filterDiv speech">
               <div
-                class="columns is-mobile"
+                class="columns"
                 style="padding: 0; margin: 0; align-items: center"
               >
                 <div class="column is-one-third pub-thumb-col">
@@ -954,11 +948,11 @@
 
         // Function to apply the theme
         function applyTheme(theme) {
-          if (theme === "dark") {
-            document.body.classList.add("dark-mode");
-          } else {
-            document.body.classList.remove("dark-mode");
-          }
+          document.body.classList.toggle("dark-mode", theme === "dark");
+          document.documentElement.classList.toggle(
+            "dark-mode-preload",
+            theme === "dark",
+          );
         }
 
         // Check for saved theme preference or use the system preference
@@ -983,9 +977,11 @@
 
         // Toggle dark mode when button is clicked
         darkModeToggle.addEventListener("click", function () {
-          const isDarkMode = document.body.classList.toggle("dark-mode");
-          const theme = isDarkMode ? "dark" : "light";
-          localStorage.setItem("theme", theme); // Save user preference
+          const newTheme = document.body.classList.contains("dark-mode")
+            ? "light"
+            : "dark";
+          applyTheme(newTheme);
+          localStorage.setItem("theme", newTheme); // Save user preference
         });
       });
     </script>
