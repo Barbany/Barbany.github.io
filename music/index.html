@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -35,111 +35,278 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+    />
   </head>
   <style>
+    :root {
+      --music-ink: #28231f;
+      --music-muted: #746c64;
+      --music-paper: #f6f2eb;
+      --music-panel: #fffdf9;
+      --music-accent: #9b5d3e;
+      --music-line: #ddd3c7;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.music-page {
+      background: var(--music-paper);
+      color: var(--music-ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .music-page .navbar {
+      display: none;
+    }
+
+    .music-page .navbar a {
+      color: var(--music-ink);
+    }
+
+    .music-page .hero {
+      min-height: 0;
+    }
+
+    .music-page .hero-body {
+      align-items: start;
+      display: grid;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+      margin: 0 auto;
+      max-width: 1120px;
+      padding: 5rem 2rem 4rem;
+      width: 100%;
+    }
+
+    .music-page .contact-link {
+      color: var(--music-accent);
+      display: inline-block;
+      font-size: 0.85rem;
+      margin-top: 0.35rem;
+    }
+
+    .music-page .language-switcher {
+      display: flex;
+      gap: 0;
+      justify-content: center;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    .music-page .language-switcher button {
+      background: transparent;
+      border: 0;
+      color: var(--music-muted);
+      cursor: pointer;
+      font:
+        0.7rem "DM Sans",
+        sans-serif;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.45rem;
+      text-transform: uppercase;
+    }
+
+    .music-page .language-switcher button.active,
+    .music-page .language-switcher button:hover {
+      color: var(--music-accent);
+      text-decoration: underline;
+      text-underline-offset: 0.25rem;
+    }
+
+    .music-page .hero-body > .column,
+    .music-page .hero-body > .container {
+      width: auto;
+    }
+
+    .music-page .hero-body > .column {
+      position: sticky;
+      top: 2rem;
+    }
+
+    .music-page .content-column {
+      max-width: none;
+      padding: 0;
+    }
+
+    .music-page h1,
+    .music-page h2,
+    .music-page h3,
+    .music-page h4 {
+      color: var(--music-ink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+    }
+
+    .music-page .hero-body h2.title {
+      font-size: 2.7rem;
+      letter-spacing: 0;
+      margin-bottom: 0.75rem !important;
+    }
+
+    .music-page .hero-body h2.subtitle {
+      color: var(--music-accent);
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      margin-top: 0 !important;
+      text-transform: uppercase;
+    }
+
+    .music-page .hero-body > .column > img {
+      border: 8px solid var(--music-panel);
+      box-shadow: 0 18px 45px rgba(61, 42, 28, 0.14);
+      width: 82% !important;
+    }
+
+    .music-page hr {
+      background-color: var(--music-line);
+      height: 1px;
+    }
+
+    .music-page .recording-heading {
+      color: var(--music-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .music-page audio {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .music-page .recording-label {
+      color: var(--music-muted);
+      font-size: 0.76rem;
+      line-height: 1.45;
+      margin: 0.6rem auto 1.7rem;
+    }
+
+    .music-page .content-column {
+      text-align: left;
+    }
+
+    .music-page .content-column > h1.title,
+    .music-page .content-column > h2.title,
+    .music-page .content-column > h1,
+    .music-page .content-column > h2 {
+      font-size: 3.5rem;
+      line-height: 0.95;
+      margin: 0 0 1.4rem;
+      text-align: left;
+    }
+
+    .music-page .content-column h6 {
+      color: var(--music-muted);
+      font-size: 0.98rem !important;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    .music-page .content-column > img {
+      border-radius: 2px;
+      box-shadow: 0 12px 32px rgba(61, 42, 28, 0.12);
+    }
+
+    .music-page .repertoire-section {
+      background: var(--music-panel);
+      border-top: 1px solid var(--music-line);
+      padding: 5rem max(1.5rem, calc((100vw - 1120px) / 2));
+    }
+
+    .music-page .repertoire-section > h1 {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .music-page .container_column {
+      column-count: 3;
+      column-gap: 3rem;
+      margin: 0;
+    }
+
+    .music-page .box_column {
+      border-top: 1px solid var(--music-line);
+      color: var(--music-muted);
+      font-size: 0.86rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+      padding-top: 0.75rem;
+    }
+
+    .music-page .box_column h4 {
+      color: var(--music-ink);
+      font-size: 1.35rem !important;
+      margin-bottom: 0.2rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .music-page {
+        --music-ink: #eee9e1;
+        --music-muted: #b7aea4;
+        --music-paper: #171615;
+        --music-panel: #24211f;
+        --music-accent: #e0a17f;
+        --music-line: #403a35;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .music-page .hero-body {
+        display: block;
+        padding: 3rem 1.25rem;
+      }
+
+      .music-page .hero-body > .column {
+        position: static;
+      }
+
+      .music-page .hero-body > .column > img {
+        width: min(260px, 75%) !important;
+      }
+
+      .music-page .content-column {
+        margin-top: 3rem;
+      }
+
+      .music-page .content-column > h1.title,
+      .music-page .content-column > h2.title,
+      .music-page .repertoire-section > h1 {
+        font-size: 2.8rem;
+      }
+
+      .music-page .container_column {
+        column-count: 1;
+      }
+    }
+
     a {
-      color: black;
+      color: var(--music-accent);
     }
 
     a:hover {
-      color: mediumslateblue;
+      color: var(--music-ink);
     }
 
     img {
       border-radius: 50%;
     }
 
-    div.container_column {
-      -moz-column-count: 3;
-      -webkit-column-count: 3;
-      column-count: 3;
-      margin: 20px;
-    }
-
     div.box_column {
-      page-break-inside: avoid; /* For Firefox. */
-      -webkit-column-break-inside: avoid; /* For Chrome & friends. */
-      break-inside: avoid; /* For standard browsers like IE. :-) */
+      page-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      break-inside: avoid;
     }
   </style>
 
-  <body class="has-navbar-fixed-top">
-    <!-- Top bar -->
-    <nav
-      class="navbar is-spaced is-fixed-top"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <div class="navbar-item">
-          <a href="mailto:oriol.barbanymayor@epfl.ch" target="_blank">
-            <i class="fa fa-envelope"></i>
-          </a>
-        </div>
-        <div class="navbar-item">
-          <a href="https://github.com/Barbany/" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-        <div class="navbar-item">
-          <a
-            href="https://scholar.google.es/citations?user=REEqrZEAAAAJ&hl=en"
-            target="_blank"
-          >
-            <i class="ai ai-google-scholar ai-fw"></i>
-          </a>
-        </div>
-        <div class="navbar-item">
-          <a
-            href="https://stackexchange.com/users/11262251/oriol-b?tab=accounts"
-            target="_blank"
-          >
-            <i class="fab fa-stack-exchange"></i>
-          </a>
-        </div>
-        <div class="navbar-item">
-          <a href="https://www.linkedin.com/in/oriol-barbany" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-        <div class="navbar-item">
-          <a href="https://twitter.com/oriolbarbany" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </div>
-
-        <a
-          role="button"
-          class="navbar-burger"
-          data-target="navMenu"
-          aria-label="menu"
-          aria-expanded="false"
-          id="navBurger"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div class="navbar-menu" id="navMenu">
-        <div class="navbar-end has-text-centered">
-          <div class="navbar-item">
-            <a href="/">About</a>
-          </div>
-          <div class="navbar-item">
-            <a href="/resume/">Resume</a>
-          </div>
-          <div class="navbar-item">
-            <a href="/music/">Musical Facet</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-
+  <body class="music-page">
     <!-- Main content -->
     <div id="About" class="content-tab">
-      <section class="hero is-fullheight-with-navbar">
+      <section class="hero">
         <div class="hero-body">
           <div class="column is-one-third">
             <img
@@ -156,10 +323,24 @@
             /><br />
             <h2 class="title is-2" style="text-align: center">Oriol Barbany</h2>
             <h2 class="subtitle is-4" style="text-align: center">
-              Bassoon and Contrabassoon
+              <span data-i18n="instrument">Bassoon and Contrabassoon</span>
             </h2>
+            <div class="language-switcher" aria-label="Language">
+              <button type="button" data-language="ca">CA</button>
+              <button type="button" data-language="es">ES</button>
+              <button type="button" data-language="en">EN</button>
+            </div>
+            <a
+              class="contact-link"
+              href="mailto:obarbany@iri.upc.edu"
+              aria-label="Email Oriol Barbany"
+            >
+              <span data-i18n="contact">Contact me by email</span>
+            </a>
             <hr />
-            <p style="text-align: center"><b>Orchestral recordings:</b></p>
+            <p class="recording-heading" data-i18n="recordings">
+              Orchestral recordings
+            </p>
             <br />
             <audio
               align="middle"
@@ -174,7 +355,7 @@
               <source src="berlioz1.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
-            <h6 style="text-align: center; font-size: 12px">
+            <h6 class="recording-label">
               Symphonie Fantastique I. Rêveries, Passions - Berlioz (IRO)
             </h6>
             <br />
@@ -191,7 +372,7 @@
               <source src="berlioz2.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
-            <h6 style="text-align: center; font-size: 12px">
+            <h6 class="recording-label">
               Symphonie Fantastique II. Un bal - Berlioz (IRO)
             </h6>
             <br />
@@ -208,7 +389,7 @@
               <source src="berlioz3.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
-            <h6 style="text-align: center; font-size: 12px">
+            <h6 class="recording-label">
               Symphonie Fantastique III. Scène aux champs - Berlioz (IRO)
             </h6>
             <br />
@@ -225,7 +406,7 @@
               <source src="berlioz4.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
-            <h6 style="text-align: center; font-size: 12px">
+            <h6 class="recording-label">
               Symphonie Fantastique IV. Marche au supplice - Berlioz (IRO)
             </h6>
             <br />
@@ -242,15 +423,15 @@
               <source src="berlioz5.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
-            <h6 style="text-align: center; font-size: 12px">
+            <h6 class="recording-label">
               Symphonie Fantastique V. Songe d'une nuit du sabbat - Berlioz
               (IRO)
             </h6>
             <br />
           </div>
-          <div class="container has-text-centered">
-            <h1 class="title is-1">Education</h1>
-            <h6 style="text-align: justify">
+          <div class="container content-column">
+            <h1 class="title is-1" data-i18n="education">Education</h1>
+            <h6 style="text-align: justify" data-i18n="education1">
               I started Bassoon studies at the Municipal School of Music of
               Sabadell in 2004 under the tutelage of Joan Xicola and joined the
               Conservatory in 2008, where I finalized my musical studies in 2014
@@ -260,14 +441,14 @@
               respectively.
             </h6>
             <br />
-            <h6 style="text-align: justify">
+            <h6 style="text-align: justify" data-i18n="education2">
               My musical studies continued from 2014 to 2018 at the Municipal
               Conservatory of Badalona with professor Maria Crisol while I was
               studying a Bachelor's Degree in Telecommunications Engineering at
               the Universitat Politècnica de Catalunya (UPC) in parallel.
             </h6>
             <br />
-            <h6 style="text-align: justify">
+            <h6 style="text-align: justify" data-i18n="education3">
               I have also received masterclasses from internationally renowned
               bassoonists such as Gustavo Núñez, Silvia Coricelli, Salvador
               Sanchis (during the intensive week of the high-performance course
@@ -288,7 +469,7 @@
               class="center"
             />
             <h6 style="text-align: center">
-              Masterclass with
+              <span data-i18n="masterclass">Masterclass with</span>
               <a
                 href="https://www.concertgebouworkest.nl/en/gustavo-nunez"
                 target="_blank"
@@ -296,8 +477,10 @@
               >
             </h6>
             <hr />
-            <h2 class="title is-2">Orchestral Trajectory</h2>
-            <h6 style="text-align: justify">
+            <h2 class="title is-2" data-i18n="trajectory">
+              Orchestral Trajectory
+            </h2>
+            <h6 style="text-align: justify" data-i18n="trajectory1">
               My first symphonic appearance was in 2011 with JOSV and I was also
               invited by the same orchestra in 2012, 2015, 2016, and 2017. I
               have also played as principal bassoon with Orquestra Simfònica
@@ -316,7 +499,7 @@
               Collegium Musicum Berlin Symphony Orchestra.
             </h6>
             <br />
-            <h6 style="text-align: justify">
+            <h6 style="text-align: justify" data-i18n="trajectory2">
               During the stay at the previous orchestras, I had the honor of
               being under the baton of renowned conductors such as Gilles Apap,
               Salvador Brotons, Miguel Hernández Silva, Joshua dos Santos,
@@ -329,204 +512,311 @@
           </div>
         </div>
         <hr />
-        <h1 class="title is-1" style="text-align: center">
+        <h1
+          class="title is-1"
+          style="text-align: center"
+          data-i18n="repertoire"
+        >
           Symphonic Repertoire
         </h1>
-        <div class="container_column">
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Antonín Dvořák
-            </h4>
-            Cello Concerto (soloist Arnau Rovira)<br />
-            Symphonies 8, 9
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Camille Saint-Saëns
-            </h4>
-            Cello Concerto (soloist Mariona Camats)
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Charles Gounod
-            </h4>
-            Petite Symphonie
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Claude Debussy
-            </h4>
-            Petite Suite
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Dmitri Shostakovich
-            </h4>
-            Festive Overture
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">Edouard Lalo</h4>
-            Cello Concerto (soloist Maximilian Hornung)
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">Eduard Toldrà</h4>
-            Empúries
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">Edvard Grieg</h4>
-            Funeral March in Memory of Rikard Nordraak <br />
-            Peer Gynt Suites 1, 2
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Felix Mendelssohn
-            </h4>
-            The Hebrides Overture <br />
-            Symphonies 3, 5 <br />
-            Violin Concerto (soloist Gilles Apap)
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Ferdinand David
-            </h4>
-            Trombone Concertino
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Franz Joseph Haydn
-            </h4>
-            The creation
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Franz Schubert
-            </h4>
-            Rosamunde<br />
-            Symphonies 1, 5, 7 (unfinished), 9
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">Gabriel Fauré</h4>
-            Pavane
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">Georges Bizet</h4>
-            Symphony 1
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              George Frideric Handel
-            </h4>
-            The Messiah
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Gerónimo Giménez
-            </h4>
-            Intermezzo "La boda de Luis Alonso"
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Giovanni Battista Viotti
-            </h4>
-            Violin Concerto 22
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">Gustav Holst</h4>
-            The Planets
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Hector Berlioz
-            </h4>
-            Symphonie Fantastique
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Igor Stravinsky
-            </h4>
-            Firebird Suite (Band arrangement)
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">Jean Sibelius</h4>
-            Finlandia
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">Joachim Raff</h4>
-            Sinfonietta (Double wind quintet)
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Johann Strauss
-            </h4>
-            Blue Danube Waltz <br />
-            Emperor Waltzes<br />
-            Radetzky Marsch
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Johannes Brahms
-            </h4>
-            Academic Festival Overture <br />
-            Hungarian Dances <br />
-            Symphony 1
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">Leo Weiner</h4>
-            Carnival
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Leonard Bernstein
-            </h4>
-            Symphonic Dances from "West Side Story"
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Ludwig van Beethoven
-            </h4>
-            Corolian Overture <br />
-            Egmont Overture<br />
-            Piano Concert No. 5 (soloists Claire Huangci, Josep Colom)<br />
-            Symphonies 1, 3, 4, 5, 6, 7, 8
-            <h4 style="font-size: 1.5em; text-align: justify">Maurice Ravel</h4>
-            Le Tombeau de Couperin <br />
-            Pavane pour une infante défunte
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Peter Ilyich Tchaikovsky
-            </h4>
-            Nutcracker Suite<br />
-            Rome and Juliet Fantasy Overture <br />
-            Suite No. 4<br />
-            Symphonies 1, 4, 5<br />
-            Swan Lake Suite<br />
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Richard Wagner
-            </h4>
-            Die Meistersinger von Nürnberg<br />
-            Parsifal - Concert version<br />
-            Tannhäuser<br />
-            Tristan und Isolde - Convert Version
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Robert Schumann
-            </h4>
-            Symphony 4
-          </div>
-          <div class="box_column">
-            <h4 style="font-size: 1.5em; text-align: justify">
-              Wolfgang Amadeus Mozart
-            </h4>
-            Clarinet Concerto (soloists Lluís Casanova, Alejandro Lobato)<br />
-            The Magic Flute <br />
-            Requiem<br />
+        <div class="repertoire-section">
+          <div class="container_column">
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Antonín Dvořák
+              </h4>
+              Cello Concerto (soloist Arnau Rovira)<br />
+              Symphonies 8, 9
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Camille Saint-Saëns
+              </h4>
+              Cello Concerto (soloist Mariona Camats)
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Charles Gounod
+              </h4>
+              Petite Symphonie
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Claude Debussy
+              </h4>
+              Petite Suite
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Dmitri Shostakovich
+              </h4>
+              Festive Overture
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Edouard Lalo
+              </h4>
+              Cello Concerto (soloist Maximilian Hornung)
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Eduard Toldrà
+              </h4>
+              Empúries
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Edvard Grieg
+              </h4>
+              Funeral March in Memory of Rikard Nordraak <br />
+              Peer Gynt Suites 1, 2
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Felix Mendelssohn
+              </h4>
+              The Hebrides Overture <br />
+              Symphonies 3, 5 <br />
+              Violin Concerto (soloist Gilles Apap)
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Ferdinand David
+              </h4>
+              Trombone Concertino
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Franz Joseph Haydn
+              </h4>
+              The creation
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Franz Schubert
+              </h4>
+              Rosamunde<br />
+              Symphonies 1, 5, 7 (unfinished), 9
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Gabriel Fauré
+              </h4>
+              Pavane
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Georges Bizet
+              </h4>
+              Symphony 1
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                George Frideric Handel
+              </h4>
+              The Messiah
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Gerónimo Giménez
+              </h4>
+              Intermezzo "La boda de Luis Alonso"
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Giovanni Battista Viotti
+              </h4>
+              Violin Concerto 22
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Gustav Holst
+              </h4>
+              The Planets
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Hector Berlioz
+              </h4>
+              Symphonie Fantastique
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Igor Stravinsky
+              </h4>
+              Firebird Suite (Band arrangement)
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Jean Sibelius
+              </h4>
+              Finlandia
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Joachim Raff
+              </h4>
+              Sinfonietta (Double wind quintet)
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Johann Strauss
+              </h4>
+              Blue Danube Waltz <br />
+              Emperor Waltzes<br />
+              Radetzky Marsch
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Johannes Brahms
+              </h4>
+              Academic Festival Overture <br />
+              Hungarian Dances <br />
+              Symphony 1
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">Leo Weiner</h4>
+              Carnival
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Leonard Bernstein
+              </h4>
+              Symphonic Dances from "West Side Story"
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Ludwig van Beethoven
+              </h4>
+              Corolian Overture <br />
+              Egmont Overture<br />
+              Piano Concert No. 5 (soloists Claire Huangci, Josep Colom)<br />
+              Symphonies 1, 3, 4, 5, 6, 7, 8
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Maurice Ravel
+              </h4>
+              Le Tombeau de Couperin <br />
+              Pavane pour une infante défunte
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Peter Ilyich Tchaikovsky
+              </h4>
+              Nutcracker Suite<br />
+              Rome and Juliet Fantasy Overture <br />
+              Suite No. 4<br />
+              Symphonies 1, 4, 5<br />
+              Swan Lake Suite<br />
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Richard Wagner
+              </h4>
+              Die Meistersinger von Nürnberg<br />
+              Parsifal - Concert version<br />
+              Tannhäuser<br />
+              Tristan und Isolde - Convert Version
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Robert Schumann
+              </h4>
+              Symphony 4
+            </div>
+            <div class="box_column">
+              <h4 style="font-size: 1.5em; text-align: justify">
+                Wolfgang Amadeus Mozart
+              </h4>
+              Clarinet Concerto (soloists Lluís Casanova, Alejandro Lobato)<br />
+              The Magic Flute <br />
+              Requiem<br />
+            </div>
           </div>
         </div>
       </section>
     </div>
+    <script>
+      const musicTranslations = {
+        en: {
+          instrument: "Bassoon and Contrabassoon",
+          contact: "Contact me by email",
+          recordings: "Orchestral recordings",
+          education: "Education",
+          education1:
+            "I started bassoon studies at the Municipal School of Music of Sabadell in 2004 under the tutelage of Joan Xicola and joined the Conservatory in 2008, where I completed my musical studies in 2014 after receiving its diploma and honour prize. These are the only two prizes that the Conservatory grants in recognition of excellence during the 2nd and 6th years, respectively.",
+          education2:
+            "My musical studies continued from 2014 to 2018 at the Municipal Conservatory of Badalona with professor Maria Crisol while I was studying a Bachelor's Degree in Telecommunications Engineering at the Universitat Politècnica de Catalunya (UPC) in parallel.",
+          education3:
+            "I have also received masterclasses from internationally renowned bassoonists such as Gustavo Núñez, Silvia Coricelli, Salvador Sanchis (during the intensive week of the Ad Libitum high-performance course), Bernardo Verde, and Antonio Lozano.",
+          masterclass: "Masterclass with",
+          trajectory: "Orchestral Trajectory",
+          trajectory1:
+            "My first symphonic appearance was in 2011 with JOSV, and I was also invited by the same orchestra in 2012, 2015, 2016, and 2017. I have played as principal bassoon with Orquestra Simfònica Sant Cugat, the Band of Cerdanyola, Jeunesses Musicales of Sabadell, and at the European Tutti project organized by JOIC. Between 2015 and 2018 I was principal bassoon of JOCG and a titular bassoon of the Youth Barcelona Orchestra (JOSB). I was also a titular member of the Simfònica Tekhné Orchestra between 2015 and 2017 and collaborated with JOFICAT and UNESCO orchestras. I played bassoon and contrabassoon at the International Regions Symphony Orchestra (IRO) in Germany in 2016 and 2017. I was principal bassoon of the Lausanne Student Chamber Orchestra from 2018 to 2020 and of the Orchestre Symphonique et Universitaire de Lausanne in 2020. I am currently first bassoon of the Collegium Musicum Berlin Symphony Orchestra.",
+          trajectory2:
+            "During my time with these orchestras, I had the honour of working under renowned conductors such as Gilles Apap, Salvador Brotons, Miguel Hernández Silva, Joshua dos Santos, Florian Krumpöck, Rubén Gimeno, Sebastian Tewinkel, Michiel Delanghe, Hannes Reich, Simone Perugini, Gonçal Comellas, and José Trigueros. I have also played with international soloists such as Gilles Apap, Claire Huangci, Maximilian Hornung, Yuriy Bekker, Josep Colom, and Mariona Camats.",
+          repertoire: "Symphonic Repertoire",
+        },
+        ca: {
+          instrument: "Fagot i contrafagot",
+          contact: "Contacta amb mi per correu electrònic",
+          recordings: "Enregistraments orquestrals",
+          education: "Formació",
+          education1:
+            "Vaig començar a estudiar fagot a l'Escola Municipal de Música de Sabadell l'any 2004, sota la tutela de Joan Xicola, i vaig entrar al Conservatori el 2008. Hi vaig completar els estudis musicals el 2014, després de rebre el diploma i el premi d'honor. Aquests són els dos únics premis que atorga el Conservatori en reconeixement de l'excel·lència durant el segon i el sisè curs, respectivament.",
+          education2:
+            "Entre el 2014 i el 2018 vaig continuar els estudis musicals al Conservatori Municipal de Badalona amb la professora Maria Crisol, mentre cursava simultàniament el grau en Enginyeria de Tecnologies i Serveis de Telecomunicació a la Universitat Politècnica de Catalunya (UPC).",
+          education3:
+            "També he rebut classes magistrals de fagotistes de renom internacional com Gustavo Núñez, Silvia Coricelli, Salvador Sanchis (durant la setmana intensiva del curs d'alt rendiment d'Ad Libitum), Bernardo Verde i Antonio Lozano.",
+          masterclass: "Classe magistral amb",
+          trajectory: "Trajectòria orquestral",
+          trajectory1:
+            "La meva primera actuació simfònica va ser el 2011 amb la JOSV, i també hi vaig ser convidat els anys 2012, 2015, 2016 i 2017. He tocat com a fagot principal amb l'Orquestra Simfònica Sant Cugat, la Banda de Cerdanyola, les Jeunesses Musicales de Sabadell i en el projecte europeu Tutti, organitzat per JOIC. Entre el 2015 i el 2018 vaig ser fagot principal de la JOCG i fagot titular de la Jove Orquestra Simfònica de Barcelona (JOSB). També vaig ser membre titular de l'Orquestra Simfònica Tekhné entre el 2015 i el 2017 i vaig col·laborar amb les orquestres JOFICAT i UNESCO. Vaig tocar el fagot i el contrafagot a la International Regions Symphony Orchestra (IRO), a Alemanya, els anys 2016 i 2017. Vaig ser fagot principal de la Lausanne Student Chamber Orchestra entre el 2018 i el 2020 i de l'Orchestre Symphonique et Universitaire de Lausanne el 2020. Actualment soc el primer fagot de la Collegium Musicum Berlin Symphony Orchestra.",
+          trajectory2:
+            "Durant la meva estada en aquestes orquestres, he treballat sota la batuta de directors reconeguts com Gilles Apap, Salvador Brotons, Miguel Hernández Silva, Joshua dos Santos, Florian Krumpöck, Rubén Gimeno, Sebastian Tewinkel, Michiel Delanghe, Hannes Reich, Simone Perugini, Gonçal Comellas i José Trigueros. També he tocat amb solistes internacionals com Gilles Apap, Claire Huangci, Maximilian Hornung, Yuriy Bekker, Josep Colom i Mariona Camats.",
+          repertoire: "Repertori simfònic",
+        },
+        es: {
+          instrument: "Fagot y contrafagot",
+          contact: "Contacta conmigo por correo electrónico",
+          recordings: "Grabaciones orquestales",
+          education: "Formación",
+          education1:
+            "Comencé a estudiar fagot en la Escuela Municipal de Música de Sabadell en 2004, bajo la tutela de Joan Xicola, y entré en el Conservatorio en 2008. Allí terminé mis estudios musicales en 2014, después de recibir el diploma y el premio de honor. Son los dos únicos premios que concede el Conservatorio en reconocimiento a la excelencia durante el segundo y el sexto curso, respectivamente.",
+          education2:
+            "Entre 2014 y 2018 continué mis estudios musicales en el Conservatorio Municipal de Badalona con la profesora Maria Crisol, mientras cursaba simultáneamente el grado en Ingeniería de Tecnologías y Servicios de Telecomunicación en la Universitat Politècnica de Catalunya (UPC).",
+          education3:
+            "También he recibido clases magistrales de fagotistas de renombre internacional como Gustavo Núñez, Silvia Coricelli, Salvador Sanchis (durante la semana intensiva del curso de alto rendimiento de Ad Libitum), Bernardo Verde y Antonio Lozano.",
+          masterclass: "Clase magistral con",
+          trajectory: "Trayectoria orquestal",
+          trajectory1:
+            "Mi primera actuación sinfónica fue en 2011 con la JOSV, y también fui invitado por la misma orquesta en 2012, 2015, 2016 y 2017. He tocado como fagot principal con la Orquestra Simfònica Sant Cugat, la Banda de Cerdanyola, Jeunesses Musicales de Sabadell y en el proyecto europeo Tutti, organizado por JOIC. Entre 2015 y 2018 fui fagot principal de la JOCG y fagot titular de la Joven Orquesta Sinfónica de Barcelona (JOSB). También fui miembro titular de la Orquesta Sinfónica Tekhné entre 2015 y 2017 y colaboré con las orquestas JOFICAT y UNESCO. Toqué el fagot y el contrafagot en la International Regions Symphony Orchestra (IRO), en Alemania, en 2016 y 2017. Fui fagot principal de la Lausanne Student Chamber Orchestra entre 2018 y 2020 y de la Orchestre Symphonique et Universitaire de Lausanne en 2020. Actualmente soy primer fagot de la Collegium Musicum Berlin Symphony Orchestra.",
+          trajectory2:
+            "Durante mi paso por estas orquestas, trabajé bajo la batuta de directores reconocidos como Gilles Apap, Salvador Brotons, Miguel Hernández Silva, Joshua dos Santos, Florian Krumpöck, Rubén Gimeno, Sebastian Tewinkel, Michiel Delanghe, Hannes Reich, Simone Perugini, Gonçal Comellas y José Trigueros. También he tocado con solistas internacionales como Gilles Apap, Claire Huangci, Maximilian Hornung, Yuriy Bekker, Josep Colom y Mariona Camats.",
+          repertoire: "Repertorio sinfónico",
+        },
+      };
+
+      function setMusicLanguage(language) {
+        const translations = musicTranslations[language];
+        document.documentElement.lang = language;
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          element.textContent = translations[element.dataset.i18n];
+        });
+        document.querySelectorAll("[data-language]").forEach((button) => {
+          button.classList.toggle(
+            "active",
+            button.dataset.language === language,
+          );
+        });
+        localStorage.setItem("music-language", language);
+      }
+
+      document.querySelectorAll("[data-language]").forEach((button) => {
+        button.addEventListener("click", () =>
+          setMusicLanguage(button.dataset.language),
+        );
+      });
+      setMusicLanguage(localStorage.getItem("music-language") || "ca");
+    </script>
   </body>
 </html>

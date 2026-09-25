@@ -6,13 +6,13 @@
     <title>Oriol Barbany</title>
     <meta
       name="description"
-      content="Oriol Barbany is a PhD student in the ELLIS PhD & PostDoc program at IRI (UPC), working on computer vision, robotics, and multimodal learning."
+      content="Oriol Barbany is a final-year PhD student in the ELLIS PhD & PostDoc program at IRI (UPC), working on machine learning for robotics, computer vision, and multimodal learning."
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Oriol Barbany" />
     <meta
       property="og:description"
-      content="Oriol Barbany is a PhD student in the ELLIS PhD & PostDoc program at IRI (UPC), working on computer vision, robotics, and multimodal learning."
+      content="Oriol Barbany is a final-year PhD student in the ELLIS PhD & PostDoc program at IRI (UPC), working on machine learning for robotics, computer vision, and multimodal learning."
     />
     <meta
       property="og:image"
@@ -23,7 +23,7 @@
     <meta name="twitter:title" content="Oriol Barbany" />
     <meta
       name="twitter:description"
-      content="Oriol Barbany is a PhD student in the ELLIS PhD & PostDoc program at IRI (UPC), working on computer vision, robotics, and multimodal learning."
+      content="Oriol Barbany is a final-year PhD student in the ELLIS PhD & PostDoc program at IRI (UPC), working on machine learning for robotics, computer vision, and multimodal learning."
     />
     <meta
       name="twitter:image"
@@ -65,7 +65,11 @@
       <div class="navbar-menu" id="site-navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
-            <button id="dark-mode-toggle" class="dark-mode-toggle">
+            <button
+              id="dark-mode-toggle"
+              class="dark-mode-toggle"
+              aria-label="Toggle dark mode"
+            >
               <div class="moon-icon" id="moon-icon">
                 <i class="fas fa-moon"></i>
               </div>
@@ -100,25 +104,50 @@
                 >/baRbaɲ/</a
               >
             </h4>
-            <a href="mailto:obarbany@iri.upc.edu" target="_blank">
+            <a
+              href="mailto:obarbany@iri.upc.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+            >
               <i class="fa-solid fa-envelope fa-2x"></i>
             </a>
-            <a href="https://github.com/Barbany/" target="_blank">
+            <a
+              href="https://github.com/Barbany/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
               <i class="fa-brands fa-github fa-2x"></i>
             </a>
             <a
               href="https://scholar.google.es/citations?user=REEqrZEAAAAJ&hl=en"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Google Scholar"
             >
               <i class="fa-brands fa-google-scholar fa-2x"></i>
             </a>
-            <a href="https://x.com/oriolbarbany" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/oriol-barbany"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in fa-2x"></i>
+            </a>
+            <a
+              href="https://x.com/oriolbarbany"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X"
+            >
               <i class="fa-brands fa-x-twitter fa-2x"></i>
             </a>
             <h1 class="title is-1">About me</h1>
 
             <p>
-              I am a PhD student of the
+              I am a final-year PhD student in the
               <a href="https://ellis.eu/phd-postdoc"
                 >ELLIS PhD &amp; PostDoc program</a
               >
@@ -139,9 +168,12 @@
               <a href="https://people.epfl.ch/amir.zamir">Prof. Amir Zamir</a> .
             </p>
             <p>
-              Previously, I interned at Amazon, where I worked on computer
-              vision and the learning-to-rank problem, and at Logitech, where I
-              worked on voice conversion. I hold a
+              My research focuses on machine learning for robotics, computer
+              vision, and multimodal learning. I am currently interning at
+              Amazon, where I work on image generation models. Previously, I
+              interned at Amazon, where I worked on visual similarity search,
+              vision-language models (VLMs), and learning to rank (LTR), and at
+              Logitech, where I worked on voice conversion. I hold a
               <a
                 href="https://www.epfl.ch/education/master/programs/data-science/"
                 >Master's degree in Data Science from EPFL</a
@@ -150,23 +182,9 @@
               <a
                 href="https://www.upc.edu/en/bachelors/telecommunications-technologies-and-services-engineering-barcelona-etsetb"
               >
-                Bachelor's Degree in Telecommunications Technologies and
-                Services Engineering from UPC</a
+                bachelor's degree in Telecommunications Engineering from UPC</a
               >.
             </p>
-            <!-- <p>
-              Besides academia, an essential part of my life is focused on
-              music. I have played bassoon since I was six years old. Take a
-              look at <a href="./music/">my musical resume</a>
-              for further details.
-            </p> -->
-            <!-- <p>
-              If you want to know more about me, take a look at my
-              <a href="./resume/">resume</a> or keep browsing through my
-              personal website to check my background and my
-              <a href="./publications/">publications</a>. Please don't hesitate
-              to contact me for further information.
-            </p> -->
             <br />
             <h1 class="title is-1">Publications</h1>
             <hr />
@@ -197,7 +215,9 @@
                 <div class="column is-one-third pub-thumb-col">
                   <img
                     style="display: block; border-radius: 0%"
-                    src="/img/omnidimm_thumbnail.gif"
+                    src="/img/omnidimm_thumbnail.png"
+                    data-poster="/img/omnidimm_thumbnail.png"
+                    data-gif="/img/omnidimm_thumbnail.gif"
                     alt="OmniDiMM teaser figure showing 1D, 2D, and 3D modality outputs"
                     width="100%"
                   />
@@ -213,7 +233,7 @@
                     Zadeh, Jesse Allardice, Chuan Li, Carme Torras, Afshin
                     Dehghan, Amir Zamir
                     <br />
-                    arXiv preprint, 2026
+                    NeurIPS, 2026
                   </div>
                   <div class="columns">
                     <a
@@ -230,19 +250,16 @@
                       class="card-footer-item"
                       style="text-decoration: none"
                     >
-                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTex
+                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTeX
                     </a>
                   </div>
                 </div>
               </div>
-              <pre
-                id="bibtex_omnidimm"
-                style="display: none; text-align: left"
-              >
-@article{omnidimm2026,
+              <pre id="bibtex_omnidimm" style="display: none; text-align: left">
+@inproceedings{omnidimm2026,
     title={{OmniDiMM: Bridging 1D, 2D, and 3D with Any-to-Any Multimodal Modeling}},
     author={Toskov, Jason and Barbany, Oriol and Singh, Rishubh and Sakurai, Jinya and Tarhan, Efe and Kar, O\u{g}uzhan Fatih and Bachmann, Roman and Zadeh, Amir and Allardice, Jesse and Li, Chuan and Torras, Carme and Dehghan, Afshin and Zamir, Amir},
-    journal={arXiv preprint},
+    booktitle={NeurIPS},
     year={2026},
 }
 </pre
@@ -257,7 +274,9 @@
                 <div class="column is-one-third pub-thumb-col">
                   <img
                     style="display: block; border-radius: 0%"
-                    src="/img/bifold_thumbnail.gif"
+                    src="/img/bifold_poster.png"
+                    data-poster="/img/bifold_poster.png"
+                    data-gif="/img/bifold_thumbnail.gif"
                     alt="BiFold robot bimanually folding a piece of cloth"
                     width="100%"
                   />
@@ -311,7 +330,7 @@
                       class="card-footer-item"
                       style="text-decoration: none"
                     >
-                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTex
+                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTeX
                     </a>
                   </div>
                 </div>
@@ -336,7 +355,9 @@
                 <div class="column is-one-third pub-thumb-col">
                   <img
                     style="display: block; border-radius: 0%"
-                    src="/img/multimodal_animation.gif"
+                    src="/img/multimodal_animation.png"
+                    data-poster="/img/multimodal_animation.png"
+                    data-gif="/img/multimodal_animation.gif"
                     alt="Multimodal search pipeline combining text and image queries"
                     width="100%"
                   />
@@ -393,7 +414,7 @@
                       class="card-footer-item"
                       style="text-decoration: none"
                     >
-                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTex
+                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTeX
                     </a>
                   </div>
                 </div>
@@ -420,7 +441,9 @@
                 <div class="column is-one-third pub-thumb-col">
                   <img
                     style="display: block; border-radius: 0%"
-                    src="/img/procsim_animation.gif"
+                    src="/img/procsim_animation.png"
+                    data-poster="/img/procsim_animation.png"
+                    data-gif="/img/procsim_animation.gif"
                     alt="ProcSim proxy-based confidence diagram for similarity learning"
                     width="100%"
                   />
@@ -476,7 +499,7 @@
                       class="card-footer-item"
                       style="text-decoration: none"
                     >
-                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTex
+                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTeX
                     </a>
                   </div>
                 </div>
@@ -502,7 +525,9 @@
                 <div class="column is-one-third pub-thumb-col">
                   <img
                     style="display: block; border-radius: 0%"
-                    src="/img/benchmark_thumbnail.gif"
+                    src="/img/benchmark_thumbnail.png"
+                    data-poster="/img/benchmark_thumbnail.png"
+                    data-gif="/img/benchmark_thumbnail.gif"
                     alt="Robot manipulating cloth in simulation next to its real-world counterpart"
                     width="100%"
                   />
@@ -564,7 +589,7 @@
                       class="card-footer-item"
                       style="text-decoration: none"
                     >
-                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTex
+                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTeX
                     </a>
                   </div>
                 </div>
@@ -594,7 +619,9 @@
                 <div class="column is-one-third pub-thumb-col">
                   <img
                     style="display: block; border-radius: 0%"
-                    src="/img/deformable_thumbnail.gif"
+                    src="/img/deformable_thumbnail.png"
+                    data-poster="/img/deformable_thumbnail.png"
+                    data-gif="/img/deformable_thumbnail.gif"
                     alt="Deformable surface reconstruction preserving Riemannian metric"
                     width="100%"
                   />
@@ -640,7 +667,7 @@
                       class="card-footer-item"
                       style="text-decoration: none"
                     >
-                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTex
+                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTeX
                     </a>
                   </div>
                 </div>
@@ -671,7 +698,9 @@
                 <div class="column is-one-third pub-thumb-col">
                   <img
                     style="display: block; border-radius: 0%"
-                    src="/img/ranker_animation.gif"
+                    src="/img/ranker_animation.png"
+                    data-poster="/img/ranker_animation.png"
+                    data-gif="/img/ranker_animation.gif"
                     alt="Same ranked list rendered on mobile (top 3 visible) vs desktop (all visible), illustrating device-dependent position bias"
                     width="100%"
                   />
@@ -702,7 +731,7 @@
                       class="card-footer-item"
                       style="text-decoration: none"
                     >
-                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTex
+                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTeX
                     </a>
                   </div>
                 </div>
@@ -725,7 +754,9 @@
                 <div class="column is-one-third pub-thumb-col">
                   <img
                     style="display: block; border-radius: 0%"
-                    src="/img/fastvc_animation.gif"
+                    src="/img/fastvc_animation.png"
+                    data-poster="/img/fastvc_animation.png"
+                    data-gif="/img/fastvc_animation.gif"
                     alt="Speaker A's voice converted to speaker B while the spoken content stays the same"
                     width="100%"
                   />
@@ -771,7 +802,7 @@
                       class="card-footer-item"
                       style="text-decoration: none"
                     >
-                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTex
+                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTeX
                     </a>
                   </div>
                 </div>
@@ -795,7 +826,9 @@
                 <div class="column is-one-third pub-thumb-col">
                   <img
                     style="display: block; border-radius: 0%"
-                    src="/img/multispeaker_animation.gif"
+                    src="/img/multispeaker_animation.png"
+                    data-poster="/img/multispeaker_animation.png"
+                    data-gif="/img/multispeaker_animation.gif"
                     alt="One vocoder model generating speech in three different speaker voices from the same text"
                     width="100%"
                   />
@@ -832,7 +865,7 @@
                       class="card-footer-item"
                       style="text-decoration: none"
                     >
-                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTex
+                      <i class="fa-sharp fa-solid fa-link"></i>&nbsp;BibTeX
                     </a>
                   </div>
                 </div>
@@ -938,6 +971,18 @@
         e.clearSelection();
       });
       //]]>
+    </script>
+    <script>
+      document.querySelectorAll("img[data-gif]").forEach(function (image) {
+        const container = image.parentElement;
+
+        container.addEventListener("mouseenter", function () {
+          image.src = image.dataset.gif;
+        });
+        container.addEventListener("mouseleave", function () {
+          image.src = image.dataset.poster;
+        });
+      });
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
